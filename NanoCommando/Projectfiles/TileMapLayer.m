@@ -15,20 +15,20 @@
 	if ((self = [super init]))
 	{
         
-        CCSprite* backgroundSprite = [CCSprite spriteWithFile:@"LvMapbackground1.png"];
+        //CCSprite* backgroundSprite = [CCSprite spriteWithFile:@"LvMapbackground1.png"];
 
-         [self addChild:backgroundSprite];
+        //[self addChild:backgroundSprite];
         
-//		CCTMXTiledMap* tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"orthogonal.tmx"];
-//		tileMapHeightInPixels = tileMap.mapSize.height * tileMap.tileSize.height / CC_CONTENT_SCALE_FACTOR();
-//		[self addChild:tileMap z:-1 tag:TileMapNode];
-//		
-//		// Use a negative offset to set the tilemap's start position
-//		//tileMap.position = CGPointMake(-160, -120);
-//
-//		// hide the event layer, we only need this information for code, not to display it
-//		CCTMXLayer* eventLayer = [tileMap layerNamed:@"GameEventLayer"];
-//		eventLayer.visible = NO;
+		CCTMXTiledMap* tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"map.tmx"];
+		tileMapHeightInPixels = tileMap.mapSize.height * tileMap.tileSize.height / CC_CONTENT_SCALE_FACTOR();
+		[self addChild:tileMap z:-1 tag:TileMapNode];
+		
+		// Use a negative offset to set the tilemap's start position
+		//tileMap.position = CGPointMake(-160, -120);
+
+		// hide the event layer, we only need this information for code, not to display it
+		CCTMXLayer* eventLayer = [tileMap layerNamed:@"GameEventLayer"];
+		eventLayer.visible = NO;
 //
 //		CCTMXLayer* winterLayer = [tileMap layerNamed:@"WinterLayer"];
 //		winterLayer.visible = NO;
@@ -196,46 +196,46 @@
 
 
 
-//#ifdef DEBUG
-//-(void) drawRect:(CGRect)rect
-//{
-//	// Because there is no specialized rect drawing method the rect is drawn using 4 lines
-//	CGPoint pos1, pos2, pos3, pos4;
-//	pos1 = CGPointMake(rect.origin.x, rect.origin.y);
-//	pos2 = CGPointMake(rect.origin.x, rect.origin.y + rect.size.height);
-//	pos3 = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height);
-//	pos4 = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y);
-//	
-//	ccDrawLine(pos1, pos2);
-//	ccDrawLine(pos2, pos3);
-//	ccDrawLine(pos3, pos4);
-//	ccDrawLine(pos4, pos1);
-//}
-//
-//// Draw the object rectangles for debugging and illustration purposes.
-//-(void) draw
-//{
-//	CCNode* node = [self getChildByTag:TileMapNode];
-//	NSAssert([node isKindOfClass:[CCTMXTiledMap class]], @"not a CCTMXTiledMap");
-//	CCTMXTiledMap* tileMap = (CCTMXTiledMap*)node;
-//	
-//	// get the object layer
-//	CCTMXObjectGroup* objectLayer = [tileMap objectGroupNamed:@"ObjectLayer"];
-//	NSAssert([objectLayer isKindOfClass:[CCTMXObjectGroup class]], @"ObjectLayer not found or not a CCTMXObjectGroup");
-//	
-//	NSUInteger numObjects = [[objectLayer objects] count];
-//	for (NSUInteger i = 0; i < numObjects; i++)
-//	{
-//		NSDictionary* properties = [[objectLayer objects] objectAtIndex:i];
-//		CGRect rect = [self getRectFromObjectProperties:properties tileMap:tileMap];
-//		[self drawRect:rect];
-//	}
-//
-//	// show center screen position
-//	CGSize screenSize = [[CCDirector sharedDirector] winSize];
-//	CGPoint center = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
-//	ccDrawCircle(center, 10, 0, 8, NO);
-//}
-//#endif
+#if false
+-(void) drawRect:(CGRect)rect
+{
+	// Because there is no specialized rect drawing method the rect is drawn using 4 lines
+	CGPoint pos1, pos2, pos3, pos4;
+	pos1 = CGPointMake(rect.origin.x, rect.origin.y);
+	pos2 = CGPointMake(rect.origin.x, rect.origin.y + rect.size.height);
+	pos3 = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height);
+	pos4 = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y);
+	
+	ccDrawLine(pos1, pos2);
+	ccDrawLine(pos2, pos3);
+	ccDrawLine(pos3, pos4);
+	ccDrawLine(pos4, pos1);
+}
+
+// Draw the object rectangles for debugging and illustration purposes.
+-(void) draw
+{
+	CCNode* node = [self getChildByTag:TileMapNode];
+	NSAssert([node isKindOfClass:[CCTMXTiledMap class]], @"not a CCTMXTiledMap");
+	CCTMXTiledMap* tileMap = (CCTMXTiledMap*)node;
+	
+	// get the object layer
+	CCTMXObjectGroup* objectLayer = [tileMap objectGroupNamed:@"ObjectLayer"];
+	NSAssert([objectLayer isKindOfClass:[CCTMXObjectGroup class]], @"ObjectLayer not found or not a CCTMXObjectGroup");
+	
+	NSUInteger numObjects = [[objectLayer objects] count];
+	for (NSUInteger i = 0; i < numObjects; i++)
+	{
+		NSDictionary* properties = [[objectLayer objects] objectAtIndex:i];
+		CGRect rect = [self getRectFromObjectProperties:properties tileMap:tileMap];
+		[self drawRect:rect];
+	}
+
+	// show center screen position
+	CGSize screenSize = [[CCDirector sharedDirector] winSize];
+	CGPoint center = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
+	ccDrawCircle(center, 10, 0, 8, NO);
+}
+#endif
 
 @end

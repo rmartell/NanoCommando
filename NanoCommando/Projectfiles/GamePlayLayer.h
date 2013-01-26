@@ -12,15 +12,11 @@
 @class PlayerShip;
 @class CancerCollection;
 
-#define MAP_WIDTH (4096)
-#define MAP_HEIGHT (3072)
-
 @interface GamePlayLayer : CCLayer
 
-
--(id)initWithTileLayer:(TileMapLayer*)tileLayer;
+-(id) initWithGame;
 
 @property (nonatomic, weak) PlayerShip* playerShip;
 @property (nonatomic, strong) CancerCollection *cancerCells;
-
+@property (nonatomic, strong) TileMapLayer* tileLayer;
 @end

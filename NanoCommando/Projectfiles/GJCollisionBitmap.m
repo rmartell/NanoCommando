@@ -35,9 +35,11 @@ typedef unsigned char byte;
 
 -(BOOL)ptInside:(CGPoint)pt;
 {
-    BOOL result= NO;
-    int x= (int)(pt.x);
-    int y= self.height - (int)(pt.y);
+    BOOL result= YES;
+    int x= (int)(pt.x + MAP_WIDTH/2);
+    int y= self.height - (int)(pt.y + MAP_HEIGHT/2);
+
+//    NSLog(@"Point Inside: %@ => %d %d", NSStringFromCGPoint(pt), x, y);
     
     // might want to just return YES on these
     if(x>=0 && x<(int)self.width && y>=0 && y<(int)self.height)

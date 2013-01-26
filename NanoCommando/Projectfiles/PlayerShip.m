@@ -10,6 +10,8 @@
 
 @implementation PlayerShip {
     CGSize screenSize;
+    
+    CCMoveBy* moveAction;
 }
 
 -(id) initWithGameLayer:(GamePlayLayer*)layer
@@ -19,6 +21,8 @@
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
+        [self scheduleUpdate];
+        
 	}
 	return self;
 }
@@ -27,6 +31,20 @@
 {
 	id playerShip= [[self alloc] initWithGameLayer:layer];
 	return playerShip;
+}
+
+-(void)moveBy:(CGPoint)vector {
+    
+    [moveAction stop];
+    moveAction = [CCMoveBy actionWithDuration:1.0f position:vector];
+    [self runAction:moveAction];
+    
+    NSLog(@"Current ship position: %@", NSStringFromCGPoint(self.position));
+}
+
+-(void)update:(ccTime)delta {
+
+    
 }
 
 

@@ -32,6 +32,7 @@
 
 // Wax (and Lua) headers
 #import "luawax.h"
+#import "Constants.h"
 
 #endif // __OBJC__
 

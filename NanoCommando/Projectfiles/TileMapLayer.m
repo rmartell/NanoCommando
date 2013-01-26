@@ -181,18 +181,18 @@
 
 
 
--(CGPoint) locationFromTouch:(UITouch*)touch
-{
-	CGPoint touchLocation = [touch locationInView:[touch view]];
-	return [[CCDirector sharedDirector] convertToGL:touchLocation];
-}
+//-(CGPoint) locationFromTouch:(UITouch*)touch
+//{
+//	CGPoint touchLocation = [touch locationInView:[touch view]];
+//	return [[CCDirector sharedDirector] convertToGL:touchLocation];
+//}
 
--(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+//-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
 	// get the position in tile coordinates from the touch location
-	CGPoint location = [self locationFromTouch:[touches anyObject]];
-	[self tilemapTouchedAt:location];
-}
+//	CGPoint location = [self locationFromTouch:[touches anyObject]];
+//	[self tilemapTouchedAt:location];
+//}
 
 
 

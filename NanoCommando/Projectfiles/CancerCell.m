@@ -109,6 +109,7 @@
 
 -(BOOL)cancerCell:(CancerCell *)cell canGrowToPoint:(CGPoint)pt andInterimArray:(NSMutableArray *)others
 {
+//    NSLog(@"Testing point: %@", NSStringFromCGPoint(pt));
     BOOL valid= ![self.collision ptInside:pt];
     
     if(valid)
@@ -178,6 +179,7 @@
 
 -(void)seed
 {
-    [self addCancerAtPoint:ccp(512, 500) intoArray:self.cells];
+//    [self addCancerAtPoint:ccp(512, 500) intoArray:self.cells];
+    [self addCancerAtPoint:ccp(0, 0) intoArray:self.cells];
 }
 @end

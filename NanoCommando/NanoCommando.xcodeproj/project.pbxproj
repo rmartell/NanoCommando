@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6E1FAABD16B468F200B711AF /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABC16B468F200B711AF /* map.tmx */; };
 		6E1FAABF16B4692000B711AF /* LvMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABE16B4692000B711AF /* LvMap.png */; };
+		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
+		BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1B16B47966009D1B11 /* Collision.bm */; };
+		BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */; };
+		BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1E16B47C80009D1B11 /* CancerCell.png */; };
 		DC2721C0160CB0DF00D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */; };
 		DC3C6FB514B8A9BA00DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FB414B8A9BA00DAD281 /* fps_images-hd.png */; };
 		DC65615C13A969B600A7AC53 /* libbox2d-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615013A969B600A7AC53 /* libbox2d-ios.a */; };
@@ -51,6 +55,12 @@
 /* Begin PBXFileReference section */
 		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMap.png; sourceTree = "<group>"; };
+		BBD95A0A16B46F3C009D1B11 /* CancerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancerCell.m; sourceTree = "<group>"; };
+		BBD95A0B16B46F3C009D1B11 /* CancerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancerCell.h; sourceTree = "<group>"; };
+		BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJCollisionBitmap.h; sourceTree = "<group>"; };
+		BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJCollisionBitmap.m; sourceTree = "<group>"; };
+		BBD95A1B16B47966009D1B11 /* Collision.bm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collision.bm; sourceTree = "<group>"; };
+		BBD95A1E16B47C80009D1B11 /* CancerCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancerCell.png; sourceTree = "<group>"; };
 		DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FB414B8A9BA00DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -240,6 +250,8 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BBD95A1B16B47966009D1B11 /* Collision.bm */,
+				BBD95A1E16B47C80009D1B11 /* CancerCell.png */,
 				6E1FAABE16B4692000B711AF /* LvMap.png */,
 				6E1FAABC16B468F200B711AF /* map.tmx */,
 				F237496016B45FC5006FCE54 /* Sprites */,
@@ -290,10 +302,14 @@
 		F21026C516B444A300C70F6D /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				BBD95A0A16B46F3C009D1B11 /* CancerCell.m */,
+				BBD95A0B16B46F3C009D1B11 /* CancerCell.h */,
 				F21026C916B4464C00C70F6D /* GameObject.h */,
 				F21026CA16B4464C00C70F6D /* GameObject.m */,
 				F21026C616B444D500C70F6D /* PlayerShip.h */,
 				F21026C716B444D500C70F6D /* PlayerShip.m */,
+				BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */,
+				BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -388,6 +404,8 @@
 				F237496216B45FF1006FCE54 /* TestShip.png in Resources */,
 				6E1FAABD16B468F200B711AF /* map.tmx in Resources */,
 				6E1FAABF16B4692000B711AF /* LvMap.png in Resources */,
+				BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */,
+				BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +422,8 @@
 				F21026C016B43C6700C70F6D /* GamePlayLayer.m in Sources */,
 				F21026C816B444D500C70F6D /* PlayerShip.m in Sources */,
 				F21026CB16B4464C00C70F6D /* GameObject.m in Sources */,
+				BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */,
+				BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

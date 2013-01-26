@@ -7,7 +7,13 @@
 
 #import "GamePlayLayer.h"
 #import "PlayerShip.h"
+#import "CancerCell.h"
+#import "GJCollisionBitmap.h"
 
+
+@interface GamePlayLayer ()
+@property (nonatomic, strong) GJCollisionBitmap *collisionMask;
+@end
 
 @implementation GamePlayLayer {
     CGSize screenSize;
@@ -43,11 +49,21 @@
         //[self addChild:hello];
         [self setupPlayerShip];
         
+        NSURL *collisionURL = [[NSBundle mainBundle] URLForResource:@"Collision" withExtension:@"bm"];
+        NSData *data= [NSData dataWithContentsOfURL:collisionURL];
+        self.collisionMask= [[GJCollisionBitmap alloc] initWithWidth:MAP_WIDTH height:MAP_HEIGHT
+                                                         bytesPerRow:MAP_WIDTH/8 andData:data];
         
+        self.cancerCells= [[CancerCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
+        [self.cancerCells seed];
         
+        [self scheduleUpdate];
     }
     return self;
 }
 
-
+-(void)update:(ccTime)ticks
+{
+    [self.cancerCells update:ticks];
+}
 @end

@@ -19,6 +19,12 @@
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
+        self.maxVelocity = 200;
+        self.maxAcceleration = 200;
+        
+        [self scheduleUpdate];
+        
+        
 	}
 	return self;
 }
@@ -27,6 +33,11 @@
 {
 	id playerShip= [[self alloc] initWithGameLayer:layer];
 	return playerShip;
+}
+
+-(void)update:(ccTime)delta {
+    [self updateMove:delta];
+    
 }
 
 

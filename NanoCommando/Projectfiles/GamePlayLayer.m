@@ -30,24 +30,63 @@
     
     playerShip = [PlayerShip createWithLayer:self];
     playerShip.position = ccp(screenSize.width/2, screenSize.height/2);
+    playerShip.destination = playerShip.position;
     [self addChild:playerShip];
+    
+    //CGRect followBoundary = CGRectMake(0, 0, 1000, 1000);
+    //CCFollow* followAction = [CCFollow actionWithTarget:playerShip worldBoundary:followBoundary];
+    //[self runAction:followAction];
+    
+    
 }
+
+-(void) setupTouchZones {
+    
+    [KKInput sharedInput].multipleTouchEnabled = YES;
+}
+
 
 -(id) initWithTileLayer:(TileMapLayer *)tileLayer {
     if ((self = [super init])) {
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
-        //CCLabelTTF* hello = [CCLabelTTF labelWithString:@"blah" fontName:@"Helvetica" fontSize:60];
-        //hello.position = ccp(screenSize.width/2, screenSize.height/2);
-        //[self addChild:hello];
         [self setupPlayerShip];
+        [self setupTouchZones];
         
+        [self scheduleUpdate];
         
         
     }
     return self;
 }
+
+-(void)update:(ccTime)delta {
+    [self processTouches:delta];
+}
+
+
+-(void)processTouches:(ccTime)delta {
+    
+    CCArray* touches = [KKInput sharedInput].touches;
+    //    int numberOfTouches = [touches count];
+    
+    KKTouch* touch;
+    
+    CCARRAY_FOREACH(touches, touch) {
+        CGPoint location = touch.location;
+        
+        if (touch.phase == KKTouchPhaseBegan) {
+            playerShip.destination = location;
+            
+        } else if (touch.phase == KKTouchPhaseStationary) {
+            
+        } else if (touch.phase == KKTouchPhaseEnded) {
+            
+        }
+    }
+}
+
 
 
 @end

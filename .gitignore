@@ -1,0 +1,11 @@
+*.app
+TestOrthogonal
+__Kobold2D__/docs
+__Kobold2D__/libs/Chipmunk-SpaceManager/Example
+__Kobold2D__/libs/Chipmunk-SpaceManager/htmldoc
+__Kobold2D__/libs/Chipmunk/Demo
+__Kobold2D__/libs/Box2D/Documentation
+__Kobold2D__/libs/Box2D/Testbed
+__Kobold2D__/libs/Chipmunk/doc
+__Kobold2D__/templates
+__Kobold2D__/tools

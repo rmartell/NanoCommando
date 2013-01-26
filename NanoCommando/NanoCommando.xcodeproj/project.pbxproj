@@ -43,6 +43,7 @@
 		F21026C816B444D500C70F6D /* PlayerShip.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026C716B444D500C70F6D /* PlayerShip.m */; };
 		F21026CB16B4464C00C70F6D /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026CA16B4464C00C70F6D /* GameObject.m */; };
 		F21026CE16B4507700C70F6D /* LvMapbackground1.png in Resources */ = {isa = PBXBuildFile; fileRef = F21026CD16B4507700C70F6D /* LvMapbackground1.png */; };
+		F237496216B45FF1006FCE54 /* TestShip.png in Resources */ = {isa = PBXBuildFile; fileRef = F237496116B45FF1006FCE54 /* TestShip.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +72,7 @@
 		DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Debug-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E813B5024400931BF2 /* BuildSettings-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Release-Mac.xcconfig"; sourceTree = "<group>"; };
-		DCC1A0E313A94ED5005BD75D /* NanoCommando-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "NanoCommando-iOS.app"; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC1A0E313A94ED5005BD75D /* NanoCommando-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NanoCommando-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1A0F913A94ED5005BD75D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DCC1A0FB13A94ED5005BD75D /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		DCC1A0FD13A94ED5005BD75D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		F21026C916B4464C00C70F6D /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		F21026CA16B4464C00C70F6D /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		F21026CD16B4507700C70F6D /* LvMapbackground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMapbackground1.png; sourceTree = "<group>"; };
+		F237496116B45FF1006FCE54 /* TestShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestShip.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,7 +236,7 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F21026CF16B4508700C70F6D /* Sprites */,
+				F237496016B45FC5006FCE54 /* Sprites */,
 				F21026CC16B4507700C70F6D /* Background */,
 				DC81EAAB141281CE00735365 /* alien-sfx.caf */,
 				DC81EAB0141281CE00735365 /* game-events.png */,
@@ -298,9 +300,10 @@
 			path = Background;
 			sourceTree = "<group>";
 		};
-		F21026CF16B4508700C70F6D /* Sprites */ = {
+		F237496016B45FC5006FCE54 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				F237496116B45FF1006FCE54 /* TestShip.png */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				DC65618F15114CB400E59F8A /* fps_images-ipadhd.png in Resources */,
 				DC2721C0160CB0DF00D88944 /* Default-568h@2x.png in Resources */,
 				F21026CE16B4507700C70F6D /* LvMapbackground1.png in Resources */,
+				F237496216B45FF1006FCE54 /* TestShip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

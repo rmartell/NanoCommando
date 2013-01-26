@@ -12,8 +12,10 @@
 
 @interface GamePlayLayer : CCLayer
 
--(id)initWithTileLayer:(TileMapLayer*)tileLayer;
+//-(id)initWithTileLayer:(TileMapLayer*)tileLayer;
+-(id) initWithGame;
 
 @property (nonatomic, weak) PlayerShip* playerShip;
+@property (nonatomic, strong) TileMapLayer* tileLayer;
 
 @end

@@ -10,6 +10,8 @@
 
 @implementation PlayerShip {
     CGSize screenSize;
+    
+    CCMoveBy* moveAction;
 }
 
 -(id) initWithGameLayer:(GamePlayLayer*)layer
@@ -19,10 +21,8 @@
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
-        self.maxVelocity = 200;
-        self.maxAcceleration = 200;
-        
         [self scheduleUpdate];
+        
         
         
 	}
@@ -35,8 +35,16 @@
 	return playerShip;
 }
 
+-(void)moveBy:(CGPoint)vector {
+    
+    [moveAction stop];
+    moveAction = [CCMoveBy actionWithDuration:1.0f position:vector];
+    [self runAction:moveAction];
+    
+}
+
 -(void)update:(ccTime)delta {
-    [self updateMove:delta];
+
     
 }
 

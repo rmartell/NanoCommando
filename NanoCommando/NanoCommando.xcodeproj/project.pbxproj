@@ -108,6 +108,7 @@
 		F21026CA16B4464C00C70F6D /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		F21026CD16B4507700C70F6D /* LvMapbackground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMapbackground1.png; sourceTree = "<group>"; };
 		F237496116B45FF1006FCE54 /* TestShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestShip.png; sourceTree = "<group>"; };
+		F237496816B47D55006FCE54 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +227,7 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
+				F237496816B47D55006FCE54 /* Constants.h */,
 				F21026C516B444A300C70F6D /* GameObjects */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,

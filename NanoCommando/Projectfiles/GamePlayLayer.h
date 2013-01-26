@@ -15,5 +15,6 @@
 -(id)initWithTileLayer:(TileMapLayer*)tileLayer;
 
 @property (nonatomic, weak) PlayerShip* playerShip;
+@property (nonatomic, weak) CCSprite *panSprite;
 
 @end

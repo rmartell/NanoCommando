@@ -37,7 +37,7 @@
 @end
 
 #define CANCER_SIZE (32)
-
+#define SECONDS_PER_GROWTH_SPURT (20.0)
 #define ROUGH_X_FROM_X(x) ((x)/(4*CANCER_SIZE))
 #define ROUGH_Y_FROM_Y(y) ((y)/(4*CANCER_SIZE))
 
@@ -98,7 +98,7 @@
 -(void)spreadIntoCollection:(CancerCollection *)collection andArray:(NSMutableArray *)array
 {
     // if we should grow...
-    if([NSDate timeIntervalSinceReferenceDate] - self.lastGrowth>1)
+    if([NSDate timeIntervalSinceReferenceDate] - self.lastGrowth>SECONDS_PER_GROWTH_SPURT)
     {
         for(int ii= 0; ii<8; ii++)
         {

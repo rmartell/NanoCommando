@@ -120,6 +120,7 @@
 
 -(void)update:(ccTime)delta {
     [self.cancerCells update:delta];
+    [self.turrets update:delta];
 }
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)point

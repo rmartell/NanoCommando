@@ -29,9 +29,9 @@ typedef enum  {
     kStateCooldown
 } TurretState;
 
-#define TURRET_COOLDOWN_SECONDS (5.0)
-#define TURRET_RANGE (700)
-#define TURRET_SECONDS_FOR_COMPLETE_REVOLUTION (2.0)
+#define TURRET_COOLDOWN_SECONDS (0.5)
+#define TURRET_RANGE (500)
+#define TURRET_SECONDS_FOR_COMPLETE_REVOLUTION (1.0)
 #define TURRET_ROTATIONAL_VELOCITY (360.0/TURRET_SECONDS_FOR_COMPLETE_REVOLUTION)
 #define BULLET_VELOCITY (700)
 
@@ -55,6 +55,7 @@ typedef enum  {
 {
 	if ((self = [super initWithSprite:frameName andLayer:layer]))
 	{
+        self.scale= 3;
         self.layer= layer;
 	}
 	return self;
@@ -79,6 +80,8 @@ typedef enum  {
             [cell die];
             // and we're done
             self.dead= YES;
+        } else {
+            self.position= newPoint;
         }
     }
 }
@@ -91,11 +94,22 @@ typedef enum  {
 	{
         self.state= kStateIdle;
         self.layer= layer;
+        self.scale= 2.0;
 	}
 	return self;
 }
 
-
+-(NSString *)nameForState:(int)state
+{
+    switch(state)
+    {
+        case kStateIdle: return @"Idle"; break;
+        case kStateTurningTowardsTarget: return @"Turning"; break;
+        case kStateFiring: return @"Firing"; break;
+        case kStateCooldown: return @"Cooldown"; break;
+    }
+    return @"Unknown";
+}
 -(void)update:(ccTime)ticksPassed
 {
     int newState= self.state;
@@ -131,7 +145,10 @@ typedef enum  {
     
     if(newState != self.state)
     {
-        NSLog(@"Turret at %@ new state: %d new state: %d", self, self.state, newState);
+        NSLog(@"Turret at %@ state: %@ new state: %@",
+              self,
+              [self nameForState:self.state],
+              [self nameForState:newState]);
         self.state= newState;
         self.startTime= [NSDate timeIntervalSinceReferenceDate];
     }
@@ -156,22 +173,23 @@ typedef enum  {
 -(BOOL)turnTowardsTarget:(ccTime)ticksElapsed
 {
     BOOL matched_bearing= NO;
-    float desiredRotation= cc_radians_between_points(self.position, self.target);
-    float rotationDelta = ticksElapsed * TURRET_ROTATIONAL_VELOCITY;
+    float desiredRotation= fmod(REAL_THETA_TO_COCOS_DEGREES(cc_radians_between_points(self.position, self.target))+180.0, 360);
+NSLog(@"Turret %@ turning towards %lf (current: %lf) Elapsed: %lf", self, desiredRotation, self.rotation, ticksElapsed);
+    float rotationDeltaDegrees = ticksElapsed * TURRET_ROTATIONAL_VELOCITY;
     float newRotation= self.rotation;
     
+    // this will not always turn in the optimal direction (FIXME)
     if(desiredRotation > self.rotation)
     {
-        newRotation= fmaxf(self.rotation+rotationDelta, desiredRotation);
+        newRotation= fminf(self.rotation+rotationDeltaDegrees, desiredRotation);
     } else {
-        newRotation= fminf(self.rotation-rotationDelta, desiredRotation);
+        newRotation= fmaxf(self.rotation-rotationDeltaDegrees, desiredRotation);
     }
     
-    if(newRotation==desiredRotation)
+    self.rotation= newRotation;
+    if(self.rotation==desiredRotation)
     {
         matched_bearing= YES;
-    } else {
-        self.rotation= newRotation;
     }
 
     return matched_bearing;
@@ -182,8 +200,8 @@ typedef enum  {
     float theta= cc_radians_between_points(self.position, self.target);
     
     CGPoint vector= CGPointMake(
-                                BULLET_VELOCITY*sin(theta),
-                                BULLET_VELOCITY*cos(theta)
+                                BULLET_VELOCITY*cos(theta),
+                                BULLET_VELOCITY*sin(theta)
     );
 
     [self.layer.turrets fireFromPoint:self.position withVector:vector ofType:self.weaponType];
@@ -202,8 +220,8 @@ typedef enum  {
         self.layer= layer;
         self.collision= bitmap;
         
-        self.textureFrameName = @"Turret0.png";
-        self.bulletFrameName= @"";
+        self.textureFrameName = @"Turret_drop";
+        self.bulletFrameName= @"bullet";
     }
     
     return self;
@@ -261,7 +279,7 @@ typedef enum  {
 
 float cc_radians_between_points(CGPoint center, CGPoint target) {
     float dx = target.x - center.x;
-    float dy = target.y - target.y;
+    float dy = target.y - center.y;
 
     float theta = atan2(dy, dx);
     if (theta < 0) {

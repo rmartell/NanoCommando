@@ -223,8 +223,8 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         
         [self.cells addObjectsFromArray:newGrowth];
         self.lastUpdate= [NSDate timeIntervalSinceReferenceDate];
-        NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
-        CCLOG(@"Total time calculating cancer spent: %lf", delta);
+        //NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
+        //CCLOG(@"Total time calculating cancer spent: %lf", delta);
     }
 }
 
@@ -282,13 +282,34 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         CGPointMake(-2031, -1405),
         CGPointMake(-2006, -381.134),
         CGPointMake(-2025, 152.49),
-        CGPointMake(-2034, 1087.51)
+        CGPointMake(-2034, 1087.51),
+        CGPointMake(-680, 1520),
+        CGPointMake(126, 1533),
+        CGPointMake(565, 1501),
+        CGPointMake(1249, 1500),
+        CGPointMake(1997, 763),
+        CGPointMake(2016, -384),
+        CGPointMake(2028, -1330),
+        CGPointMake(1076, -1473),
+        CGPointMake(101, -1481),
+        CGPointMake(-827, -1502),
+        CGPointMake(-1146, -1525)
     };
+    int numberOfSeedsToMake = 3;
+    int numberOfSeedPoints = sizeof(seed_pts)/sizeof(seed_pts[0]);
+    int iterations = numberOfSeedPoints / numberOfSeedsToMake;
+    for (int iii = 0; iii < numberOfSeedsToMake; iii++) {
+        int randomInt = arc4random()%iterations;
+        int randomSeed = iii*iterations + randomInt;
+        [self addCancerAtPoint:seed_pts[randomSeed] intoArray:self.cells];
+        CCLOG(@"Random seed index:%i", randomSeed);
+        
+    }
     
 //    [self addCancerAtPoint:ccp(512, 500) intoArray:self.cells];
-    for(int ii= 0; ii<(int)(sizeof(seed_pts)/sizeof(seed_pts[0])); ii++)
-    {
-        [self addCancerAtPoint:seed_pts[ii] intoArray:self.cells];
-    }
+    //for(int ii= 0; ii<(int)(sizeof(seed_pts)/sizeof(seed_pts[0])); ii++)
+    //{
+    //    [self addCancerAtPoint:seed_pts[ii] intoArray:self.cells];
+    //}
 }
 @end

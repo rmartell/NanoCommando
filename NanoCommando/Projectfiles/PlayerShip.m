@@ -44,6 +44,8 @@
         
         [self runAction:normalAnimation];
         
+        [self schedule:@selector(logPosition) interval:5.0f];
+        
 	}
 	return self;
 }
@@ -53,6 +55,10 @@
 	id playerShip= [[self alloc] initWithGameLayer:layer];
     
 	return playerShip;
+}
+
+-(void)logPosition {
+    CCLOG(@"-----player ship is at %f %f", self.position.x, self.position.y);
 }
 
 

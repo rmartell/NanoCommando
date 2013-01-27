@@ -8,6 +8,13 @@
 
 #import "HudLayer.h"
 
+@interface HudLayer ()
+@property (nonatomic, weak) CCSprite *panSprite;
+@property (nonatomic, weak) CCSprite *panSprite2;
+@property (nonatomic) Boolean startpan;
+@property (nonatomic) CGPoint startpos;
+@end
+
 @implementation HudLayer
 
 @synthesize panSprite;
@@ -179,6 +186,7 @@
         panSprite.visible = false;
         panSprite2.visible = false;
         self.startpan = true;
+        self.throttle= 0;
     }
 }
 

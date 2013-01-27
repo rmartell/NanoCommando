@@ -36,6 +36,8 @@
     GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
     [scene addChild:gamePlayLayer z:kGameZ];
     
+    gamePlayLayer.playerShip.hud= hudLayer;
+    
 	return scene;
 }
 
@@ -54,7 +56,7 @@
 -(void)setupBackground {
     
     tileLayer = [[TileMapLayer alloc]init];
-    tileLayer.position = ccp(-2*screenSize.width, -2*screenSize.height);
+    tileLayer.position = ccp(-MAP_WIDTH/2, -MAP_HEIGHT/2);
     [self addChild:tileLayer z:kBackgroundZ];
     
 }

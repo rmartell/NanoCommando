@@ -26,7 +26,7 @@
     
 }
 
--(void)playSound:(SoundType)type at:(CGPoint)pt
+-(void)playSound:(SoundType)type atPoint:(CGPoint)pt
 {
     
 }

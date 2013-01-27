@@ -9,6 +9,7 @@
 #import "Turret.h"
 #import "GJCollisionBitmap.h"
 #import "CancerCell.h"
+#import "SoundManager.h"
 
 @interface TurretCollection ()
 @property (nonatomic, strong) NSMutableArray *turrets;
@@ -297,6 +298,8 @@ typedef enum  {
     bullet.position= pt;
     bullet.velocity= v;
     bullet.bulletType= type;
+    
+    [[SoundManager sharedSoundManager] playSound:kSoundFireProjectile atPoint:pt];
     
     [self.layer.batchNode addChild:bullet z:kBulletZ];
     [self.bullets addObject:bullet];

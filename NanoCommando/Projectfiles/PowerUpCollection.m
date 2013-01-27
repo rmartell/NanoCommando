@@ -7,6 +7,7 @@
 //
 
 #import "PowerUpCollection.h"
+#import "SoundManager.h"
 
 #define SPAWN_POWERUPS_TIME (6.0)
 #define SPAWN_POWERUP_CHANCE (0.65)
@@ -38,6 +39,8 @@
     [self removeFromParentAndCleanup:YES];
 
     [self.layer.powerups.powerups removeObject:self];
+    
+    [[SoundManager sharedSoundManager] playSound:kSoundPowerupPickup];
 }
 @end
 
@@ -98,6 +101,7 @@
                 if([self powerupsInRange:50 ofPoint:seed_pts[actualIndex]].count==0)
                 {
                     [self addPowerUpOfType:kPowerUpTurret atPoint:seed_pts[actualIndex]];
+                    [[SoundManager sharedSoundManager] playSound:kSoundPowerupPing atPoint:seed_pts[actualIndex]];
                     break;
                 }
             }

@@ -26,5 +26,5 @@ typedef enum {
 +(SoundManager *)sharedSoundManager;
 
 -(void)playSound:(SoundType)type;
--(void)playSound:(SoundType)type at:(CGPoint)pt;
+-(void)playSound:(SoundType)type atPoint:(CGPoint)pt;
 @end

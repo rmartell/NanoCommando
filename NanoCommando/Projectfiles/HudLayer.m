@@ -208,8 +208,11 @@
         if([self.theGamePlayLayer.collisionMask ptInside:testDeployPoint])
         {
             [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
+            //[[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy atPoint:testDeployPoint];
+
         } else {
             self.deployAt = testDeployPoint;
+            [[SoundManager sharedSoundManager] playSound:kSoundTurretDeploy];
             self.deploy= true;
         }
         self.tapSprite.position = input.gestureTapLocation;

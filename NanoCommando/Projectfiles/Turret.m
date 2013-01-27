@@ -56,7 +56,7 @@ typedef enum  {
 {
 	if ((self = [super initWithSprite:frameName andLayer:layer]))
 	{
-        self.scale= 3;
+        self.scale= 1;
         self.layer= layer;
 	}
 	return self;
@@ -309,7 +309,7 @@ typedef enum  {
 
 -(void)seed
 {
-    [self addTurretAtPoint:CGPointMake(0, 0)];
+//    [self addTurretAtPoint:CGPointMake(0, 0)];
 }
 @end
 

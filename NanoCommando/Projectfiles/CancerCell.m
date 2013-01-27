@@ -30,17 +30,20 @@
 @property (nonatomic, weak) GamePlayLayer *layer;
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
-@property (nonatomic, assign) NSTimeInterval lastGrowth;
+@property (nonatomic, assign) NSTimeInterval nextGrowth;
 @property (nonatomic, assign) int generation;
 @property (nonatomic, assign) int roughX;
 @property (nonatomic, assign) int roughY;
 @property (nonatomic, assign) int fileSeed;
 @end
 
-#define CANCER_SIZE (32)
+#define CANCER_SIZE (80)
 #define SECONDS_PER_GROWTH_SPURT (20.0)
 #define ROUGH_X_FROM_X(x) ((x)/(4*CANCER_SIZE))
 #define ROUGH_Y_FROM_Y(y) ((y)/(4*CANCER_SIZE))
+
+#define UPDATE_SECONDS_PER_CELL (2.5)
+#define OVERALL_UPDATE_PER_SECOND (1.0)
 
 @implementation CancerCell {
     CCAction* normalAnimation;
@@ -68,6 +71,7 @@
         
         [self runAction:normalAnimation];
         self.rotation = rand()%360;
+        [self updateNextGrowthTime];
 	}
 	return self;
 }
@@ -96,10 +100,15 @@
     return CGRectContainsPoint(self.boundingBox, pt);
 }
 
+-(void)updateNextGrowthTime
+{
+    self.nextGrowth= [NSDate timeIntervalSinceReferenceDate] + rand()%8 + (rand()%10)/9.0;
+}
+
 -(void)spreadIntoCollection:(CancerCollection *)collection andArray:(NSMutableArray *)array
 {
     // if we should grow...
-    if([NSDate timeIntervalSinceReferenceDate] - self.lastGrowth>SECONDS_PER_GROWTH_SPURT)
+    if([NSDate timeIntervalSinceReferenceDate] > self.nextGrowth)
     {
         for(int ii= 0; ii<8; ii++)
         {
@@ -140,7 +149,7 @@
                // self.texture= collection.cancerDormant;
             }
         }
-        self.lastGrowth= [NSDate timeIntervalSinceReferenceDate];
+        [self updateNextGrowthTime];
     }
 }
 @end
@@ -211,7 +220,7 @@
 {
 //    return;
     // I _really_ don't like the ticksPassed in crap..
-    if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1)
+    if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1.5)
     {
         self.currentGeneration+= 1;
         int ticks= 1;
@@ -259,15 +268,22 @@
 
 -(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt
 {
+    return [self cancerCellsInRange:range ofPoint:pt maxNumber:-1];
+}
+
+
+-(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt maxNumber:(int)max
+{
     NSMutableArray *array= [NSMutableArray arrayWithCapacity:10];
     int rXStart= ROUGH_X_FROM_X(pt.x - range);
     int rXEnd= ROUGH_X_FROM_X(pt.x + range);
     int rYStart= ROUGH_Y_FROM_Y(pt.y - range);
     int rYEnd= ROUGH_Y_FROM_Y(pt.y + range);
-
-    for(int rx= rXStart; rx<= rXEnd; rx++)
+    BOOL done= false;
+    
+    for(int rx= rXStart; rx<= rXEnd && !done; rx++)
     {
-        for(int ry= rYStart; ry<= rYEnd; ry++)
+        for(int ry= rYStart; ry<= rYEnd && !done; ry++)
         {
             for(CancerCell *cell in self.cells)
             {
@@ -279,6 +295,10 @@
                     if((dx*dx + dy*dy)<range*range)
                     {
                         [array addObject:cell];
+                        if(max==(int)array.count) // -1 means all of them.
+                        {
+                            done= YES;
+                        }
                     }
                 }
             }

@@ -28,7 +28,7 @@
 {
 	if ((self = [super initWithSprite:frameName andLayer:layer]))
 	{
-        self.scale= 2.4;
+        self.scale= 1.5;
         self.layer= layer;
 	}
 	return self;
@@ -52,7 +52,7 @@
         self.powerups= [NSMutableArray arrayWithCapacity:10];
         self.layer= layer;
         
-        self.powerupFrameName = @"Turret_drop"; // FIXME
+        self.powerupFrameName = @"Turret_Power_Up";
     }
     
     return self;
@@ -68,7 +68,7 @@
     
     [self.layer.batchNode addChild:powerup z:kPowerUpZ];
     [self.powerups addObject:powerup];
-    NSLog(@"Dropped powerup at %@", NSStringFromCGPoint(pt));
+//    NSLog(@"Dropped powerup at %@", NSStringFromCGPoint(pt));
 }
 
 -(void)update:(ccTime)ticksPassed

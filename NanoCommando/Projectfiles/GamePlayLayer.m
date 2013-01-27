@@ -15,7 +15,12 @@
 #import "Turret.h"
 #import "LightLayer.h"
 #import "PowerUpCollection.h"
+#import "GameManger.h"
 
+@interface GamePlayLayer ()
+@property (nonatomic, weak) LightLayer *lightLayer;
+@property (nonatomic, assign) PlayerDeathState lastPlayerDeathState;
+@end
 
 @implementation GamePlayLayer {
     CGSize screenSize;
@@ -43,6 +48,7 @@
     
     gamePlayLayer.playerShip.hud= hudLayer;
     gamePlayLayer.playerShip.collision= gamePlayLayer.collisionMask;
+    gamePlayLayer.lightLayer= lightLayer;
     
 	return scene;
 }
@@ -138,6 +144,28 @@
     [self.cancerCells update:delta];
     [self.turrets update:delta];
     [self.powerups update:delta];
+    
+    if(self.playerShip.deathState != self.lastPlayerDeathState)
+    {
+        GLubyte red;
+        switch(self.playerShip.deathState)
+        {
+            case PlayerDeathStateAlive: red= 0; break;
+            case PlayerDeathStateWarning: red= 128; break;
+            case PlayerDeathStateCritical: red= 255; break;
+            case PlayerDeathStateDead: red= 255; break;
+            default:break;
+        }
+
+        id action = [CCTintTo actionWithDuration:0.5 red:red green:0 blue:0];
+        [self.lightLayer.lampSprite runAction:action];
+        self.lastPlayerDeathState= self.playerShip.deathState;
+    }
+    
+    if(self.playerShip.deathState==PlayerDeathStateDead)
+    {
+        [[GameManager sharedGameManager] runSceneWithID:kKillScene];
+    }
 }
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)point

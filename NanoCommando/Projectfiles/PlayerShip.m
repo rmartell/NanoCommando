@@ -12,6 +12,7 @@
 #import "GJCollisionBitmap.h"
 #import "SoundManager.h"
 #import "PowerUpCollection.h"
+#import "CancerCell.h"
 
 // Maximum velocity in world units/second
 #define MAXIMUM_VELOCITY (300)
@@ -50,9 +51,11 @@
         [self scheduleUpdate];
         [self setupAnimation];
         
+        _deathState= -1;
+        self.deathState= PlayerDeathStateAlive;
         [self runAction:normalAnimation];
         
-        [self schedule:@selector(logPosition) interval:5.0f];
+//        [self schedule:@selector(logPosition) interval:5.0f];
         
 	}
 	return self;
@@ -121,6 +124,36 @@
         self.turretInventory-= 1;
     }
     
+    // calculate death state..
+    float ranges[]= { 100, 500, 800 };
+    PlayerDeathState newState= PlayerDeathStateAlive;
+    for(int ii= 0; ii<ARRAY_SIZE(ranges); ii++)
+    {
+        NSArray *encroaching= [self.layer.cancerCells cancerCellsInRange:ranges[ii] ofPoint:CGPointMake(0, 0) maxNumber:1];
+        if([encroaching count])
+        {
+            newState= PlayerDeathStateDead - ii;
+            break;
+        }
+    }
+    self.deathState= newState;
+}
+
+-(void)setDeathState:(PlayerDeathState)deathState
+{
+    if(_deathState != deathState)
+    {
+        _deathState= deathState;
+        switch(deathState)
+        {
+            case PlayerDeathStateAlive: NSLog(@"Alive State"); break;
+            case PlayerDeathStateWarning: NSLog(@"Warning State"); break;
+            case PlayerDeathStateCritical: NSLog(@"Critical State"); break;
+            case PlayerDeathStateDead: NSLog(@"Dead State"); break;
+            default:
+                break;
+        }
+    }
 }
 
 

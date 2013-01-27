@@ -15,15 +15,16 @@
 -(id) init {
     if(self=[super init])
     {
-        //[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-        self.lampSprite = [CCSprite spriteWithFile:@"superlamp.png"];
+        //[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4e444];
+        CCSprite *ls= [CCSprite spriteWithFile:@"superlamp.png"];
         
         CGSize screenSize;
         screenSize = [CCDirector sharedDirector].screenSize;
         
-        lampSprite.position = ccp(screenSize.width/2,screenSize.height/2);
+        ls.position = ccp(screenSize.width/2,screenSize.height/2);
         
-        [self addChild:lampSprite];
+        [self addChild:ls];
+        self.lampSprite = ls;
         
         //[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_Default];
     }

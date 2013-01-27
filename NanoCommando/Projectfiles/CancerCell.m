@@ -22,9 +22,11 @@
 
 -(CancerCell *)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array;
 -(BOOL)cancerCell:(CancerCell *)cell canGrowToPoint:(CGPoint)pt andInterimArray:(NSMutableArray *)others;
+-(void)killCell:(CancerCell *)cell;
 @end
 
 @interface CancerCell ()
+@property (nonatomic, weak) GamePlayLayer *layer;
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
 @property (nonatomic, assign) NSTimeInterval lastGrowth;
@@ -47,6 +49,7 @@
 //    if ((self = [super initWithSpriteFrameName:texture]))
     if ((self = [super initWithSprite:@"cancertest02" andLayer:layer]))
 	{
+        self.layer= layer; // this is not the best way to do this; lots of duplicate pointers
         self.growDirections= 0x7f;
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];
 	}
@@ -58,6 +61,13 @@
     self.roughX= ROUGH_X_FROM_X(position.x);
     self.roughY= ROUGH_Y_FROM_Y(position.y);
     [super setPosition:position];
+}
+
+-(void)die
+{
+    [self removeFromParentAndCleanup:YES];
+    
+    [self.layer.cancerCells killCell:self];
 }
 
 -(BOOL)isGrowing
@@ -258,6 +268,48 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
     return array;
 }
 
+// this does NOT do it right.
+-(NSArray *)cellsIntersectedByLineSegmentStart:(CGPoint)pt end:(CGPoint)end
+{
+    NSMutableArray *result= [NSMutableArray arrayWithCapacity:10];
+    int rx= ROUGH_X_FROM_X(end.x);
+    int ry= ROUGH_Y_FROM_Y(end.y);
+    
+    for(CancerCell *cell in self.cells)
+    {
+        if(cell.roughX==rx && cell.roughY==ry)
+        {
+            if([cell ptInside:end])
+            {
+                [result addObject:cell];
+            }
+        }
+    }
+    
+    return result;
+}
+
+-(void)killCell:(CancerCell *)cell
+{
+    // remove it.
+    [self.cells removeObject:cell];
+    
+    // This is gross; we reactivate everyone in our rough box.
+    int rough_x= ROUGH_X_FROM_X(cell.position.x);
+    int rough_y= ROUGH_Y_FROM_Y(cell.position.y);
+    
+    // check if inside another cancer cell...
+    for(CancerCell *c in self.cells)
+    {
+        if(cell != c &&
+           abs(rough_x-c.roughX)<=1 &&
+           abs(rough_y-c.roughY)<=1)
+        {
+            // just reset all of them.
+            c.growDirections= 0x7f;
+        }
+    }
+}
 
 -(void)seed
 {

@@ -12,9 +12,11 @@
 
 // Maximum velocity in world units/second
 #define MAXIMUM_VELOCITY (300)
+#define VELOCITY_CHANGE_PER_SECOND (600)
 
 @interface PlayerShip ()
 @property (nonatomic, assign) float desiredTheta;
+@property (nonatomic, assign) float currentSpeed;
 @property (nonatomic, assign) CGPoint desiredVelocity;
 @property (nonatomic, assign) CGPoint velocity;
 @end
@@ -63,10 +65,19 @@
     self.rotation= 360 - RADIANS_TO_DEGREES(currentRotationTheta) - 90;
     
     // update velocity
-    float velocityMag= MAXIMUM_VELOCITY*self.hud.throttle;
+    float desiredSpeed= MAXIMUM_VELOCITY*self.hud.throttle;
+    float speedDelta= delta*VELOCITY_CHANGE_PER_SECOND;
+    
+    if(desiredSpeed < self.currentSpeed)
+    {
+        self.currentSpeed= fmaxf(self.currentSpeed - speedDelta, desiredSpeed);
+    } else {
+        self.currentSpeed= fminf(self.currentSpeed + speedDelta, desiredSpeed);
+    }
+    
     self.velocity= CGPointMake(
-                               velocityMag*cos(currentRotationTheta),
-                               velocityMag*sin(currentRotationTheta));
+                               self.currentSpeed*cos(currentRotationTheta),
+                               self.currentSpeed*sin(currentRotationTheta));
 
     // update position
     CGPoint newPosition= CGPointMake(

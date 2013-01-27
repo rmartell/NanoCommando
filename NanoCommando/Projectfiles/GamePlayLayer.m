@@ -12,11 +12,9 @@
 #import "GJCollisionBitmap.h"
 #import "Constants.h"
 #import "HudLayer.h"
+#import "Turret.h"
 
 
-@interface GamePlayLayer ()
-@property (nonatomic, strong) GJCollisionBitmap *collisionMask;
-@end
 
 @implementation GamePlayLayer {
     CGSize screenSize;
@@ -69,6 +67,11 @@
     [self.cancerCells seed];
 }
 
+-(void)setupTurrets {
+    self.turrets= [[TurretCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
+    [self.turrets seed]; // this is NOOP once testing is complete
+}
+
 -(void)setupCollisionMask {
 
     NSURL *collisionURL = [[NSBundle mainBundle] URLForResource:@"Collision" withExtension:@"bm"];
@@ -110,7 +113,7 @@
         [self setupCollisionMask];
         [self setupCancerCells];
         [self scheduleUpdate];
-        
+        [self setupTurrets];
     }
     return self;
 }

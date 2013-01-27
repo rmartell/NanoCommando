@@ -27,6 +27,8 @@
         
         screenSize = [CCDirector sharedDirector].screenSize;        
 
+        self.scale= 4.0;
+NSLog(@"Bounding Box: %@", NSStringFromCGRect(self.boundingBox));
         [self setupAnimation];
         [self runAction:normalAnimation];
         

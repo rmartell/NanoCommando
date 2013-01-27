@@ -11,6 +11,7 @@
 #import "GJCollisionBitmap.h"
 
 @interface CancerCell : GameObject
+-(void)die;
 @end
 
 @interface CancerCollection : NSObject
@@ -20,4 +21,5 @@
 -(void)seed;
 
 -(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt;
+-(NSArray *)cellsIntersectedByLineSegmentStart:(CGPoint)pt end:(CGPoint)end;
 @end

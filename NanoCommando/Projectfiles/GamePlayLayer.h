@@ -12,6 +12,8 @@
 @class PlayerShip;
 @class Heart;
 @class CancerCollection;
+@class TurretCollection;
+@class GJCollisionBitmap;
 
 @interface GamePlayLayer : CCLayer
 
@@ -22,7 +24,9 @@
 @property (nonatomic, weak) PlayerShip* playerShip;
 
 @property (nonatomic, strong) CancerCollection *cancerCells;
+@property (nonatomic, strong) TurretCollection *turrets;
 @property (nonatomic, strong) TileMapLayer* tileLayer;
+@property (nonatomic, strong) GJCollisionBitmap *collisionMask;
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)pt;
 @end

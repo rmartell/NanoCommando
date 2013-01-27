@@ -7,6 +7,7 @@ typedef enum {
     kBatchNodeZ,
     kTurretZ,
     kEffectsZ,
+    kBulletZ,
     kHudZ
 } metaZOrders;
 
@@ -23,3 +24,5 @@ typedef enum {
 #define DEGREES_TO_RADIANS(x) ((x)*PI/180.0)
 #define RADIANS_TO_DEGREES(x) (((x)*180.0)/PI)
 
+// standard c; defined in Turret.m for now.
+float cc_radians_between_points(CGPoint center, CGPoint target);

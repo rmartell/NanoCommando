@@ -8,13 +8,80 @@
 
 #import "Turret.h"
 #import "GJCollisionBitmap.h"
+#import "CancerCell.h"
 
 @interface TurretCollection ()
 @property (nonatomic, strong) NSMutableArray *turrets;
+@property (nonatomic, strong) NSMutableArray *bullets;
 @property (nonatomic, weak) GamePlayLayer *layer;
 @property (nonatomic, weak) GJCollisionBitmap *collision;
 @property (nonatomic, assign) NSTimeInterval lastUpdate;
 @property (nonatomic, strong) NSString *textureFrameName;
+@property (nonatomic, strong) NSString *bulletFrameName;
+
+-(void)fireFromPoint:(CGPoint)pt withVector:(CGPoint)v ofType:(int)type;
+@end
+
+typedef enum  {
+    kStateIdle,
+    kStateTurningTowardsTarget,
+    kStateFiring,
+    kStateCooldown
+} TurretState;
+
+#define TURRET_COOLDOWN_SECONDS (5.0)
+#define TURRET_RANGE (700)
+#define TURRET_SECONDS_FOR_COMPLETE_REVOLUTION (2.0)
+#define TURRET_ROTATIONAL_VELOCITY (360.0/TURRET_SECONDS_FOR_COMPLETE_REVOLUTION)
+#define BULLET_VELOCITY (700)
+
+@interface Turret ()
+@property (nonatomic, assign) TurretState state;
+@property (nonatomic, assign) CGPoint target;
+@property (nonatomic, assign) NSTimeInterval startTime;
+@property (nonatomic, weak) GamePlayLayer *layer;
+@property (nonatomic, assign) int weaponType;
+@end
+
+@interface Bullet : GameObject
+@property (nonatomic, assign) int bulletType;
+@property (nonatomic, assign) CGPoint velocity;
+@property (nonatomic, assign) BOOL dead;
+@property (nonatomic, weak) GamePlayLayer *layer;
+@end
+
+@implementation Bullet
+-(id)initWithGameLayer:(GamePlayLayer *)layer andFrameName:(NSString *)frameName
+{
+	if ((self = [super initWithSprite:frameName andLayer:layer]))
+	{
+        self.layer= layer;
+	}
+	return self;
+}
+
+-(void)update:(ccTime)ticksElapsed
+{
+    CGPoint newPoint= CGPointMake(
+                                  self.position.x + ticksElapsed*self.velocity.x,
+                                  self.position.y + ticksElapsed*self.velocity.y
+                                  );
+    
+    if([self.layer.collisionMask ptInside:newPoint])
+    {
+        self.dead= YES;
+    } else {
+        // compare with the cells.
+        NSArray *cells= [self.layer.cancerCells cellsIntersectedByLineSegmentStart:self.position end:newPoint];
+        if(cells.count)
+        {
+            CancerCell *cell= [cells objectAtIndex:0];
+            [cell die];
+            // and we're done
+            self.dead= YES;
+        }
+    }
+}
 @end
 
 @implementation Turret
@@ -22,10 +89,106 @@
 {
 	if ((self = [super initWithSprite:frameName andLayer:layer]))
 	{
-        [self scheduleUpdate];
+        self.state= kStateIdle;
+        self.layer= layer;
 	}
 	return self;
 }
+
+
+-(void)update:(ccTime)ticksPassed
+{
+    int newState= self.state;
+    switch(self.state)
+    {
+        case kStateIdle:
+            // find a target...
+            if([self findTarget])
+            {
+                newState= kStateTurningTowardsTarget;
+            } else {
+                newState= kStateCooldown;
+            }
+            break;
+        case kStateTurningTowardsTarget:
+            if([self turnTowardsTarget:ticksPassed])
+            {
+                newState= kStateFiring;
+            }
+            break;
+        case kStateFiring:
+            [self fire];
+            newState= kStateCooldown;
+            break;
+            
+        case kStateCooldown:
+            if([NSDate timeIntervalSinceReferenceDate] - self.startTime > TURRET_COOLDOWN_SECONDS)
+            {
+                newState= kStateIdle;
+            }
+            break;
+    }
+    
+    if(newState != self.state)
+    {
+        NSLog(@"Turret at %@ new state: %d new state: %d", self, self.state, newState);
+        self.state= newState;
+        self.startTime= [NSDate timeIntervalSinceReferenceDate];
+    }
+}
+
+
+-(BOOL)findTarget
+{
+    BOOL foundTarget= NO;
+    
+    NSArray *possibleTargets= [self.layer.cancerCells cancerCellsInRange:TURRET_RANGE ofPoint:self.position];
+    if(possibleTargets.count)
+    {
+        CCSprite *target= [possibleTargets objectAtIndex:(rand()%[possibleTargets count])];
+        self.target= target.position;
+        foundTarget= YES;
+    }
+    
+    return foundTarget;
+}
+
+-(BOOL)turnTowardsTarget:(ccTime)ticksElapsed
+{
+    BOOL matched_bearing= NO;
+    float desiredRotation= cc_radians_between_points(self.position, self.target);
+    float rotationDelta = ticksElapsed * TURRET_ROTATIONAL_VELOCITY;
+    float newRotation= self.rotation;
+    
+    if(desiredRotation > self.rotation)
+    {
+        newRotation= fmaxf(self.rotation+rotationDelta, desiredRotation);
+    } else {
+        newRotation= fminf(self.rotation-rotationDelta, desiredRotation);
+    }
+    
+    if(newRotation==desiredRotation)
+    {
+        matched_bearing= YES;
+    } else {
+        self.rotation= newRotation;
+    }
+
+    return matched_bearing;
+}
+
+-(void)fire
+{
+    float theta= cc_radians_between_points(self.position, self.target);
+    
+    CGPoint vector= CGPointMake(
+                                BULLET_VELOCITY*sin(theta),
+                                BULLET_VELOCITY*cos(theta)
+    );
+
+    [self.layer.turrets fireFromPoint:self.position withVector:vector ofType:self.weaponType];
+}
+
 @end
 
 
@@ -35,12 +198,12 @@
     if(self= [super init])
     {
         self.turrets= [NSMutableArray arrayWithCapacity:10];
+        self.bullets= [NSMutableArray arrayWithCapacity:10];
         self.layer= layer;
         self.collision= bitmap;
         
         self.textureFrameName = @"Turret0.png";
-        //  self.cancerLive= [[CCTextureCache sharedTextureCache] addImage: @"CancerCell.png"];
-        //self.cancerDormant= [[CCTextureCache sharedTextureCache] addImage: @"CancerCellInside.png"];
+        self.bulletFrameName= @"";
     }
     
     return self;
@@ -54,16 +217,56 @@
 
     [self.layer.batchNode addChild:turret z:kTurretZ];
     [self.turrets addObject:turret];
-//    [array addObject:cell];
 }
 
 -(void)update:(ccTime)ticksPassed
 {
+    for(Turret *turret in self.turrets)
+    {
+        [turret update:ticksPassed];
+    }
+    
+    NSMutableArray *deadBullets= [NSMutableArray arrayWithCapacity:10];
+    for(Bullet *bullet in self.bullets)
+    {
+        [bullet update:ticksPassed];
+        if(bullet.dead)
+        {
+            [bullet removeFromParentAndCleanup:YES];
+            [deadBullets addObject:bullet];
+        }
+    }
+    [self.bullets removeObjectsInArray:deadBullets];
+}
+
+-(void)fireFromPoint:(CGPoint)pt withVector:(CGPoint)v ofType:(int)type
+{
+    //    CancerCell *cell= [[CancerCell alloc] initWithGameLayer:self.layer andTexture:self.cancerLive];
+    Bullet *bullet= [[Bullet alloc] initWithGameLayer:self.layer andFrameName:self.bulletFrameName];
+    bullet.position= pt;
+    bullet.velocity= v;
+    bullet.bulletType= type;
+    
+    [self.layer.batchNode addChild:bullet z:kBulletZ];
+    [self.bullets addObject:bullet];
+    //    [array addObject:cell];
     
 }
 
 -(void)seed
 {
-    
+    [self addTurretAtPoint:CGPointMake(0, 0)];
 }
 @end
+
+float cc_radians_between_points(CGPoint center, CGPoint target) {
+    float dx = target.x - center.x;
+    float dy = target.y - target.y;
+
+    float theta = atan2(dy, dx);
+    if (theta < 0) {
+        theta += 2*M_PI;
+    }
+    
+    return theta;
+}

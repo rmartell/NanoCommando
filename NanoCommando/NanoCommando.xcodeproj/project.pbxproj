@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		6E1FAABD16B468F200B711AF /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABC16B468F200B711AF /* map.tmx */; };
 		6E1FAABF16B4692000B711AF /* LvMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABE16B4692000B711AF /* LvMap.png */; };
-		6E1FAAC416B47E8600B711AF /* cancer.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC316B47E8600B711AF /* cancer.png */; };
 		6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */; };
 		6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */; };
+		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
+		BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1B16B47966009D1B11 /* Collision.bm */; };
+		BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */; };
+		BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1E16B47C80009D1B11 /* CancerCell.png */; };
+		BBD95A2116B486E7009D1B11 /* CancerCellInside.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A2016B486E7009D1B11 /* CancerCellInside.png */; };
 		DC2721C0160CB0DF00D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */; };
 		DC3C6FB514B8A9BA00DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FB414B8A9BA00DAD281 /* fps_images-hd.png */; };
 		DC65615C13A969B600A7AC53 /* libbox2d-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615013A969B600A7AC53 /* libbox2d-ios.a */; };
@@ -49,14 +53,26 @@
 		F21026CB16B4464C00C70F6D /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026CA16B4464C00C70F6D /* GameObject.m */; };
 		F21026CE16B4507700C70F6D /* LvMapbackground1.png in Resources */ = {isa = PBXBuildFile; fileRef = F21026CD16B4507700C70F6D /* LvMapbackground1.png */; };
 		F237496216B45FF1006FCE54 /* TestShip.png in Resources */ = {isa = PBXBuildFile; fileRef = F237496116B45FF1006FCE54 /* TestShip.png */; };
+		F237498116B4AC7E006FCE54 /* NanoCommando-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */; };
+		F237498216B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */; };
+		F237498316B4AC7E006FCE54 /* NanoCommando-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497D16B4AC7E006FCE54 /* NanoCommando-ipadhd.plist */; };
+		F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */; };
+		F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497F16B4AC7E006FCE54 /* NanoCommando.plist */; };
+		F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMap.png; sourceTree = "<group>"; };
-		6E1FAAC316B47E8600B711AF /* cancer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancer.png; sourceTree = "<group>"; };
 		6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickedge.png; sourceTree = "<group>"; };
 		6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickcenter.png; sourceTree = "<group>"; };
+		BBD95A0A16B46F3C009D1B11 /* CancerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancerCell.m; sourceTree = "<group>"; };
+		BBD95A0B16B46F3C009D1B11 /* CancerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancerCell.h; sourceTree = "<group>"; };
+		BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJCollisionBitmap.h; sourceTree = "<group>"; };
+		BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJCollisionBitmap.m; sourceTree = "<group>"; };
+		BBD95A1B16B47966009D1B11 /* Collision.bm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collision.bm; sourceTree = "<group>"; };
+		BBD95A1E16B47C80009D1B11 /* CancerCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancerCell.png; sourceTree = "<group>"; };
+		BBD95A2016B486E7009D1B11 /* CancerCellInside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancerCellInside.png; sourceTree = "<group>"; };
 		DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FB414B8A9BA00DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -114,6 +130,13 @@
 		F21026CA16B4464C00C70F6D /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		F21026CD16B4507700C70F6D /* LvMapbackground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMapbackground1.png; sourceTree = "<group>"; };
 		F237496116B45FF1006FCE54 /* TestShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestShip.png; sourceTree = "<group>"; };
+		F237496816B47D55006FCE54 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NanoCommando-hd.plist"; sourceTree = "<group>"; };
+		F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanoCommando-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F237497D16B4AC7E006FCE54 /* NanoCommando-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NanoCommando-ipadhd.plist"; sourceTree = "<group>"; };
+		F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanoCommando-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
+		F237497F16B4AC7E006FCE54 /* NanoCommando.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NanoCommando.plist; sourceTree = "<group>"; };
+		F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanoCommando.pvr.ccz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +255,7 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
+				F237496816B47D55006FCE54 /* Constants.h */,
 				F21026C516B444A300C70F6D /* GameObjects */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
@@ -248,8 +272,10 @@
 			children = (
 				6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */,
 				6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */,
-				6E1FAAC316B47E8600B711AF /* cancer.png */,
+				BBD95A1B16B47966009D1B11 /* Collision.bm */,
+				BBD95A1E16B47C80009D1B11 /* CancerCell.png */,
 				6E1FAABE16B4692000B711AF /* LvMap.png */,
+				BBD95A2016B486E7009D1B11 /* CancerCellInside.png */,
 				6E1FAABC16B468F200B711AF /* map.tmx */,
 				F237496016B45FC5006FCE54 /* Sprites */,
 				F21026CC16B4507700C70F6D /* Background */,
@@ -299,10 +325,14 @@
 		F21026C516B444A300C70F6D /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				BBD95A0A16B46F3C009D1B11 /* CancerCell.m */,
+				BBD95A0B16B46F3C009D1B11 /* CancerCell.h */,
 				F21026C916B4464C00C70F6D /* GameObject.h */,
 				F21026CA16B4464C00C70F6D /* GameObject.m */,
 				F21026C616B444D500C70F6D /* PlayerShip.h */,
 				F21026C716B444D500C70F6D /* PlayerShip.m */,
+				BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */,
+				BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -318,9 +348,23 @@
 		F237496016B45FC5006FCE54 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				F237498816B4AC86006FCE54 /* SpriteSheets */,
 				F237496116B45FF1006FCE54 /* TestShip.png */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		F237498816B4AC86006FCE54 /* SpriteSheets */ = {
+			isa = PBXGroup;
+			children = (
+				F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */,
+				F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */,
+				F237497D16B4AC7E006FCE54 /* NanoCommando-ipadhd.plist */,
+				F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */,
+				F237497F16B4AC7E006FCE54 /* NanoCommando.plist */,
+				F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */,
+			);
+			name = SpriteSheets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,9 +441,17 @@
 				F237496216B45FF1006FCE54 /* TestShip.png in Resources */,
 				6E1FAABD16B468F200B711AF /* map.tmx in Resources */,
 				6E1FAABF16B4692000B711AF /* LvMap.png in Resources */,
-				6E1FAAC416B47E8600B711AF /* cancer.png in Resources */,
 				6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */,
 				6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */,
+				BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */,
+				BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */,
+				BBD95A2116B486E7009D1B11 /* CancerCellInside.png in Resources */,
+				F237498116B4AC7E006FCE54 /* NanoCommando-hd.plist in Resources */,
+				F237498216B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz in Resources */,
+				F237498316B4AC7E006FCE54 /* NanoCommando-ipadhd.plist in Resources */,
+				F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */,
+				F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */,
+				F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +468,8 @@
 				F21026C016B43C6700C70F6D /* GamePlayLayer.m in Sources */,
 				F21026C816B444D500C70F6D /* PlayerShip.m in Sources */,
 				F21026CB16B4464C00C70F6D /* GameObject.m in Sources */,
+				BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */,
+				BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,13 +13,6 @@
 
 -(id) initWithSprite:(NSString*)spriteName andLayer:(GamePlayLayer*)layer;
 
-@property (assign) CGPoint velocity;
-@property (assign) CGPoint acceleration;
-@property (assign) float maxVelocity;
-@property (assign) float maxAcceleration;
-@property (assign) CGPoint destination;
-
--(void)updateMove:(ccTime)delta;
 
 
 @end

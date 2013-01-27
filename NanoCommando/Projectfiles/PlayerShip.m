@@ -10,20 +10,30 @@
 
 @implementation PlayerShip {
     CGSize screenSize;
+    
+    CCMoveBy* moveAction;
+    CCRotateBy* rotateAction;
+    CCAction* normalAnimation;
+}
+
+-(void)setupAnimation {
+    
+    id normalAnim = [CCAnimation animationWithFrames:@"ShipSprite" frameCount:96 delay:(float)1.0/24];
+    normalAnimation = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:normalAnim]];
+    
 }
 
 -(id) initWithGameLayer:(GamePlayLayer*)layer
 {
-	if ((self = [super initWithSprite:@"TestShip" andLayer:layer]))
+	if ((self = [super initWithSprite:@"ShipSprite0" andLayer:layer]))
 	{
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
-        self.maxVelocity = 200;
-        self.maxAcceleration = 200;
-        
         [self scheduleUpdate];
+        [self setupAnimation];
         
+        [self runAction:normalAnimation];
         
 	}
 	return self;
@@ -35,8 +45,17 @@
 	return playerShip;
 }
 
+-(void)moveBy:(CGPoint)vector {
+    
+    [moveAction stop];
+    moveAction = [CCMoveBy actionWithDuration:1.0f position:vector];
+    [self runAction:moveAction];
+    
+    NSLog(@"Current ship position: %@", NSStringFromCGPoint(self.position));
+}
+
 -(void)update:(ccTime)delta {
-    [self updateMove:delta];
+
     
 }
 

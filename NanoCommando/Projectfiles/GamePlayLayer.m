@@ -29,9 +29,11 @@
 +(CCScene*)scene
 {
 	CCScene *scene = [CCScene node];
+
 	HudLayer *hudLayer = [[HudLayer alloc]init];
 	[scene addChild:hudLayer z:kHudZ];
-    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc]initWithGame];
+
+    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
     [scene addChild:gamePlayLayer z:kGameZ];
     
 	return scene;
@@ -40,15 +42,13 @@
 -(void)setupPlayerShip {
     
     playerShip = [PlayerShip createWithLayer:self];
-    playerShip.position = ccp(screenSize.width/2, screenSize.height/2);
-    [batchNode addChild:playerShip z:kPlayerShipZ];
+    playerShip.position = ccp(0, 0);
+    [self addChild:playerShip z:kPlayerShipZ];
     
-    CGRect followBoundary = CGRectMake(-2*screenSize.width, -2*screenSize.height, 4*screenSize.width, 4*screenSize.height);
-    
+    CGRect followBoundary = CGRectMake(-(MAP_WIDTH/2), -(MAP_HEIGHT/2), MAP_WIDTH, MAP_HEIGHT);
+
     CCFollow* followAction = [CCFollow actionWithTarget:playerShip worldBoundary:followBoundary];
     [self runAction:followAction];
-    
-    
 }
 
 -(void)setupBackground {
@@ -103,5 +103,8 @@
   //  [self positionLayerWithPlayer];
 }
 
-
+-(CGPoint)screenPointToWorldPoint:(CGPoint)point
+{
+    return ccpSub(point, self.position);
+}
 @end

@@ -29,14 +29,14 @@
 
 -(void)setupAnimation {
     
-    id normalAnim = [CCAnimation animationWithFrames:@"ShipSprite" frameCount:96 delay:(float)1.0/24];
+    id normalAnim = [CCAnimation animationWithFrames:@"ship" frameCount:16 delay:(float)1.0/6.0];
     normalAnimation = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:normalAnim]];
     
 }
 
 -(id) initWithGameLayer:(GamePlayLayer*)layer
 {
-	if ((self = [super initWithSprite:@"ShipSprite0" andLayer:layer]))
+	if ((self = [super initWithSprite:@"ship0" andLayer:layer]))
 	{
         
         screenSize = [CCDirector sharedDirector].screenSize;

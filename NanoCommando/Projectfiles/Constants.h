@@ -3,7 +3,7 @@
 typedef enum {
     
     kNoSceneUnitialized,
-    kLaunchScene,
+    kLaunchScene,   
     kMainMenuScene,
     kGameScene,
     kKillScene

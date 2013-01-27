@@ -119,7 +119,8 @@
                 
                 if([collection cancerCell:self canGrowToPoint:dest andInterimArray:array])
                 {
-                    CancerCell *newCell= [collection addCancerAtPoint:dest intoArray:array];
+//                    CancerCell *newCell=
+                    [collection addCancerAtPoint:dest intoArray:array];
                     // The newCell growDirection can't grow back in the way it went before.
                 }
                 
@@ -214,8 +215,9 @@
         self.currentGeneration+= 1;
         int ticks= 1;
 
-NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
-        
+#ifdef PROFILE
+        NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
+#endif
 //    NSLog(@"Interval: %f Ticks: %d", ticksPassed, ticks);
         NSMutableArray *newGrowth= [NSMutableArray arrayWithCapacity:10];
         for(int ii= 0; ii<ticks; ii++)
@@ -231,8 +233,10 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         
         [self.cells addObjectsFromArray:newGrowth];
         self.lastUpdate= [NSDate timeIntervalSinceReferenceDate];
-        //NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
-        //CCLOG(@"Total time calculating cancer spent: %lf", delta);
+#ifdef PROFILE
+        NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
+        CCLOG(@"Total time calculating cancer spent: %lf", delta);
+#endif
     }
 }
 

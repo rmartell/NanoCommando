@@ -145,10 +145,12 @@ typedef enum  {
     
     if(newState != self.state)
     {
+#if false
         NSLog(@"Turret at %@ state: %@ new state: %@",
               self,
               [self nameForState:self.state],
               [self nameForState:newState]);
+#endif
         self.state= newState;
         self.startTime= [NSDate timeIntervalSinceReferenceDate];
     }
@@ -174,7 +176,9 @@ typedef enum  {
 {
     BOOL matched_bearing= NO;
     float desiredRotation= fmod(REAL_THETA_TO_COCOS_DEGREES(cc_radians_between_points(self.position, self.target))+180.0, 360);
-NSLog(@"Turret %@ turning towards %lf (current: %lf) Elapsed: %lf", self, desiredRotation, self.rotation, ticksElapsed);
+#if false
+    NSLog(@"Turret %@ turning towards %lf (current: %lf) Elapsed: %lf", self, desiredRotation, self.rotation, ticksElapsed);
+#endif
     float rotationDeltaDegrees = ticksElapsed * TURRET_ROTATIONAL_VELOCITY;
     float newRotation= self.rotation;
     

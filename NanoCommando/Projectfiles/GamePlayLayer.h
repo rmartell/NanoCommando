@@ -16,6 +16,7 @@
 
 -(id) initWithGame;
 
+@property (nonatomic, weak) CCSpriteBatchNode* batchNode;
 @property (nonatomic, weak) PlayerShip* playerShip;
 @property (nonatomic, strong) CancerCollection *cancerCells;
 @property (nonatomic, strong) TileMapLayer* tileLayer;

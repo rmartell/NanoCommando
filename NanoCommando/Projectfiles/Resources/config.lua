@@ -23,7 +23,7 @@ local config =
 		DisplayFPS = YES,
 
 		EnableUserInteraction = YES,
-		EnableMultiTouch = NO,
+		EnableMultiTouch = YES,
 
 		-- Render settings
 		DefaultTexturePixelFormat = TexturePixelFormat.RGBA8888,
@@ -33,7 +33,7 @@ local config =
 		GLViewNumberOfSamples = 0,
 
 		Enable2DProjection = NO,
-		EnableRetinaDisplaySupport = NO,
+		EnableRetinaDisplaySupport = YES,
 		EnableGLViewNodeHitTesting = NO,
 		EnableStatusBar = NO,
 

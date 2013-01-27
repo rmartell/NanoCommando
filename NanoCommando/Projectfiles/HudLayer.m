@@ -7,25 +7,39 @@
 //
 
 #import "HudLayer.h"
+#import "GamePlayLayer.h"
+#import "GJCollisionBitmap.h"
+#import "SoundManager.h"
 
 @interface HudLayer ()
 @property (nonatomic, weak) CCSprite *panSprite;
 @property (nonatomic, weak) CCSprite *panSprite2;
+@property (nonatomic, weak) CCSprite *tapSprite;
 @property (nonatomic) Boolean startpan;
 @property (nonatomic) CGPoint startpos;
+@property (nonatomic) ccTime counterDelta;
+
+@property(nonatomic, weak) GamePlayLayer* theGamePlayLayer;
+
 @end
 
 @implementation HudLayer
 
 @synthesize panSprite;
 @synthesize panSprite2;
+@synthesize tapSprite;
 @synthesize startpan;
 @synthesize startpos;
 @synthesize theta;
 @synthesize throttle;
+@synthesize deployAt;
+@synthesize deploy;
+@synthesize counterDelta;
 
 -(id) init {
     if(self=[super init])
+        
+        
     {
         self.panSprite = [CCSprite spriteWithFile:@"thumbstickcenter.png"];
         panSprite.position = ccp(300,300);
@@ -35,18 +49,28 @@
         panSprite2.position = ccp(350,300);
         [self addChild:panSprite2];
         
+        self.tapSprite = [CCSprite spriteWithFile:@"thumbstickedge.png"];
+        tapSprite.position = ccp(350,300);
+        [self addChild:tapSprite];
+        
         self.startpos = ccp(0,0);
         self.startpan = true;
         self.theta = 0.0;
         self.throttle = 0.0;
+        self.deploy = false;
         panSprite.visible = false;
         panSprite2.visible = false;
+        tapSprite.visible = false;
         
         [self setupTouchZones];
 //        CCLOG(@"==========INIT CALLED===========");
         [self scheduleUpdate];
     }
     return self;
+}
+
+-(void)setGameLayer:(GamePlayLayer *)gameplayLayer  {
+    self.theGamePlayLayer = gameplayLayer;
 }
 
 -(void) setupTouchZones {
@@ -87,6 +111,10 @@
     
     return pt;
 }
+
+//-(void)delayNonVisible:(CCSprite*)asprite {
+//    asprite.visible = false;
+//}
 
 -(void)processTouches:(ccTime)delta {
     
@@ -171,8 +199,29 @@
     }
     else if (input.gestureTapRecognizedThisFrame) {
         // do some deployment
-        panSprite.position = ccp(input.gestureTapLocation.x, input.gestureTapLocation.y);
+        //panSprite.position = ccp(input.gestureTapLocation.x, input.gestureTapLocation.y);
 //        CCLOG(@"gesture tap: %f,%f", panSprite.position.x, panSprite.position.y);
+        
+        self.deploy = true;
+        
+        CGPoint testDeployPoint= [self.theGamePlayLayer screenPointToWorldPoint:input.gestureTapLocation];
+        if([self.theGamePlayLayer.collisionMask ptInside:testDeployPoint])
+        {
+            [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
+            //[[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy atPoint:testDeployPoint];
+
+        } else {
+            self.deployAt = testDeployPoint;
+            [[SoundManager sharedSoundManager] playSound:kSoundTurretDeploy];
+            self.deploy= true;
+        }
+        self.tapSprite.position = input.gestureTapLocation;
+        self.tapSprite.visible = true;
+        //[self scheduleOnce:@selector(delayNonVisible:self.tapSprite) delay:2.0];
+        id delay = [CCDelayTime actionWithDuration:.3];
+        id turnOffSprite = [CCCallBlock actionWithBlock:^{self.tapSprite.visible = NO;}];
+        id seq = [CCSequence actions:delay, turnOffSprite, nil];
+        [self runAction:seq];
     }
     
     else if (!input.gesturePanBegan && !self.startpan) {
@@ -184,9 +233,10 @@
     }
 }
 
+
+
 -(void)update:(ccTime)delta {
     [self processTouches:delta];
-    
     //  [self positionLayerWithPlayer];
 }
 

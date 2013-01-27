@@ -7,6 +7,7 @@
 //
 
 #import "CancerCell.h"
+#import "SoundManager.h"
 
 @interface CancerCollection ()
 @property (nonatomic, strong) NSMutableArray *cells;
@@ -283,8 +284,27 @@
             }
         }
     }
+    
+    NSArray *result= [array sortedArrayUsingComparator:^NSComparisonResult(
+                                                                           CancerCell *obj1,
+                                                                           CancerCell *obj2)
+    {
+        NSComparisonResult result= NSOrderedSame;
+        float obj1Distance= distance_between_points(pt, obj1.position);
+        float obj2Distance= distance_between_points(pt, obj2.position);
 
-    return array;
+        if(obj1Distance<obj2Distance)
+        {
+            result= NSOrderedAscending;
+        } else if (obj1Distance>obj2Distance)
+        {
+            result= NSOrderedDescending;
+        }
+        
+        return result;
+    }];
+    
+    return result;
 }
 
 // this does NOT do it right.
@@ -312,6 +332,8 @@
 {
     // remove it.
     [self.cells removeObject:cell];
+    
+    [[SoundManager sharedSoundManager] playSound:kSoundCellDeath atPoint:cell.position];
     
     // This is gross; we reactivate everyone in our rough box.
     int rough_x= ROUGH_X_FROM_X(cell.position.x);

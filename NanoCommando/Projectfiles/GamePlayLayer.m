@@ -14,6 +14,7 @@
 #import "HudLayer.h"
 #import "Turret.h"
 #import "LightLayer.h"
+#import "PowerUpCollection.h"
 
 
 @implementation GamePlayLayer {
@@ -24,6 +25,7 @@
 @synthesize playerShip;
 @synthesize heart;
 @synthesize tileLayer;
+@synthesize theHudLayer;
 
 
 +(CCScene*)scene
@@ -36,7 +38,7 @@
     LightLayer *lightLayer = [[LightLayer alloc]init];
 	[scene addChild:lightLayer z:kLightZ];
 
-    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
+    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithHUDLayer:hudLayer];
     [scene addChild:gamePlayLayer z:kGameZ];
     
     gamePlayLayer.playerShip.hud= hudLayer;
@@ -69,6 +71,11 @@
     self.cancerCells= [[CancerCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
     [self.cancerCells seed];
 }
+
+-(void)setupPowerUps {
+    self.powerups= [[PowerUpCollection alloc] initWithLayer:self];
+}
+
 
 -(void)setupTurrets {
     self.turrets= [[TurretCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
@@ -104,10 +111,12 @@
 
 
 //-(id) initWithTileLayer:(TileMapLayer *)tileLayer {
--(id) initWithGame {
+-(id) initWithHUDLayer:(HudLayer*)HUDLayer {
     if ((self = [super init])) {
         
         screenSize = [CCDirector sharedDirector].screenSize;
+        
+        self.theHudLayer = HUDLayer;
     
         [self setupBatchNode];
         [self setupBackground];
@@ -115,8 +124,11 @@
         [self setupPlayerShip];
         [self setupCollisionMask];
         [self setupCancerCells];
+        [self setupPowerUps];
         [self scheduleUpdate];
         [self setupTurrets];
+        
+        [HUDLayer setGameLayer:self];
     }
     return self;
 }
@@ -124,6 +136,7 @@
 -(void)update:(ccTime)delta {
     [self.cancerCells update:delta];
     [self.turrets update:delta];
+    [self.powerups update:delta];
 }
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)point

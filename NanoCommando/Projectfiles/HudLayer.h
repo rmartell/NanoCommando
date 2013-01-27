@@ -10,4 +10,11 @@
 
 @interface HudLayer : CCLayer
 
+@property (nonatomic, weak) CCSprite *panSprite;
+@property (nonatomic, weak) CCSprite *panSprite2;
+@property (nonatomic) Boolean startpan;
+@property (nonatomic) CGPoint startpos;
+@property (nonatomic) double theta;
+@property (nonatomic) double throttle;
+
 @end

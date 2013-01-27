@@ -18,12 +18,6 @@
 
 @property (nonatomic, weak) CCSpriteBatchNode* batchNode;
 @property (nonatomic, weak) PlayerShip* playerShip;
-@property (nonatomic, weak) CCSprite *panSprite;
-@property (nonatomic, weak) CCSprite *panSprite2;
-@property (nonatomic) Boolean startpan;
-@property (nonatomic) CGPoint startpos;
-@property (nonatomic) double theta;
-@property (nonatomic) double throttle;
 
 @property (nonatomic, strong) CancerCollection *cancerCells;
 @property (nonatomic, strong) TileMapLayer* tileLayer;

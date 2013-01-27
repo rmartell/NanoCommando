@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E1E2D4B16B4D0ED002794CA /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E2D4A16B4D0ED002794CA /* HudLayer.m */; };
+		6E1E2D5016B4D795002794CA /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E2D4E16B4D2CE002794CA /* HudLayer.m */; };
 		6E1FAABD16B468F200B711AF /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABC16B468F200B711AF /* map.tmx */; };
 		6E1FAABF16B4692000B711AF /* LvMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABE16B4692000B711AF /* LvMap.png */; };
 		6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */; };
@@ -65,6 +65,8 @@
 /* Begin PBXFileReference section */
 		6E1E2D4916B4D0ED002794CA /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
 		6E1E2D4A16B4D0ED002794CA /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
+		6E1E2D4D16B4D2CE002794CA /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
+		6E1E2D4E16B4D2CE002794CA /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
 		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMap.png; sourceTree = "<group>"; };
 		6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickedge.png; sourceTree = "<group>"; };
@@ -317,6 +319,8 @@
 		F21026C416B4447F00C70F6D /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				6E1E2D4D16B4D2CE002794CA /* HudLayer.h */,
+				6E1E2D4E16B4D2CE002794CA /* HudLayer.m */,
 				F21026BE16B43C6700C70F6D /* GamePlayLayer.h */,
 				F21026BF16B43C6700C70F6D /* GamePlayLayer.m */,
 				DC81EAA7141280D400735365 /* TileMapLayer.h */,
@@ -475,7 +479,7 @@
 				F21026CB16B4464C00C70F6D /* GameObject.m in Sources */,
 				BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */,
 				BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */,
-				6E1E2D4B16B4D0ED002794CA /* HudLayer.m in Sources */,
+				6E1E2D5016B4D795002794CA /* HudLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

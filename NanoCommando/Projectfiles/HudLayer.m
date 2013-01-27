@@ -10,6 +10,7 @@
 #import "GamePlayLayer.h"
 #import "GJCollisionBitmap.h"
 #import "SoundManager.h"
+#import "PlayerShip.h"
 
 @interface HudLayer ()
 @property (nonatomic, weak) CCSprite *panSprite;
@@ -18,6 +19,8 @@
 @property (nonatomic) Boolean startpan;
 @property (nonatomic) CGPoint startpos;
 @property (nonatomic) ccTime counterDelta;
+@property (nonatomic, assign) int lastTurretCount;
+@property (nonatomic, weak) CCLabelAtlas *turretInventoryLabel;
 
 @property(nonatomic, weak) GamePlayLayer* theGamePlayLayer;
 
@@ -38,8 +41,6 @@
 
 -(id) init {
     if(self=[super init])
-        
-        
     {
         self.panSprite = [CCSprite spriteWithFile:@"thumbstickcenter.png"];
         panSprite.position = ccp(300,300);
@@ -63,6 +64,16 @@
         tapSprite.visible = false;
         
         [self setupTouchZones];
+
+        CCLabelAtlas *inventory= [[CCLabelAtlas alloc]  initWithString:@"00.0" charMapFile:@"fps_images.png" itemWidth:12 itemHeight:32 startCharMap:'.'];
+
+        CGSize size= [CCDirector sharedDirector].screenSize;
+        inventory.position= ccp(size.width - 50, size.height - 20);
+        [self addChild:inventory];
+        self.lastTurretCount= -1;
+        self.turretInventoryLabel= inventory;
+
+        
 //        CCLOG(@"==========INIT CALLED===========");
         [self scheduleUpdate];
     }
@@ -202,19 +213,24 @@
         //panSprite.position = ccp(input.gestureTapLocation.x, input.gestureTapLocation.y);
 //        CCLOG(@"gesture tap: %f,%f", panSprite.position.x, panSprite.position.y);
         
-        self.deploy = true;
-        
         CGPoint testDeployPoint= [self.theGamePlayLayer screenPointToWorldPoint:input.gestureTapLocation];
-        if([self.theGamePlayLayer.collisionMask ptInside:testDeployPoint])
+        if(self.theGamePlayLayer.playerShip.turretInventory>0)
         {
-            [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
-            //[[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy atPoint:testDeployPoint];
+            if([self.theGamePlayLayer.collisionMask ptInside:testDeployPoint])
+            {
+                [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
+                //[[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy atPoint:testDeployPoint];
 
+            } else {
+                self.deployAt = testDeployPoint;
+                [[SoundManager sharedSoundManager] playSound:kSoundTurretDeploy];
+                self.deploy= true;
+            }
         } else {
-            self.deployAt = testDeployPoint;
-            [[SoundManager sharedSoundManager] playSound:kSoundTurretDeploy];
-            self.deploy= true;
+            // REPLACE ME (FIXME) SOUNDTYPE
+            [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
         }
+        
         self.tapSprite.position = input.gestureTapLocation;
         self.tapSprite.visible = true;
         //[self scheduleOnce:@selector(delayNonVisible:self.tapSprite) delay:2.0];
@@ -234,10 +250,14 @@
 }
 
 
-
 -(void)update:(ccTime)delta {
     [self processTouches:delta];
     //  [self positionLayerWithPlayer];
+    if(self.lastTurretCount != self.theGamePlayLayer.playerShip.turretInventory)
+    {
+        self.turretInventoryLabel.string= [NSString stringWithFormat:@"%d", self.theGamePlayLayer.playerShip.turretInventory];
+        self.lastTurretCount= self.theGamePlayLayer.playerShip.turretInventory;
+    }
 }
 
 @end

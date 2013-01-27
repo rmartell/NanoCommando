@@ -17,11 +17,15 @@ typedef enum {
     kSoundPowerupPing,
     kSoundFlatline,
     kSoundGameStart,
+    kSoundGameQuit,
     kSoundPause,
+    kSoundMoveShipLong,
+    kSoundMoveShipShort,
     NUMBER_OF_SOUND_TYPES
 } SoundType;
 
 @interface SoundManager : NSObject
+@property (nonatomic, assign) CGPoint listenerPoint;
 
 +(SoundManager *)sharedSoundManager;
 

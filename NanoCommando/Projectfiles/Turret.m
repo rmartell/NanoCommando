@@ -216,7 +216,7 @@ typedef enum  {
     }
 #endif
     
-#if true
+#if false
     NSLog(@"Turret %@ turning towards %lf (current: %lf) New: %lf Elapsed: %lf", self, desiredRotation, self.rotation, newRotation, ticksElapsed);
 #endif
 

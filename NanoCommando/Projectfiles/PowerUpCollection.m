@@ -28,7 +28,7 @@
 {
 	if ((self = [super initWithSprite:frameName andLayer:layer]))
 	{
-        self.scale= 10;
+        self.scale= 2.4;
         self.layer= layer;
 	}
 	return self;
@@ -64,6 +64,8 @@
     powerup.position= pt;
     powerup.type= type;
     
+    [[SoundManager sharedSoundManager] playSound:kSoundPowerupPing atPoint:pt];
+    
     [self.layer.batchNode addChild:powerup z:kPowerUpZ];
     [self.powerups addObject:powerup];
     NSLog(@"Dropped powerup at %@", NSStringFromCGPoint(pt));
@@ -77,21 +79,7 @@
         {
             // find a random one to seed.
             CGPoint seed_pts[]= {
-                CGPointMake(-2031, -1405),
-                CGPointMake(-2006, -381.134),
-                CGPointMake(-2025, 152.49),
-                CGPointMake(-2034, 1087.51),
-                CGPointMake(-680, 1520),
-                CGPointMake(126, 1533),
-                CGPointMake(565, 1501),
-                CGPointMake(1249, 1500),
-                CGPointMake(1997, 763),
-                CGPointMake(2016, -384),
-                CGPointMake(2028, -1330),
-                CGPointMake(1076, -1473),
-                CGPointMake(101, -1481),
-                CGPointMake(-827, -1502),
-                CGPointMake(-1146, -1525)
+                CGPointMake(50, 60)
             };
             
             int randIndex= rand()%ARRAY_SIZE(seed_pts);

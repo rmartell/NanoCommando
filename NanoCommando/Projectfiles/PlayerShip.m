@@ -10,10 +10,13 @@
 #import "HudLayer.h"
 #import "Turret.h"
 #import "GJCollisionBitmap.h"
+#import "SoundManager.h"
+#import "PowerUpCollection.h"
 
 // Maximum velocity in world units/second
 #define MAXIMUM_VELOCITY (300)
 #define VELOCITY_CHANGE_PER_SECOND (600)
+#define MAXIMUM_DISTANCE_TO_PICKUP (90)
 
 @interface PlayerShip ()
 @property (nonatomic, assign) float desiredTheta;
@@ -98,12 +101,24 @@
     {
         // don't allow for now..
         self.position= newPosition;
+
+        // Update tracking and gain audio
+        [SoundManager sharedSoundManager].listenerPoint= newPosition;
+    }
+    
+    // look for pickups near me...
+    NSArray *nearbyPickups= [self.layer.powerups powerupsInRange:MAXIMUM_DISTANCE_TO_PICKUP ofPoint:self.position];
+    for(PowerUp *powerup in nearbyPickups)
+    {
+        self.turretInventory+= 1;
+        [powerup pickup];
     }
     
     if(self.hud.deploy)
     {
         [self.layer.turrets addTurretAtPoint:self.hud.deployAt];
         self.hud.deploy = false;
+        self.turretInventory-= 1;
     }
     
 }

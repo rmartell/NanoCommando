@@ -17,6 +17,7 @@ typedef enum {
     kSoundPowerupPing,
     kSoundFlatline,
     kSoundGameStart,
+    kSoundGameQuit,
     kSoundPause,
     kSoundMoveShipLong,
     kSoundMoveShipShort,

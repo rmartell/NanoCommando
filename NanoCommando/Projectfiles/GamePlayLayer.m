@@ -24,6 +24,7 @@
 @synthesize playerShip;
 @synthesize heart;
 @synthesize tileLayer;
+@synthesize theHudLayer;
 
 
 +(CCScene*)scene
@@ -36,7 +37,7 @@
     LightLayer *lightLayer = [[LightLayer alloc]init];
 	[scene addChild:lightLayer z:kLightZ];
 
-    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
+    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithHUDLayer:hudLayer];
     [scene addChild:gamePlayLayer z:kGameZ];
     
     gamePlayLayer.playerShip.hud= hudLayer;
@@ -104,10 +105,12 @@
 
 
 //-(id) initWithTileLayer:(TileMapLayer *)tileLayer {
--(id) initWithGame {
+-(id) initWithHUDLayer:(HudLayer*)HUDLayer {
     if ((self = [super init])) {
         
         screenSize = [CCDirector sharedDirector].screenSize;
+        
+        self.theHudLayer = HUDLayer;
     
         [self setupBatchNode];
         [self setupBackground];
@@ -117,6 +120,8 @@
         [self setupCancerCells];
         [self scheduleUpdate];
         [self setupTurrets];
+        
+        [HUDLayer setGameLayer:self];
     }
     return self;
 }

@@ -8,26 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NanoCommando/Projectfiles/GamePlayLayer.m"
-         timestampString = "380961933.38297"
+         timestampString = "381001667.455363"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "104"
-         endingLineNumber = "104"
+         startingLineNumber = "105"
+         endingLineNumber = "105"
          landmarkName = "@implementation GamePlayLayer"
          landmarkType = "3">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "NanoCommando/Projectfiles/GamePlayLayer.m"
-         timestampString = "380961922.526192"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
-         landmarkName = "+scene"
-         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

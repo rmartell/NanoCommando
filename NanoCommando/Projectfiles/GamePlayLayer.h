@@ -14,14 +14,16 @@
 @class CancerCollection;
 @class TurretCollection;
 @class GJCollisionBitmap;
+@class HudLayer;
 
 @interface GamePlayLayer : CCLayer
 
--(id) initWithGame;
+-(id) initWithHUDLayer:(HudLayer*)HUDLayer;
 
 @property (nonatomic, weak) CCSpriteBatchNode* batchNode;
 @property (nonatomic, weak) Heart* heart;
 @property (nonatomic, weak) PlayerShip* playerShip;
+@property (nonatomic, weak) HudLayer* theHudLayer;
 
 @property (nonatomic, strong) CancerCollection *cancerCells;
 @property (nonatomic, strong) TurretCollection *turrets;

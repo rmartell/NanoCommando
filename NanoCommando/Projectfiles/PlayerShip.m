@@ -8,6 +8,7 @@
 
 #import "PlayerShip.h"
 #import "HudLayer.h"
+#import "Turret.h"
 #import "GJCollisionBitmap.h"
 
 // Maximum velocity in world units/second
@@ -19,6 +20,7 @@
 @property (nonatomic, assign) float currentSpeed;
 @property (nonatomic, assign) CGPoint desiredVelocity;
 @property (nonatomic, assign) CGPoint velocity;
+@property (nonatomic, weak) GamePlayLayer *layer;
 @end
 
 @implementation PlayerShip {
@@ -41,6 +43,7 @@
         screenSize = [CCDirector sharedDirector].screenSize;
         
 //        self.scale= 0.5;
+        self.layer= layer;
         [self scheduleUpdate];
         [self setupAnimation];
         
@@ -96,6 +99,13 @@
         // don't allow for now..
         self.position= newPosition;
     }
+    
+    if(self.hud.deploy)
+    {
+        [self.layer.turrets addTurretAtPoint:self.hud.deployAt];
+        self.hud.deploy = false;
+    }
+    
 }
 
 

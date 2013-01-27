@@ -2,10 +2,12 @@
 
 typedef enum {
     kBackgroundZ,
+    kGameZ,
     kGameObjectsZ,
     kBatchNodeZ,
    // kPlayerShipZ,
-    kEffectsZ
+    kEffectsZ,
+    kHudZ
 } metaZOrders;
 
 typedef enum {

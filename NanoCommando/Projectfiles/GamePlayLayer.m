@@ -10,6 +10,7 @@
 #import "CancerCell.h"
 #import "GJCollisionBitmap.h"
 #import "Constants.h"
+#import "HudLayer.h"
 
 
 @interface GamePlayLayer ()
@@ -24,14 +25,16 @@
 @synthesize playerShip;
 @synthesize tileLayer;
 
+
 +(CCScene*)scene
 {
 	CCScene *scene = [CCScene node];
-    
-//	TileMapLayer *tileLayer = [[TileMapLayer alloc]init];
-//	[scene addChild:tileLayer];
+
+	HudLayer *hudLayer = [[HudLayer alloc]init];
+	[scene addChild:hudLayer z:kHudZ];
+
     GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc]initWithGame];
-    [scene addChild:gamePlayLayer];
+    [scene addChild:gamePlayLayer z:kGameZ];
     
 	return scene;
 }
@@ -50,11 +53,6 @@
     
 }
 
--(void) setupTouchZones {
-    
-    [KKInput sharedInput].multipleTouchEnabled = YES;
-}
-
 -(void)setupBackground {
     
     tileLayer = [[TileMapLayer alloc]init];
@@ -69,7 +67,7 @@
     if ((self = [super init])) {
         
         screenSize = [CCDirector sharedDirector].screenSize;
-        
+
         // pre load the sprite frames from the texture atlas
 		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
         
@@ -85,7 +83,8 @@
         [self setupBackground];
         
         [self setupPlayerShip];
-        [self setupTouchZones];
+        
+    
         
         NSURL *collisionURL = [[NSBundle mainBundle] URLForResource:@"Collision" withExtension:@"bm"];
         NSData *data= [NSData dataWithContentsOfURL:collisionURL];
@@ -101,46 +100,10 @@
 }
 
 -(void)update:(ccTime)delta {
-    [self processTouches:delta];
     [self.cancerCells update:delta];
     
   //  [self positionLayerWithPlayer];
 }
 
-//-(void)positionLayerWithPlayer {
-    
-   // self.position = playerShip.position;
-    //[self.camera setCenterX:playerShip.position.x centerY:playerShip.position.y centerZ:0];
-    //[self.camera setEyeX:playerShip.position.x eyeY:playerShip.position.y eyeZ:415];
-//}
 
-
--(void)processTouches:(ccTime)delta {
-    
-    CCArray* touches = [KKInput sharedInput].touches;
-    //    int numberOfTouches = [touches count];
-    
-    KKTouch* touch;
-    
-    CCARRAY_FOREACH(touches, touch) {
-        CGPoint location = touch.location;
-        //CCLOG(@"Real touch location is at: %f, %f", location.x, location.y);
-        CGPoint screenCenter = ccp(screenSize.width/2, screenSize.height/2);
-        float relativeX = location.x - screenCenter.x;
-        float relativeY = location.y - screenCenter.y;
-        //CCLOG(@"Relative touch location is at: %f, %f", relativeX, relativeY);
-        //CCLOG(@"PlayerShip is at %f, %f", playerShip.position.x, playerShip.position.y);
-        CGPoint relativeLocation = ccp(relativeX, relativeY);
-        
-        
-        if (touch.phase == KKTouchPhaseBegan) {
-            [playerShip moveBy:relativeLocation];
-            
-        } else if (touch.phase == KKTouchPhaseStationary) {
-            
-        } else if (touch.phase == KKTouchPhaseEnded) {
-            
-        }
-    }
-}
 @end

@@ -79,6 +79,8 @@
 		F23C30EF16B5CD1900FD9CE7 /* 72logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30EE16B5CD1900FD9CE7 /* 72logo.png */; };
 		F23C30F116B5CD7900FD9CE7 /* 144logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F016B5CD7900FD9CE7 /* 144logo.png */; };
 		F23C30F316B5D0CA00FD9CE7 /* noMoreTurrets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F216B5D0CA00FD9CE7 /* noMoreTurrets.mp3 */; };
+		F23C30F516B5D65700FD9CE7 /* NCKillScreen.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F416B5D65700FD9CE7 /* NCKillScreen.ccbi */; };
+		F23C30F816B5D67E00FD9CE7 /* NCKillScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F23C30F716B5D67E00FD9CE7 /* NCKillScreen.m */; };
 		F2C7DA7316B595B0009FBC1F /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7416B595B0009FBC1F /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3A16B595B0009FBC1F /* CCBKeyframe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7516B595B0009FBC1F /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3C16B595B0009FBC1F /* CCBReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -226,6 +228,9 @@
 		F23C30EE16B5CD1900FD9CE7 /* 72logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 72logo.png; path = ../../72logo.png; sourceTree = "<group>"; };
 		F23C30F016B5CD7900FD9CE7 /* 144logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144logo.png; sourceTree = SOURCE_ROOT; };
 		F23C30F216B5D0CA00FD9CE7 /* noMoreTurrets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noMoreTurrets.mp3; sourceTree = "<group>"; };
+		F23C30F416B5D65700FD9CE7 /* NCKillScreen.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = NCKillScreen.ccbi; sourceTree = "<group>"; };
+		F23C30F616B5D67E00FD9CE7 /* NCKillScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCKillScreen.h; path = Projectfiles/NCKillScreen.h; sourceTree = SOURCE_ROOT; };
+		F23C30F716B5D67E00FD9CE7 /* NCKillScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NCKillScreen.m; path = Projectfiles/NCKillScreen.m; sourceTree = SOURCE_ROOT; };
 		F2C7DA3716B595B0009FBC1F /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		F2C7DA3916B595B0009FBC1F /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -692,7 +697,10 @@
 		F2C7DA8F16B5A442009FBC1F /* CCBuilderLayers */ = {
 			isa = PBXGroup;
 			children = (
+				F23C30F416B5D65700FD9CE7 /* NCKillScreen.ccbi */,
 				F2C7DA9016B5A47B009FBC1F /* NanoCommandoMainMenu.ccbi */,
+				F23C30F616B5D67E00FD9CE7 /* NCKillScreen.h */,
+				F23C30F716B5D67E00FD9CE7 /* NCKillScreen.m */,
 				F2C7DA9916B5A4F8009FBC1F /* NCMainMenu.h */,
 				F2C7DA9A16B5A4F8009FBC1F /* NCMainMenu.m */,
 			);
@@ -838,6 +846,7 @@
 				F23C30EF16B5CD1900FD9CE7 /* 72logo.png in Resources */,
 				F23C30F116B5CD7900FD9CE7 /* 144logo.png in Resources */,
 				F23C30F316B5D0CA00FD9CE7 /* noMoreTurrets.mp3 in Resources */,
+				F23C30F516B5D65700FD9CE7 /* NCKillScreen.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +900,7 @@
 				F2C7DAA116B5B17F009FBC1F /* LaunchScene.m in Sources */,
 				BB506CDD16B5A82C00F50E50 /* PowerUpCollection.m in Sources */,
 				BB506CE116B5B14000F50E50 /* SoundManager.m in Sources */,
+				F23C30F816B5D67E00FD9CE7 /* NCKillScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

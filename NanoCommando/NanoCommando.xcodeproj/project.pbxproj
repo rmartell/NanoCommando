@@ -53,6 +53,24 @@
 		F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */; };
 		F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497F16B4AC7E006FCE54 /* NanoCommando.plist */; };
 		F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */; };
+		F23C30CD16B5BE0600FD9CE7 /* deadCell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30BA16B5BE0600FD9CE7 /* deadCell.mp3 */; };
+		F23C30CE16B5BE0600FD9CE7 /* Flatline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30BB16B5BE0600FD9CE7 /* Flatline.mp3 */; };
+		F23C30CF16B5BE0600FD9CE7 /* heartbeat_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F23C30BD16B5BE0600FD9CE7 /* heartbeat_1.wav */; };
+		F23C30D016B5BE0600FD9CE7 /* heartbeat_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F23C30BE16B5BE0600FD9CE7 /* heartbeat_2.wav */; };
+		F23C30D116B5BE0600FD9CE7 /* heartbeat_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F23C30BF16B5BE0600FD9CE7 /* heartbeat_3.wav */; };
+		F23C30D216B5BE0600FD9CE7 /* heartbeat_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C016B5BE0600FD9CE7 /* heartbeat_4.wav */; };
+		F23C30D316B5BE0600FD9CE7 /* heartbeat_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C116B5BE0600FD9CE7 /* heartbeat_5.wav */; };
+		F23C30D416B5BE0600FD9CE7 /* InvalidPlacement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C216B5BE0600FD9CE7 /* InvalidPlacement.mp3 */; };
+		F23C30D516B5BE0600FD9CE7 /* NanoCommandoTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C316B5BE0600FD9CE7 /* NanoCommandoTheme.mp3 */; };
+		F23C30D616B5BE0600FD9CE7 /* Pause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C416B5BE0600FD9CE7 /* Pause.mp3 */; };
+		F23C30D716B5BE0600FD9CE7 /* pickupItem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C516B5BE0600FD9CE7 /* pickupItem.mp3 */; };
+		F23C30D816B5BE0600FD9CE7 /* PowerupPing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C616B5BE0600FD9CE7 /* PowerupPing.mp3 */; };
+		F23C30D916B5BE0600FD9CE7 /* quitBack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C716B5BE0600FD9CE7 /* quitBack.mp3 */; };
+		F23C30DA16B5BE0600FD9CE7 /* ShipHum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C816B5BE0600FD9CE7 /* ShipHum.mp3 */; };
+		F23C30DB16B5BE0600FD9CE7 /* ShipHumShort.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C916B5BE0600FD9CE7 /* ShipHumShort.mp3 */; };
+		F23C30DC16B5BE0600FD9CE7 /* ShotFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */; };
+		F23C30DD16B5BE0600FD9CE7 /* startConfirm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */; };
+		F23C30DE16B5BE0600FD9CE7 /* turretDeploy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */; };
 		F2C7DA7316B595B0009FBC1F /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7416B595B0009FBC1F /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3A16B595B0009FBC1F /* CCBKeyframe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7516B595B0009FBC1F /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3C16B595B0009FBC1F /* CCBReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -174,6 +192,24 @@
 		F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanoCommando-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
 		F237497F16B4AC7E006FCE54 /* NanoCommando.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NanoCommando.plist; sourceTree = "<group>"; };
 		F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanoCommando.pvr.ccz; sourceTree = "<group>"; };
+		F23C30BA16B5BE0600FD9CE7 /* deadCell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deadCell.mp3; sourceTree = "<group>"; };
+		F23C30BB16B5BE0600FD9CE7 /* Flatline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Flatline.mp3; sourceTree = "<group>"; };
+		F23C30BD16B5BE0600FD9CE7 /* heartbeat_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat_1.wav; sourceTree = "<group>"; };
+		F23C30BE16B5BE0600FD9CE7 /* heartbeat_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat_2.wav; sourceTree = "<group>"; };
+		F23C30BF16B5BE0600FD9CE7 /* heartbeat_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat_3.wav; sourceTree = "<group>"; };
+		F23C30C016B5BE0600FD9CE7 /* heartbeat_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat_4.wav; sourceTree = "<group>"; };
+		F23C30C116B5BE0600FD9CE7 /* heartbeat_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeat_5.wav; sourceTree = "<group>"; };
+		F23C30C216B5BE0600FD9CE7 /* InvalidPlacement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = InvalidPlacement.mp3; sourceTree = "<group>"; };
+		F23C30C316B5BE0600FD9CE7 /* NanoCommandoTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NanoCommandoTheme.mp3; sourceTree = "<group>"; };
+		F23C30C416B5BE0600FD9CE7 /* Pause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pause.mp3; sourceTree = "<group>"; };
+		F23C30C516B5BE0600FD9CE7 /* pickupItem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pickupItem.mp3; sourceTree = "<group>"; };
+		F23C30C616B5BE0600FD9CE7 /* PowerupPing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PowerupPing.mp3; sourceTree = "<group>"; };
+		F23C30C716B5BE0600FD9CE7 /* quitBack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quitBack.mp3; sourceTree = "<group>"; };
+		F23C30C816B5BE0600FD9CE7 /* ShipHum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShipHum.mp3; sourceTree = "<group>"; };
+		F23C30C916B5BE0600FD9CE7 /* ShipHumShort.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShipHumShort.mp3; sourceTree = "<group>"; };
+		F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShotFire.mp3; sourceTree = "<group>"; };
+		F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startConfirm.mp3; sourceTree = "<group>"; };
+		F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = turretDeploy.mp3; sourceTree = "<group>"; };
 		F2C7DA3716B595B0009FBC1F /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		F2C7DA3916B595B0009FBC1F /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -370,6 +406,7 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F23C30B916B5BE0600FD9CE7 /* Sound */,
 				F2C7DAA216B5B2A8009FBC1F /* UI stuff */,
 				6E4066FA16B51A47009ADC89 /* superlamp.png */,
 				F2CA839C16B4F017008248B3 /* HUD */,
@@ -472,6 +509,39 @@
 				F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */,
 			);
 			name = SpriteSheets;
+			sourceTree = "<group>";
+		};
+		F23C30B916B5BE0600FD9CE7 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F23C30BA16B5BE0600FD9CE7 /* deadCell.mp3 */,
+				F23C30BB16B5BE0600FD9CE7 /* Flatline.mp3 */,
+				F23C30BC16B5BE0600FD9CE7 /* HeartBeat */,
+				F23C30C216B5BE0600FD9CE7 /* InvalidPlacement.mp3 */,
+				F23C30C316B5BE0600FD9CE7 /* NanoCommandoTheme.mp3 */,
+				F23C30C416B5BE0600FD9CE7 /* Pause.mp3 */,
+				F23C30C516B5BE0600FD9CE7 /* pickupItem.mp3 */,
+				F23C30C616B5BE0600FD9CE7 /* PowerupPing.mp3 */,
+				F23C30C716B5BE0600FD9CE7 /* quitBack.mp3 */,
+				F23C30C816B5BE0600FD9CE7 /* ShipHum.mp3 */,
+				F23C30C916B5BE0600FD9CE7 /* ShipHumShort.mp3 */,
+				F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */,
+				F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */,
+				F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		F23C30BC16B5BE0600FD9CE7 /* HeartBeat */ = {
+			isa = PBXGroup;
+			children = (
+				F23C30BD16B5BE0600FD9CE7 /* heartbeat_1.wav */,
+				F23C30BE16B5BE0600FD9CE7 /* heartbeat_2.wav */,
+				F23C30BF16B5BE0600FD9CE7 /* heartbeat_3.wav */,
+				F23C30C016B5BE0600FD9CE7 /* heartbeat_4.wav */,
+				F23C30C116B5BE0600FD9CE7 /* heartbeat_5.wav */,
+			);
+			path = HeartBeat;
 			sourceTree = "<group>";
 		};
 		F2C7DA3516B595B0009FBC1F /* CocosBuilder */ = {
@@ -718,6 +788,24 @@
 				F2C7DAB116B5B924009FBC1F /* map.tmx in Resources */,
 				F2C7DAB216B5B92E009FBC1F /* LvMap.png in Resources */,
 				F2C7DAB316B5B932009FBC1F /* Collision.bm in Resources */,
+				F23C30CD16B5BE0600FD9CE7 /* deadCell.mp3 in Resources */,
+				F23C30CE16B5BE0600FD9CE7 /* Flatline.mp3 in Resources */,
+				F23C30CF16B5BE0600FD9CE7 /* heartbeat_1.wav in Resources */,
+				F23C30D016B5BE0600FD9CE7 /* heartbeat_2.wav in Resources */,
+				F23C30D116B5BE0600FD9CE7 /* heartbeat_3.wav in Resources */,
+				F23C30D216B5BE0600FD9CE7 /* heartbeat_4.wav in Resources */,
+				F23C30D316B5BE0600FD9CE7 /* heartbeat_5.wav in Resources */,
+				F23C30D416B5BE0600FD9CE7 /* InvalidPlacement.mp3 in Resources */,
+				F23C30D516B5BE0600FD9CE7 /* NanoCommandoTheme.mp3 in Resources */,
+				F23C30D616B5BE0600FD9CE7 /* Pause.mp3 in Resources */,
+				F23C30D716B5BE0600FD9CE7 /* pickupItem.mp3 in Resources */,
+				F23C30D816B5BE0600FD9CE7 /* PowerupPing.mp3 in Resources */,
+				F23C30D916B5BE0600FD9CE7 /* quitBack.mp3 in Resources */,
+				F23C30DA16B5BE0600FD9CE7 /* ShipHum.mp3 in Resources */,
+				F23C30DB16B5BE0600FD9CE7 /* ShipHumShort.mp3 in Resources */,
+				F23C30DC16B5BE0600FD9CE7 /* ShotFire.mp3 in Resources */,
+				F23C30DD16B5BE0600FD9CE7 /* startConfirm.mp3 in Resources */,
+				F23C30DE16B5BE0600FD9CE7 /* turretDeploy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

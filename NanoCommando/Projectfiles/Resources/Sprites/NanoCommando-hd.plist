@@ -605,7 +605,7 @@
             <key>ShipSprite5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1620,2},{122,196}}</string>
+                <string>{{1686,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{-2,-4}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>ShipSprite50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1422,2},{122,196}}</string>
+                <string>{{1488,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{3,-4}</string>
                 <key>rotated</key>
@@ -631,7 +631,7 @@
             <key>ShipSprite51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1224,2},{122,196}}</string>
+                <string>{{1290,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{2,-4}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>ShipSprite52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1026,2},{122,196}}</string>
+                <string>{{1092,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{2,-4}</string>
                 <key>rotated</key>
@@ -657,7 +657,7 @@
             <key>ShipSprite53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{828,2},{122,196}}</string>
+                <string>{{894,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{1,-4}</string>
                 <key>rotated</key>
@@ -748,7 +748,7 @@
             <key>ShipSprite6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{630,2},{122,196}}</string>
+                <string>{{696,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{-1,-4}</string>
                 <key>rotated</key>
@@ -1229,7 +1229,7 @@
             <key>ShipSprite93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,2},{122,196}}</string>
+                <string>{{498,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{-5,-4}</string>
                 <key>rotated</key>
@@ -1242,7 +1242,7 @@
             <key>ShipSprite94.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{234,2},{122,196}}</string>
+                <string>{{300,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{-5,-4}</string>
                 <key>rotated</key>
@@ -1255,7 +1255,7 @@
             <key>ShipSprite95.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{36,2},{122,196}}</string>
+                <string>{{102,2},{122,196}}</string>
                 <key>offset</key>
                 <string>{-4,-4}</string>
                 <key>rotated</key>
@@ -1278,6 +1278,19 @@
                 <key>sourceSize</key>
                 <string>{320,240}</string>
             </dict>
+            <key>cancetest.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{36,2},{64,64}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,64}}</string>
+                <key>sourceSize</key>
+                <string>{64,64}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -1288,7 +1301,7 @@
             <key>size</key>
             <string>{1916,1282}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c6d9193aced89c7a8bfa6e0d8bfd2008$</string>
+            <string>$TexturePacker:SmartUpdate:126d2578159afb774752ae116ba7ca4d$</string>
             <key>textureFileName</key>
             <string>NanoCommando-hd.pvr.ccz</string>
         </dict>

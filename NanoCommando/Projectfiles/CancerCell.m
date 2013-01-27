@@ -46,7 +46,7 @@
 {
 	//if ((self = [super initWithTexture:texture]))
 //    if ((self = [super initWithSpriteFrameName:texture]))
-    if ((self = [super initWithSprite:@"CancerCell" andLayer:layer]))
+    if ((self = [super initWithSprite:@"cancetest" andLayer:layer]))
 	{
         self.growDirections= 0x7f;
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];

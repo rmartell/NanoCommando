@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1E2D5016B4D795002794CA /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E2D4E16B4D2CE002794CA /* HudLayer.m */; };
 		6E1FAABD16B468F200B711AF /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABC16B468F200B711AF /* map.tmx */; };
 		6E1FAABF16B4692000B711AF /* LvMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABE16B4692000B711AF /* LvMap.png */; };
+		6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */; };
+		6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */; };
 		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
 		BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1B16B47966009D1B11 /* Collision.bm */; };
 		BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */; };
@@ -61,8 +64,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E1E2D4916B4D0ED002794CA /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
+		6E1E2D4A16B4D0ED002794CA /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
+		6E1E2D4D16B4D2CE002794CA /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
+		6E1E2D4E16B4D2CE002794CA /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
 		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMap.png; sourceTree = "<group>"; };
+		6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickedge.png; sourceTree = "<group>"; };
+		6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickcenter.png; sourceTree = "<group>"; };
 		BBD95A0A16B46F3C009D1B11 /* CancerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancerCell.m; sourceTree = "<group>"; };
 		BBD95A0B16B46F3C009D1B11 /* CancerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancerCell.h; sourceTree = "<group>"; };
 		BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJCollisionBitmap.h; sourceTree = "<group>"; };
@@ -269,6 +278,8 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */,
+				6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */,
 				BBD95A1B16B47966009D1B11 /* Collision.bm */,
 				BBD95A1E16B47C80009D1B11 /* CancerCell.png */,
 				6E1FAABE16B4692000B711AF /* LvMap.png */,
@@ -311,6 +322,8 @@
 		F21026C416B4447F00C70F6D /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				6E1E2D4D16B4D2CE002794CA /* HudLayer.h */,
+				6E1E2D4E16B4D2CE002794CA /* HudLayer.m */,
 				F21026BE16B43C6700C70F6D /* GamePlayLayer.h */,
 				F21026BF16B43C6700C70F6D /* GamePlayLayer.m */,
 				DC81EAA7141280D400735365 /* TileMapLayer.h */,
@@ -332,6 +345,8 @@
 				F21026C716B444D500C70F6D /* PlayerShip.m */,
 				BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */,
 				BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */,
+				6E1E2D4916B4D0ED002794CA /* HudLayer.h */,
+				6E1E2D4A16B4D0ED002794CA /* HudLayer.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -440,6 +455,8 @@
 				F237496216B45FF1006FCE54 /* TestShip.png in Resources */,
 				6E1FAABD16B468F200B711AF /* map.tmx in Resources */,
 				6E1FAABF16B4692000B711AF /* LvMap.png in Resources */,
+				6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */,
+				6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */,
 				BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */,
 				BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */,
 				BBD95A2116B486E7009D1B11 /* CancerCellInside.png in Resources */,
@@ -468,6 +485,7 @@
 				BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */,
 				BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */,
 				BBD95A3A16B4D1C4009D1B11 /* Turret.m in Sources */,
+				6E1E2D5016B4D795002794CA /* HudLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

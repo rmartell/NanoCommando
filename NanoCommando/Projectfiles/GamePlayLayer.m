@@ -37,14 +37,12 @@
 -(void)setupPlayerShip {
     
     playerShip = [PlayerShip createWithLayer:self];
-    playerShip.position = ccp(screenSize.width/2, screenSize.height/2);
+    playerShip.position = ccp(0, 0);
     [self addChild:playerShip z:kPlayerShipZ];
     
-    CGRect followBoundary = CGRectMake(-2*screenSize.width, -2*screenSize.height, 4*screenSize.width, 4*screenSize.height);
+    CGRect followBoundary = CGRectMake(-(MAP_WIDTH/2), -(MAP_HEIGHT/2), MAP_WIDTH, MAP_HEIGHT);
     CCFollow* followAction = [CCFollow actionWithTarget:playerShip worldBoundary:followBoundary];
     [self runAction:followAction];
-    
-    
 }
 
 -(void) setupTouchZones {
@@ -103,6 +101,11 @@
     //[self.camera setEyeX:playerShip.position.x eyeY:playerShip.position.y eyeZ:415];
 //}
 
+-(CGPoint)screenPointToWorldPoint:(CGPoint)point
+{
+    return ccpSub(point, self.position);
+}
+
 
 -(void)processTouches:(ccTime)delta {
     
@@ -113,14 +116,26 @@
     
     CCARRAY_FOREACH(touches, touch) {
         CGPoint location = touch.location;
+
+        /*
+[self.tileLayer screenPointToWorldPoint:location];
+        
         //CCLOG(@"Real touch location is at: %f, %f", location.x, location.y);
+ */
         CGPoint screenCenter = ccp(screenSize.width/2, screenSize.height/2);
         float relativeX = location.x - screenCenter.x;
         float relativeY = location.y - screenCenter.y;
-        //CCLOG(@"Relative touch location is at: %f, %f", relativeX, relativeY);
+// CCLOG(@"Relative touch location is at: %f, %f", relativeX, relativeY);
         //CCLOG(@"PlayerShip is at %f, %f", playerShip.position.x, playerShip.position.y);
         CGPoint relativeLocation = ccp(relativeX, relativeY);
+
+        CGPoint worldPt = ccpSub(touch.location, self.position);
         
+        NSLog(@"Touch %@ convertToGL: %@ WorldPt: %@",
+              NSStringFromCGPoint(self.position),
+              NSStringFromCGPoint(touch.location),
+              NSStringFromCGPoint(worldPt));
+
         
         if (touch.phase == KKTouchPhaseBegan) {
             [playerShip moveBy:relativeLocation];

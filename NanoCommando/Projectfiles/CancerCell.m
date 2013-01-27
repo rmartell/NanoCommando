@@ -27,6 +27,8 @@
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
 @property (nonatomic, assign) NSTimeInterval lastGrowth;
+@property (nonatomic, assign) int roughX;
+@property (nonatomic, assign) int roughY;
 @end
 
 @implementation CancerCell
@@ -142,6 +144,7 @@
 
 -(void)update:(ccTime)ticksPassed
 {
+    return;
     // I _really_ don't like the ticksPassed in crap..
     if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1)
     {
@@ -179,7 +182,17 @@
 
 -(void)seed
 {
+    CGPoint seed_pts[]= {
+        CGPointMake(-2031, -1405),
+        CGPointMake(-2006, -381.134),
+        CGPointMake(-2025, 152.49),
+        CGPointMake(-2034, 1087.51)
+    };
+    
 //    [self addCancerAtPoint:ccp(512, 500) intoArray:self.cells];
-    [self addCancerAtPoint:ccp(0, 0) intoArray:self.cells];
+    for(int ii= 0; ii<(int)(sizeof(seed_pts)/sizeof(seed_pts[0])); ii++)
+    {
+        [self addCancerAtPoint:seed_pts[ii] intoArray:self.cells];
+    }
 }
 @end

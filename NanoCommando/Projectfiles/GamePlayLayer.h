@@ -19,4 +19,6 @@
 @property (nonatomic, weak) PlayerShip* playerShip;
 @property (nonatomic, strong) CancerCollection *cancerCells;
 @property (nonatomic, strong) TileMapLayer* tileLayer;
+
+-(CGPoint)screenPointToWorldPoint:(CGPoint)pt;
 @end

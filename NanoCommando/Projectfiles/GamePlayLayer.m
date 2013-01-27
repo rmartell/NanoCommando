@@ -107,3 +107,4 @@
 {
     return ccpSub(point, self.position);
 }
+@end

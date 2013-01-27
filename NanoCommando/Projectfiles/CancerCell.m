@@ -87,6 +87,7 @@
             }
             
             if(!self.growDirections) {
+                [self runAction:[CCTintTo actionWithDuration:1.0f red:5 green:5 blue:5]];
                // self.texture= collection.cancerDormant;
             }
         }

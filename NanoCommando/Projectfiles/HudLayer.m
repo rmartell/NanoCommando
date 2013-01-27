@@ -8,6 +8,8 @@
 
 #import "HudLayer.h"
 #import "GamePlayLayer.h"
+#import "GJCollisionBitmap.h"
+#import "SoundManager.h"
 
 @interface HudLayer ()
 @property (nonatomic, weak) CCSprite *panSprite;
@@ -201,7 +203,15 @@
 //        CCLOG(@"gesture tap: %f,%f", panSprite.position.x, panSprite.position.y);
         
         self.deploy = true;
-        self.deployAt = [self.theGamePlayLayer screenPointToWorldPoint:input.gestureTapLocation];
+        
+        CGPoint testDeployPoint= [self.theGamePlayLayer screenPointToWorldPoint:input.gestureTapLocation];
+        if([self.theGamePlayLayer.collisionMask ptInside:testDeployPoint])
+        {
+            [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
+        } else {
+            self.deployAt = testDeployPoint;
+            self.deploy= true;
+        }
         self.tapSprite.position = input.gestureTapLocation;
         self.tapSprite.visible = true;
         //[self scheduleOnce:@selector(delayNonVisible:self.tapSprite) delay:2.0];

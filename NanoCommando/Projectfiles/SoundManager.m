@@ -46,7 +46,7 @@
                               @"shipHum.mp3",
                               @"shipHumShort.mp3",
                               @"noMoreTurrets2.mp3",
-                              @"heartbeat_1.wav",
+                              @"heartbeat2.mp3",
                               nil];
 
         NSAssert(NUMBER_OF_SOUND_TYPES==self.audioFileNames.count, @"Counts don't match %d != %d", NUMBER_OF_SOUND_TYPES, self.audioFileNames.count);

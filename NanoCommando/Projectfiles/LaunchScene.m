@@ -8,6 +8,7 @@
 
 #import "LaunchScene.h"
 #import "GameManger.h"
+#import "SoundManager.h"
 
 @implementation LaunchScene
 
@@ -24,6 +25,7 @@
     if ((self = [super init])) {
         
         CCLOG(@"Welcome to the splash screen");
+        [SoundManager sharedSoundManager];
         
         //CGSize screenSize = [CCDirector sharedDirector].screenSize;
         [self scheduleOnce:@selector(showNextScreen) delay:1.0f];

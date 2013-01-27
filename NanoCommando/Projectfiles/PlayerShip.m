@@ -8,6 +8,7 @@
 
 #import "PlayerShip.h"
 #import "HudLayer.h"
+#import "GJCollisionBitmap.h"
 
 // Maximum velocity in world units/second
 #define MAXIMUM_VELOCITY (300)
@@ -86,8 +87,11 @@ return;
                                      self.position.y + delta*self.velocity.y);
 
     // collision test on newPosition
-    
-    self.position= newPosition;
+    if(![self.collision ptInside:newPosition])
+    {
+        // don't allow for now..
+        self.position= newPosition;
+    }
 }
 
 

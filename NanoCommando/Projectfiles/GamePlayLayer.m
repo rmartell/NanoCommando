@@ -37,6 +37,7 @@
     [scene addChild:gamePlayLayer z:kGameZ];
     
     gamePlayLayer.playerShip.hud= hudLayer;
+    gamePlayLayer.playerShip.collision= gamePlayLayer.collisionMask;
     
 	return scene;
 }

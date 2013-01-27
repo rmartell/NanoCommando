@@ -11,6 +11,7 @@
 
 @interface SoundManager ()
 @property (nonatomic, strong) NSArray *audioFileNames;
+@property (nonatomic, strong) NSArray *themeFileNames;
 @end
 
 @implementation SoundManager
@@ -46,16 +47,27 @@
                               @"shipHum.mp3",
                               @"shipHumShort.mp3",
                               @"noMoreTurrets2.mp3",
-                              @"nanoCommandRedux.mp3",
+                              @"heartbeat2.mp3",
+                              nil];
+        self.themeFileNames= [NSArray arrayWithObjects:
+                              @"NanoCommandoRedux.mp3",
                               nil];
 
+        
         NSAssert(NUMBER_OF_SOUND_TYPES==self.audioFileNames.count, @"Counts don't match %d != %d", NUMBER_OF_SOUND_TYPES, self.audioFileNames.count);
         
         for(NSString *filename in self.audioFileNames)
         {
-            CCLOG(@"Preloading audio %@", filename);
+//            CCLOG(@"Preloading audio %@", filename);
             [engine preloadEffect:filename];
         }
+
+        for(NSString *filename in self.themeFileNames)
+        {
+            //            CCLOG(@"Preloading audio %@", filename);
+            [engine preloadBackgroundMusic:filename];
+        }
+
     }
     return self;
 }
@@ -94,12 +106,12 @@
     }    
 }
 
--(void)startBackgroundMusic:(SoundType)type
+-(void)startBackgroundMusic:(BackgroundMusicType)type
 {
-    NSAssert(type>=0 && type<self.audioFileNames.count, @"Index %d out of range!", type);
+    NSAssert(type>=0 && type<self.themeFileNames.count, @"Index %d out of range!", type);
     if(!self.backgroundMusicPlaying)
     {
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:self.audioFileNames[type] loop:YES];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:self.themeFileNames[type]];
         self.backgroundMusicPlaying= YES;
     }
 }

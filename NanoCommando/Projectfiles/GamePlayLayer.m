@@ -97,6 +97,7 @@
                                                      bytesPerRow:MAP_WIDTH/8 andData:data];
 }
 
+
 -(void)setupBatchNode {
     
     // pre load the sprite frames from the texture atlas
@@ -135,7 +136,7 @@
         [self scheduleUpdate];
         [self setupTurrets];
         
-        [[SoundManager sharedSoundManager] startBackgroundMusic:kTheme];
+        [[SoundManager sharedSoundManager] startBackgroundMusic:kMainTheme];
         
         [HUDLayer setGameLayer:self];
     }

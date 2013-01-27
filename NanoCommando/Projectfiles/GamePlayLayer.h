@@ -19,6 +19,7 @@
 
 @interface GamePlayLayer : CCLayer
 
++(CCScene*)scene;
 -(id) initWithHUDLayer:(HudLayer*)HUDLayer;
 
 @property (nonatomic, weak) CCSpriteBatchNode* batchNode;

@@ -28,7 +28,7 @@
 {
 	if ((self = [super initWithSprite:frameName andLayer:layer]))
 	{
-        self.scale= 10;
+        self.scale= 2.4;
         self.layer= layer;
 	}
 	return self;
@@ -63,6 +63,8 @@
     PowerUp *powerup= [[PowerUp alloc] initWithGameLayer:self.layer andFrameName:self.powerupFrameName];
     powerup.position= pt;
     powerup.type= type;
+    
+    [[SoundManager sharedSoundManager] playSound:kSoundPowerupPing atPoint:pt];
     
     [self.layer.batchNode addChild:powerup z:kPowerUpZ];
     [self.powerups addObject:powerup];

@@ -16,6 +16,7 @@
 
 @property (nonatomic, weak) HudLayer *hud;
 @property (nonatomic, weak) GJCollisionBitmap *collision;
+@property (nonatomic, assign) int turretInventory;
 
 +(id) createWithLayer:(GamePlayLayer*)layer;
 

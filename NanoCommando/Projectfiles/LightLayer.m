@@ -21,9 +21,9 @@
         CGSize screenSize;
         screenSize = [CCDirector sharedDirector].screenSize;
         
-        lampSprite.position = ccp(screenSize.width/2,screenSize.height/2);
+        ls.position = ccp(screenSize.width/2,screenSize.height/2);
         
-        [self addChild:lampSprite];
+        [self addChild:ls];
         self.lampSprite = ls;
         
         //[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_Default];

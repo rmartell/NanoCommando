@@ -43,6 +43,19 @@
                 <key>sourceSize</key>
                 <string>{63,63}</string>
             </dict>
+            <key>bullet.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{650,630},{10,10}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,10}}</string>
+                <key>sourceSize</key>
+                <string>{10,10}</string>
+            </dict>
             <key>cancertest02.png</key>
             <dict>
                 <key>frame</key>
@@ -59,7 +72,7 @@
             <key>fire0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{660,630},{8,6}}</string>
+                <string>{{672,630},{8,6}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>fire1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{650,630},{10,8}}</string>
+                <string>{{662,630},{10,8}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -807,7 +820,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:740d6eafba6cfe8d0fe65fb9d46aaac9$</string>
+            <string>$TexturePacker:SmartUpdate:6c541d1ba40da819336f6bea7961700d$</string>
             <key>textureFileName</key>
             <string>NanoCommando-hd.pvr.ccz</string>
         </dict>

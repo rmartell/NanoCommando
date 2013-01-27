@@ -43,6 +43,19 @@
                 <key>sourceSize</key>
                 <string>{31,31}</string>
             </dict>
+            <key>bullet.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{16,1010},{5,5}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{5,5}}</string>
+                <key>sourceSize</key>
+                <string>{5,5}</string>
+            </dict>
             <key>cancertest02.png</key>
             <dict>
                 <key>frame</key>
@@ -807,7 +820,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:33105c39e4c283ecccd019fff4a14927$</string>
+            <string>$TexturePacker:SmartUpdate:82fd9155c5cf93e0caa7fe8ceeb3811e$</string>
             <key>textureFileName</key>
             <string>NanoCommando.pvr.ccz</string>
         </dict>

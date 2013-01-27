@@ -43,6 +43,19 @@
                 <key>sourceSize</key>
                 <string>{125,125}</string>
             </dict>
+            <key>bullet.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1242,1252},{20,20}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{20,20}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
             <key>cancertest02.png</key>
             <dict>
                 <key>frame</key>
@@ -59,7 +72,7 @@
             <key>fire0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1300,1252},{16,10}}</string>
+                <string>{{1322,1252},{16,10}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>fire1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1242,1252},{20,16}}</string>
+                <string>{{1264,1252},{20,16}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +98,7 @@
             <key>fire2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1280,1252},{18,18}}</string>
+                <string>{{1302,1252},{18,18}}</string>
                 <key>offset</key>
                 <string>{1,0}</string>
                 <key>rotated</key>
@@ -98,7 +111,7 @@
             <key>fire3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1260,1252},{18,18}}</string>
+                <string>{{1282,1252},{18,18}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -807,7 +820,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:dc86141f7f861a1e6c216fee74d850b8$</string>
+            <string>$TexturePacker:SmartUpdate:4a997afa05f235e6f333229b2f91634b$</string>
             <key>textureFileName</key>
             <string>NanoCommando-ipadhd.pvr.ccz</string>
         </dict>

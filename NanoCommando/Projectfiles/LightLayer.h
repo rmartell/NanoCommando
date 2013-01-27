@@ -10,4 +10,6 @@
 
 @interface LightLayer : CCLayer
 
+@property (nonatomic, weak) CCSprite *lampSprite;
+
 @end

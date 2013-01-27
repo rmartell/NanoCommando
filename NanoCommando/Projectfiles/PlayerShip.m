@@ -20,10 +20,6 @@
 
 @implementation PlayerShip {
     CGSize screenSize;
-    
-    
-    CCMoveBy* moveAction;
-    CCRotateBy* rotateAction;
     CCAction* normalAnimation;
 }
 
@@ -58,15 +54,6 @@
 	return playerShip;
 }
 
--(void)moveBy:(CGPoint)vector {
-    
-return;
-    [moveAction stop];
-    moveAction = [CCMoveBy actionWithDuration:1.0f position:vector];
-    [self runAction:moveAction];
-    
-    NSLog(@"Current ship position: %@", NSStringFromCGPoint(self.position));
-}
 
 -(void)update:(ccTime)delta {
     // update theta

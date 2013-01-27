@@ -7,6 +7,7 @@
 
 #import "GamePlayLayer.h"
 #import "PlayerShip.h"
+#import "Heart.h"
 #import "CancerCell.h"
 #import "GJCollisionBitmap.h"
 #import "Constants.h"
@@ -23,6 +24,7 @@
 
 @synthesize batchNode;
 @synthesize playerShip;
+@synthesize heart;
 @synthesize tileLayer;
 
 
@@ -45,7 +47,7 @@
     
     playerShip = [PlayerShip createWithLayer:self];
     playerShip.position = ccp(0, 0);
-    [self addChild:playerShip z:kPlayerShipZ];
+    [batchNode addChild:playerShip z:kPlayerShipZ];
     
     CGRect followBoundary = CGRectMake(-(MAP_WIDTH/2), -(MAP_HEIGHT/2), MAP_WIDTH, MAP_HEIGHT);
 
@@ -85,6 +87,14 @@
     [self addChild:batchNode z:kBatchNodeZ];
 }
 
+-(void)setupHeart {
+    
+    heart = [Heart createWithLayer:self];
+    heart.position = ccp(0, 0);
+    [batchNode addChild:heart z:kHeartZ];
+    
+}
+
 
 //-(id) initWithTileLayer:(TileMapLayer *)tileLayer {
 -(id) initWithGame {
@@ -94,6 +104,7 @@
     
         [self setupBatchNode];
         [self setupBackground];
+        [self setupHeart];
         [self setupPlayerShip];
         [self setupCollisionMask];
         [self setupCancerCells];

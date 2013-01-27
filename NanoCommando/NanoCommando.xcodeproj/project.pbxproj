@@ -50,6 +50,7 @@
 		F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */; };
 		F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497F16B4AC7E006FCE54 /* NanoCommando.plist */; };
 		F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */; };
+		F2CA83A316B4F7B4008248B3 /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA83A216B4F7B4008248B3 /* Heart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,8 @@
 		F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanoCommando-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
 		F237497F16B4AC7E006FCE54 /* NanoCommando.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NanoCommando.plist; sourceTree = "<group>"; };
 		F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanoCommando.pvr.ccz; sourceTree = "<group>"; };
+		F2CA83A116B4F7B4008248B3 /* Heart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heart.h; sourceTree = "<group>"; };
+		F2CA83A216B4F7B4008248B3 /* Heart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +296,8 @@
 		F21026C516B444A300C70F6D /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				F2CA83A116B4F7B4008248B3 /* Heart.h */,
+				F2CA83A216B4F7B4008248B3 /* Heart.m */,
 				BBD95A0A16B46F3C009D1B11 /* CancerCell.m */,
 				BBD95A0B16B46F3C009D1B11 /* CancerCell.h */,
 				F21026C916B4464C00C70F6D /* GameObject.h */,
@@ -442,6 +447,7 @@
 				BBD95A3A16B4D1C4009D1B11 /* Turret.m in Sources */,
 				6E1E2D5016B4D795002794CA /* (null) in Sources */,
 				BBD95A4516B4E1F1009D1B11 /* HudLayer.m in Sources */,
+				F2CA83A316B4F7B4008248B3 /* Heart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

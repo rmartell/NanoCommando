@@ -55,7 +55,7 @@
         self.deathState= PlayerDeathStateAlive;
         [self runAction:normalAnimation];
         
-        [self schedule:@selector(logPosition) interval:5.0f];
+//        [self schedule:@selector(logPosition) interval:5.0f];
         
 	}
 	return self;

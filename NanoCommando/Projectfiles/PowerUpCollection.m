@@ -68,7 +68,7 @@
     
     [self.layer.batchNode addChild:powerup z:kPowerUpZ];
     [self.powerups addObject:powerup];
-    NSLog(@"Dropped powerup at %@", NSStringFromCGPoint(pt));
+//    NSLog(@"Dropped powerup at %@", NSStringFromCGPoint(pt));
 }
 
 -(void)update:(ccTime)ticksPassed

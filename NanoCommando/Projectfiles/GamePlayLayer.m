@@ -20,6 +20,7 @@
     CGSize screenSize;
 }
 
+@synthesize batchNode;
 @synthesize playerShip;
 @synthesize tileLayer;
 
@@ -38,9 +39,10 @@
     
     playerShip = [PlayerShip createWithLayer:self];
     playerShip.position = ccp(screenSize.width/2, screenSize.height/2);
-    [self addChild:playerShip z:kPlayerShipZ];
+    [batchNode addChild:playerShip z:kPlayerShipZ];
     
     CGRect followBoundary = CGRectMake(-2*screenSize.width, -2*screenSize.height, 4*screenSize.width, 4*screenSize.height);
+    
     CCFollow* followAction = [CCFollow actionWithTarget:playerShip worldBoundary:followBoundary];
     [self runAction:followAction];
     
@@ -66,6 +68,14 @@
     if ((self = [super init])) {
         
         screenSize = [CCDirector sharedDirector].screenSize;
+        
+        // pre load the sprite frames from the texture atlas
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
+        
+        // setup batchNode
+        CCLOG(@"Setting up batchNode");
+        batchNode = [CCSpriteBatchNode batchNodeWithFile:@"NanoCommando.pvr.ccz"];
+        [self addChild:batchNode z:kBatchNodeZ];
         
         CCSprite* dummy = [CCSprite spriteWithFile:@"game-events.png"];
         dummy.position = ccp(screenSize.width/3,screenSize.height/3);

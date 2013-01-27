@@ -16,8 +16,10 @@
 @property (nonatomic, weak) GamePlayLayer *layer;
 @property (nonatomic, weak) GJCollisionBitmap *collision;
 @property (nonatomic, assign) NSTimeInterval lastUpdate;
-@property (nonatomic, strong) CCTexture2D *cancerLive;
-@property (nonatomic, strong) CCTexture2D *cancerDormant;
+
+@property (nonatomic, strong) NSString* textureFrameName;
+//@property (nonatomic, strong) CCTexture2D *cancerLive;
+//@property (nonatomic, strong) CCTexture2D *cancerDormant;
 
 -(void)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array;
 -(BOOL)cancerCell:(CancerCell *)cell canGrowToPoint:(CGPoint)pt andInterimArray:(NSMutableArray *)others;
@@ -31,9 +33,12 @@
 
 @implementation CancerCell
 
--(id) initWithGameLayer:(GamePlayLayer*)layer andTexture:(CCTexture2D *)texture
+//-(id) initWithGameLayer:(GamePlayLayer*)layer andTexture:(CCTexture2D *)texture
+-(id) initWithGameLayer:(GamePlayLayer*)layer andFrameName:(NSString *)texture
 {
-	if ((self = [super initWithTexture:texture]))
+	//if ((self = [super initWithTexture:texture]))
+//    if ((self = [super initWithSpriteFrameName:texture]))
+    if ((self = [super initWithSprite:@"CancerCell" andLayer:layer]))
 	{
         self.growDirections= 0x7f;
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];
@@ -82,7 +87,7 @@
             }
             
             if(!self.growDirections) {
-                self.texture= collection.cancerDormant;
+               // self.texture= collection.cancerDormant;
             }
         }
         self.lastGrowth= [NSDate timeIntervalSinceReferenceDate];
@@ -100,8 +105,9 @@
         self.layer= layer;
         self.collision= bitmap;
         
-        self.cancerLive= [[CCTextureCache sharedTextureCache] addImage: @"CancerCell.png"];
-        self.cancerDormant= [[CCTextureCache sharedTextureCache] addImage: @"CancerCellInside.png"];
+        self.textureFrameName = @"CancerCell.png";
+      //  self.cancerLive= [[CCTextureCache sharedTextureCache] addImage: @"CancerCell.png"];
+        //self.cancerDormant= [[CCTextureCache sharedTextureCache] addImage: @"CancerCellInside.png"];
     }
 
     return self;
@@ -146,6 +152,8 @@
     if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1)
     {
         int ticks= 1;
+
+NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         
 //    NSLog(@"Interval: %f Ticks: %d", ticksPassed, ticks);
         NSMutableArray *newGrowth= [NSMutableArray arrayWithCapacity:10];
@@ -162,18 +170,22 @@
         
         [self.cells addObjectsFromArray:newGrowth];
         self.lastUpdate= [NSDate timeIntervalSinceReferenceDate];
+        NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
+        CCLOG(@"Total time spent: %lf", delta);
+
     }
 }
 
 -(void)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array
 {
-    CancerCell *cell= [[CancerCell alloc] initWithGameLayer:self.layer andTexture:self.cancerLive];
+//    CancerCell *cell= [[CancerCell alloc] initWithGameLayer:self.layer andTexture:self.cancerLive];
+    CancerCell *cell= [[CancerCell alloc] initWithGameLayer:self.layer andFrameName:self.textureFrameName];
     cell.position= pt;
     double scaled = (double)rand()/RAND_MAX;
 
     cell.scale= 0.9 + (.20*scaled);
     
-    [self.layer addChild:cell];
+    [self.layer.batchNode addChild:cell z:kCancerZ];
     [array addObject:cell];
 }
 

@@ -51,6 +51,12 @@
 		F21026CB16B4464C00C70F6D /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026CA16B4464C00C70F6D /* GameObject.m */; };
 		F21026CE16B4507700C70F6D /* LvMapbackground1.png in Resources */ = {isa = PBXBuildFile; fileRef = F21026CD16B4507700C70F6D /* LvMapbackground1.png */; };
 		F237496216B45FF1006FCE54 /* TestShip.png in Resources */ = {isa = PBXBuildFile; fileRef = F237496116B45FF1006FCE54 /* TestShip.png */; };
+		F237498116B4AC7E006FCE54 /* NanoCommando-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */; };
+		F237498216B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */; };
+		F237498316B4AC7E006FCE54 /* NanoCommando-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497D16B4AC7E006FCE54 /* NanoCommando-ipadhd.plist */; };
+		F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */; };
+		F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497F16B4AC7E006FCE54 /* NanoCommando.plist */; };
+		F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +127,12 @@
 		F21026CD16B4507700C70F6D /* LvMapbackground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMapbackground1.png; sourceTree = "<group>"; };
 		F237496116B45FF1006FCE54 /* TestShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestShip.png; sourceTree = "<group>"; };
 		F237496816B47D55006FCE54 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NanoCommando-hd.plist"; sourceTree = "<group>"; };
+		F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanoCommando-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F237497D16B4AC7E006FCE54 /* NanoCommando-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NanoCommando-ipadhd.plist"; sourceTree = "<group>"; };
+		F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanoCommando-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
+		F237497F16B4AC7E006FCE54 /* NanoCommando.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NanoCommando.plist; sourceTree = "<group>"; };
+		F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanoCommando.pvr.ccz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,9 +342,23 @@
 		F237496016B45FC5006FCE54 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				F237498816B4AC86006FCE54 /* SpriteSheets */,
 				F237496116B45FF1006FCE54 /* TestShip.png */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		F237498816B4AC86006FCE54 /* SpriteSheets */ = {
+			isa = PBXGroup;
+			children = (
+				F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */,
+				F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */,
+				F237497D16B4AC7E006FCE54 /* NanoCommando-ipadhd.plist */,
+				F237497E16B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz */,
+				F237497F16B4AC7E006FCE54 /* NanoCommando.plist */,
+				F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */,
+			);
+			name = SpriteSheets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +438,12 @@
 				BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */,
 				BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */,
 				BBD95A2116B486E7009D1B11 /* CancerCellInside.png in Resources */,
+				F237498116B4AC7E006FCE54 /* NanoCommando-hd.plist in Resources */,
+				F237498216B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz in Resources */,
+				F237498316B4AC7E006FCE54 /* NanoCommando-ipadhd.plist in Resources */,
+				F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */,
+				F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */,
+				F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

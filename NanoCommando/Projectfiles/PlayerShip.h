@@ -11,6 +11,8 @@
 
 @interface PlayerShip : GameObject
 
+
+
 +(id) createWithLayer:(GamePlayLayer*)layer;
 
 -(void)moveBy:(CGPoint)vector;

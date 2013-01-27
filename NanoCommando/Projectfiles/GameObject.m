@@ -18,7 +18,7 @@
     screenSize = [CCDirector sharedDirector].screenSize;
     
     NSString* filename = [NSString stringWithFormat:@"%@.png",spriteName];
-    self = [super initWithFile:filename];
+    self = [super initWithSpriteFrameName:filename];
     if (self) {
     }
     return self;

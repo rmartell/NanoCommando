@@ -13,7 +13,7 @@
 #import "Constants.h"
 #import "HudLayer.h"
 #import "Turret.h"
-
+#import "LightLayer.h"
 
 
 @implementation GamePlayLayer {
@@ -32,6 +32,9 @@
 
 	HudLayer *hudLayer = [[HudLayer alloc]init];
 	[scene addChild:hudLayer z:kHudZ];
+    
+    LightLayer *lightLayer = [[LightLayer alloc]init];
+	[scene addChild:lightLayer z:kLightZ];
 
     GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
     [scene addChild:gamePlayLayer z:kGameZ];

@@ -43,7 +43,7 @@
         panSprite2.visible = false;
         
         [self setupTouchZones];
-        CCLOG(@"==========INIT CALLED===========");
+//        CCLOG(@"==========INIT CALLED===========");
         [self scheduleUpdate];
     }
     return self;

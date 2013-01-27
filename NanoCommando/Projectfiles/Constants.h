@@ -8,6 +8,7 @@ typedef enum {
     kTurretZ,
     kEffectsZ,
     kBulletZ,
+    kLightZ,
     kHudZ
 } metaZOrders;
 

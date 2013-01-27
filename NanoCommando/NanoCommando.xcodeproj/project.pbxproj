@@ -10,6 +10,8 @@
 		6E1E2D5016B4D795002794CA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */; };
 		6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */; };
+		6E4066DC16B5023B009ADC89 /* LightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4066DB16B5023B009ADC89 /* LightLayer.m */; };
+		6E4066FB16B51A47009ADC89 /* superlamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4066FA16B51A47009ADC89 /* superlamp.png */; };
 		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
 		BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */; };
 		BBD95A3A16B4D1C4009D1B11 /* Turret.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A3916B4D1C4009D1B11 /* Turret.m */; };
@@ -56,6 +58,9 @@
 /* Begin PBXFileReference section */
 		6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickedge.png; sourceTree = "<group>"; };
 		6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickcenter.png; sourceTree = "<group>"; };
+		6E4066DA16B5023B009ADC89 /* LightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightLayer.h; sourceTree = "<group>"; };
+		6E4066DB16B5023B009ADC89 /* LightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightLayer.m; sourceTree = "<group>"; };
+		6E4066FA16B51A47009ADC89 /* superlamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superlamp.png; sourceTree = "<group>"; };
 		BBC8785A16B4F3E900460547 /* Collision.bm */ = {isa = PBXFileReference; lastKnownFileType = file; name = Collision.bm; path = Projectfiles/Resources/Collision.bm; sourceTree = SOURCE_ROOT; };
 		BBC8785B16B4F3E900460547 /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LvMap.png; path = Projectfiles/Resources/LvMap.png; sourceTree = SOURCE_ROOT; };
 		BBC8785C16B4F3E900460547 /* map.tmx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = map.tmx; path = Projectfiles/Resources/map.tmx; sourceTree = SOURCE_ROOT; };
@@ -250,6 +255,7 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E4066FA16B51A47009ADC89 /* superlamp.png */,
 				F2CA839C16B4F017008248B3 /* HUD */,
 				F237496016B45FC5006FCE54 /* Sprites */,
 				F21026CC16B4507700C70F6D /* Background */,
@@ -289,6 +295,8 @@
 				F21026BF16B43C6700C70F6D /* GamePlayLayer.m */,
 				DC81EAA7141280D400735365 /* TileMapLayer.h */,
 				DC81EAA8141280D400735365 /* TileMapLayer.m */,
+				6E4066DA16B5023B009ADC89 /* LightLayer.h */,
+				6E4066DB16B5023B009ADC89 /* LightLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -426,6 +434,7 @@
 				F237498416B4AC7E006FCE54 /* NanoCommando-ipadhd.pvr.ccz in Resources */,
 				F237498516B4AC7E006FCE54 /* NanoCommando.plist in Resources */,
 				F237498616B4AC7E006FCE54 /* NanoCommando.pvr.ccz in Resources */,
+				6E4066FB16B51A47009ADC89 /* superlamp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +457,7 @@
 				6E1E2D5016B4D795002794CA /* (null) in Sources */,
 				BBD95A4516B4E1F1009D1B11 /* HudLayer.m in Sources */,
 				F2CA83A316B4F7B4008248B3 /* Heart.m in Sources */,
+				6E4066DC16B5023B009ADC89 /* LightLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

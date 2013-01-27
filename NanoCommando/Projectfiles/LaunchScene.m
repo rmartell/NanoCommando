@@ -32,6 +32,10 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"MenuSpriteSheet.plist"];
         
+        CCSprite* backgroundImage = [CCSprite spriteWithFile:@"startupscreen.png"];
+        backgroundImage.position = [CCDirector sharedDirector].screenCenter;
+        [self addChild:backgroundImage];
+        
     }
     return self;
 }

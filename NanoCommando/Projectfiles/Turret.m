@@ -95,7 +95,7 @@ typedef enum  {
 	{
         self.state= kStateIdle;
         self.layer= layer;
-        self.scale= 2.0;
+        self.scale= 0.75;
 	}
 	return self;
 }

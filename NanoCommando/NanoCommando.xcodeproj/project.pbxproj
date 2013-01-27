@@ -71,6 +71,13 @@
 		F23C30DC16B5BE0600FD9CE7 /* ShotFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */; };
 		F23C30DD16B5BE0600FD9CE7 /* startConfirm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */; };
 		F23C30DE16B5BE0600FD9CE7 /* turretDeploy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */; };
+		F23C30E316B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30E216B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png */; };
+		F23C30E516B5C22400FD9CE7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30E416B5C22400FD9CE7 /* Default-Landscape~ipad.png */; };
+		F23C30E916B5C55D00FD9CE7 /* startupscreen-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30E616B5C55D00FD9CE7 /* startupscreen-hd.png */; };
+		F23C30EA16B5C55D00FD9CE7 /* startupscreen-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30E716B5C55D00FD9CE7 /* startupscreen-ipadhd.png */; };
+		F23C30EB16B5C55D00FD9CE7 /* startupscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30E816B5C55D00FD9CE7 /* startupscreen.png */; };
+		F23C30EF16B5CD1900FD9CE7 /* 72logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30EE16B5CD1900FD9CE7 /* 72logo.png */; };
+		F23C30F116B5CD7900FD9CE7 /* 144logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F016B5CD7900FD9CE7 /* 144logo.png */; };
 		F2C7DA7316B595B0009FBC1F /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7416B595B0009FBC1F /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3A16B595B0009FBC1F /* CCBKeyframe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7516B595B0009FBC1F /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3C16B595B0009FBC1F /* CCBReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -210,6 +217,13 @@
 		F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShotFire.mp3; sourceTree = "<group>"; };
 		F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startConfirm.mp3; sourceTree = "<group>"; };
 		F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = turretDeploy.mp3; sourceTree = "<group>"; };
+		F23C30E216B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		F23C30E416B5C22400FD9CE7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		F23C30E616B5C55D00FD9CE7 /* startupscreen-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startupscreen-hd.png"; sourceTree = "<group>"; };
+		F23C30E716B5C55D00FD9CE7 /* startupscreen-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startupscreen-ipadhd.png"; sourceTree = "<group>"; };
+		F23C30E816B5C55D00FD9CE7 /* startupscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startupscreen.png; sourceTree = "<group>"; };
+		F23C30EE16B5CD1900FD9CE7 /* 72logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 72logo.png; path = ../../72logo.png; sourceTree = "<group>"; };
+		F23C30F016B5CD7900FD9CE7 /* 144logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144logo.png; sourceTree = SOURCE_ROOT; };
 		F2C7DA3716B595B0009FBC1F /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		F2C7DA3916B595B0009FBC1F /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -406,6 +420,10 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F23C30EE16B5CD1900FD9CE7 /* 72logo.png */,
+				F23C30F016B5CD7900FD9CE7 /* 144logo.png */,
+				F23C30E416B5C22400FD9CE7 /* Default-Landscape~ipad.png */,
+				F23C30E216B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png */,
 				F23C30B916B5BE0600FD9CE7 /* Sound */,
 				F2C7DAA216B5B2A8009FBC1F /* UI stuff */,
 				6E4066FA16B51A47009ADC89 /* superlamp.png */,
@@ -682,6 +700,9 @@
 		F2C7DAA216B5B2A8009FBC1F /* UI stuff */ = {
 			isa = PBXGroup;
 			children = (
+				F23C30E616B5C55D00FD9CE7 /* startupscreen-hd.png */,
+				F23C30E716B5C55D00FD9CE7 /* startupscreen-ipadhd.png */,
+				F23C30E816B5C55D00FD9CE7 /* startupscreen.png */,
 				F2C7DAA316B5B2A8009FBC1F /* MenuSpriteSheet-hd.plist */,
 				F2C7DAA416B5B2A8009FBC1F /* MenuSpriteSheet-hd.png */,
 				F2C7DAA516B5B2A8009FBC1F /* MenuSpriteSheet-ipadhd.plist */,
@@ -806,6 +827,13 @@
 				F23C30DC16B5BE0600FD9CE7 /* ShotFire.mp3 in Resources */,
 				F23C30DD16B5BE0600FD9CE7 /* startConfirm.mp3 in Resources */,
 				F23C30DE16B5BE0600FD9CE7 /* turretDeploy.mp3 in Resources */,
+				F23C30E316B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png in Resources */,
+				F23C30E516B5C22400FD9CE7 /* Default-Landscape~ipad.png in Resources */,
+				F23C30E916B5C55D00FD9CE7 /* startupscreen-hd.png in Resources */,
+				F23C30EA16B5C55D00FD9CE7 /* startupscreen-ipadhd.png in Resources */,
+				F23C30EB16B5C55D00FD9CE7 /* startupscreen.png in Resources */,
+				F23C30EF16B5CD1900FD9CE7 /* 72logo.png in Resources */,
+				F23C30F116B5CD7900FD9CE7 /* 144logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

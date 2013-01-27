@@ -8,9 +8,6 @@
 
 #import "CancerCell.h"
 
-#define PI 3.14159265
-#define DEGREES_TO_RADIANS(x) (x*PI/180.0)
-
 @interface CancerCollection ()
 @property (nonatomic, strong) NSMutableArray *cells;
 @property (nonatomic, weak) GamePlayLayer *layer;
@@ -99,11 +96,12 @@
                 
                 // either we grew, or we clear...
                 self.growDirections &= ~mask;
-            }
-            
-            if(!self.growDirections) {
-                [self runAction:[CCTintTo actionWithDuration:1.0f red:0xff green:0 blue:0]];
-               // self.texture= collection.cancerDormant;
+
+                if(!self.growDirections) {
+                    // [self runAction:[CCTintTo actionWithDuration:1.0f red:0xff green:0 blue:0]];
+                   // self.texture= collection.cancerDormant;
+                }
+                break; // only do one each time
             }
         }
         self.lastGrowth= [NSDate timeIntervalSinceReferenceDate];
@@ -226,7 +224,7 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
 
     for(int rx= rXStart; rx<= rXEnd; rx++)
     {
-        for(int ry= rYStart; ry<= rYStart; ry++)
+        for(int ry= rYStart; ry<= rYEnd; ry++)
         {
             for(CancerCell *cell in self.cells)
             {

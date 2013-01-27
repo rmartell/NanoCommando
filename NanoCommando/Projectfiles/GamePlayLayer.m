@@ -61,48 +61,50 @@
     
 }
 
+-(void)setupCancerCells {
+    self.cancerCells= [[CancerCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
+    [self.cancerCells seed];
+}
+
+-(void)setupCollisionMask {
+
+    NSURL *collisionURL = [[NSBundle mainBundle] URLForResource:@"Collision" withExtension:@"bm"];
+    NSData *data= [NSData dataWithContentsOfURL:collisionURL];
+    self.collisionMask= [[GJCollisionBitmap alloc] initWithWidth:MAP_WIDTH height:MAP_HEIGHT
+                                                     bytesPerRow:MAP_WIDTH/8 andData:data];
+}
+
+-(void)setupBatchNode {
+    
+    // pre load the sprite frames from the texture atlas
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
+    
+    // setup batchNode
+    CCLOG(@"Setting up batchNode");
+    batchNode = [CCSpriteBatchNode batchNodeWithFile:@"NanoCommando.pvr.ccz"];
+    [self addChild:batchNode z:kBatchNodeZ];
+}
+
 
 //-(id) initWithTileLayer:(TileMapLayer *)tileLayer {
 -(id) initWithGame {
     if ((self = [super init])) {
         
         screenSize = [CCDirector sharedDirector].screenSize;
-
-        // pre load the sprite frames from the texture atlas
-		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
-        
-        // setup batchNode
-        CCLOG(@"Setting up batchNode");
-        batchNode = [CCSpriteBatchNode batchNodeWithFile:@"NanoCommando.pvr.ccz"];
-        [self addChild:batchNode z:kBatchNodeZ];
-        
-        CCSprite* dummy = [CCSprite spriteWithFile:@"game-events.png"];
-        dummy.position = ccp(screenSize.width/3,screenSize.height/3);
-        [self addChild:dummy z:kGameObjectsZ];
-        
-        [self setupBackground];
-        
-        [self setupPlayerShip];
-        
     
-        
-        NSURL *collisionURL = [[NSBundle mainBundle] URLForResource:@"Collision" withExtension:@"bm"];
-        NSData *data= [NSData dataWithContentsOfURL:collisionURL];
-        self.collisionMask= [[GJCollisionBitmap alloc] initWithWidth:MAP_WIDTH height:MAP_HEIGHT
-                                                         bytesPerRow:MAP_WIDTH/8 andData:data];
-        
-        self.cancerCells= [[CancerCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
-        [self.cancerCells seed];
-        
+        [self setupBatchNode];
+        [self setupBackground];
+        [self setupPlayerShip];
+        [self setupCollisionMask];
+        [self setupCancerCells];
         [self scheduleUpdate];
+        
     }
     return self;
 }
 
 -(void)update:(ccTime)delta {
     [self.cancerCells update:delta];
-    
-  //  [self positionLayerWithPlayer];
 }
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)point

@@ -41,7 +41,7 @@
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
-        self.scale= 0.5;
+//        self.scale= 0.5;
         [self scheduleUpdate];
         [self setupAnimation];
         

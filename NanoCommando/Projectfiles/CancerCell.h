@@ -21,5 +21,6 @@
 -(void)seed;
 
 -(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt;
+-(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt maxNumber:(int)max;
 -(NSArray *)cellsIntersectedByLineSegmentStart:(CGPoint)pt end:(CGPoint)end;
 @end

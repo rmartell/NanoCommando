@@ -259,15 +259,22 @@
 
 -(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt
 {
+    return [self cancerCellsInRange:range ofPoint:pt maxNumber:-1];
+}
+
+
+-(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt maxNumber:(int)max
+{
     NSMutableArray *array= [NSMutableArray arrayWithCapacity:10];
     int rXStart= ROUGH_X_FROM_X(pt.x - range);
     int rXEnd= ROUGH_X_FROM_X(pt.x + range);
     int rYStart= ROUGH_Y_FROM_Y(pt.y - range);
     int rYEnd= ROUGH_Y_FROM_Y(pt.y + range);
-
-    for(int rx= rXStart; rx<= rXEnd; rx++)
+    BOOL done= false;
+    
+    for(int rx= rXStart; rx<= rXEnd && !done; rx++)
     {
-        for(int ry= rYStart; ry<= rYEnd; ry++)
+        for(int ry= rYStart; ry<= rYEnd && !done; ry++)
         {
             for(CancerCell *cell in self.cells)
             {
@@ -279,6 +286,10 @@
                     if((dx*dx + dy*dy)<range*range)
                     {
                         [array addObject:cell];
+                        if(max==(int)array.count) // -1 means all of them.
+                        {
+                            done= YES;
+                        }
                     }
                 }
             }

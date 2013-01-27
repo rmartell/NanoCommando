@@ -35,7 +35,7 @@
         self.audioFileNames= [NSArray arrayWithObjects:
                               @"invalidPlacement.mp3",
                               @"turretDeploy.mp3",
-                              @"shotFire.mp3",
+                              @"shotFire2.mp3",
                               @"deadCell.mp3",
                               @"pickupItem.mp3",
                               @"powerupPing.mp3",
@@ -45,6 +45,7 @@
                               @"pause.mp3",
                               @"shipHum.mp3",
                               @"shipHumShort.mp3",
+                              @"noMoreTurrets2.mp3",
                               nil];
 
         NSAssert(NUMBER_OF_SOUND_TYPES==self.audioFileNames.count, @"Counts don't match %d != %d", NUMBER_OF_SOUND_TYPES, self.audioFileNames.count);

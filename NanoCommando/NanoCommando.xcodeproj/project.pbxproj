@@ -10,6 +10,8 @@
 		6E1FAABD16B468F200B711AF /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABC16B468F200B711AF /* map.tmx */; };
 		6E1FAABF16B4692000B711AF /* LvMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAABE16B4692000B711AF /* LvMap.png */; };
 		6E1FAAC416B47E8600B711AF /* cancer.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC316B47E8600B711AF /* cancer.png */; };
+		6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */; };
+		6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */; };
 		DC2721C0160CB0DF00D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */; };
 		DC3C6FB514B8A9BA00DAD281 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3C6FB414B8A9BA00DAD281 /* fps_images-hd.png */; };
 		DC65615C13A969B600A7AC53 /* libbox2d-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615013A969B600A7AC53 /* libbox2d-ios.a */; };
@@ -53,6 +55,8 @@
 		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMap.png; sourceTree = "<group>"; };
 		6E1FAAC316B47E8600B711AF /* cancer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancer.png; sourceTree = "<group>"; };
+		6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickedge.png; sourceTree = "<group>"; };
+		6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickcenter.png; sourceTree = "<group>"; };
 		DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC3C6FB414B8A9BA00DAD281 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */,
+				6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */,
 				6E1FAAC316B47E8600B711AF /* cancer.png */,
 				6E1FAABE16B4692000B711AF /* LvMap.png */,
 				6E1FAABC16B468F200B711AF /* map.tmx */,
@@ -392,6 +398,8 @@
 				6E1FAABD16B468F200B711AF /* map.tmx in Resources */,
 				6E1FAABF16B4692000B711AF /* LvMap.png in Resources */,
 				6E1FAAC416B47E8600B711AF /* cancer.png in Resources */,
+				6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */,
+				6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

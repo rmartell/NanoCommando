@@ -7,11 +7,11 @@
             <key>ipaddrawings.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,57},{370,143}}</string>
+                <string>{{57,696},{370,143}}</string>
                 <key>offset</key>
                 <string>{0,9}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{370,143}}</string>
                 <key>sourceSize</key>
@@ -20,11 +20,11 @@
             <key>nanocommando.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1179,57},{480,68}}</string>
+                <string>{{429,813},{480,68}}</string>
                 <key>offset</key>
                 <string>{0,-4}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,8},{480,68}}</string>
                 <key>sourceSize</key>
@@ -46,24 +46,37 @@
             <key>startbutton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,2},{167,53}}</string>
+                <string>{{2,696},{167,53}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{167,53}}</string>
                 <key>sourceSize</key>
                 <string>{167,53}</string>
             </dict>
+            <key>tapanddrag.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{429,696},{337,115}}</string>
+                <key>offset</key>
+                <string>{1,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{10,9},{337,115}}</string>
+                <key>sourceSize</key>
+                <string>{355,127}</string>
+            </dict>
             <key>thumbstick edge.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1034,429},{96,98}}</string>
+                <string>{{768,696},{96,98}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{1,1},{96,98}}</string>
                 <key>sourceSize</key>
@@ -72,7 +85,7 @@
             <key>thumbstickcenter.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1203,2},{36,36}}</string>
+                <string>{{57,841},{36,36}}</string>
                 <key>offset</key>
                 <string>{-1,1}</string>
                 <key>rotated</key>
@@ -90,9 +103,9 @@
             <key>realTextureFileName</key>
             <string>MenuSpriteSheet-hd.png</string>
             <key>size</key>
-            <string>{1249,696}</string>
+            <string>{1034,883}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2f21b881a4430ca9470c4f5df9547250$</string>
+            <string>$TexturePacker:SmartUpdate:fb79eaafa6b36e916f4720655ff5d857$</string>
             <key>textureFileName</key>
             <string>MenuSpriteSheet-hd.png</string>
         </dict>

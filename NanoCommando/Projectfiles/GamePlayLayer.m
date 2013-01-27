@@ -93,7 +93,7 @@
 -(void)setupBatchNode {
     
     // pre load the sprite frames from the texture atlas
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
+    //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"NanoCommando.plist"];
     
     // setup batchNode
     CCLOG(@"Setting up batchNode");

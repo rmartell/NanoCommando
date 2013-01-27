@@ -7,6 +7,7 @@
 //
 
 #import "CancerCell.h"
+#import "SoundManager.h"
 
 @interface CancerCollection ()
 @property (nonatomic, strong) NSMutableArray *cells;
@@ -331,6 +332,8 @@
 {
     // remove it.
     [self.cells removeObject:cell];
+    
+    [[SoundManager sharedSoundManager] playSound:kSoundCellDeath atPoint:cell.position];
     
     // This is gross; we reactivate everyone in our rough box.
     int rough_x= ROUGH_X_FROM_X(cell.position.x);

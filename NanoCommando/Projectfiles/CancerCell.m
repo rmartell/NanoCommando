@@ -32,6 +32,7 @@
 @property (nonatomic, assign) int generation;
 @property (nonatomic, assign) int roughX;
 @property (nonatomic, assign) int roughY;
+@property (nonatomic, assign) int fileSeed;
 @end
 
 #define CANCER_SIZE (32)
@@ -44,7 +45,7 @@
 }
 
 -(void)setupAnimation {
-    id normalAnim = [CCAnimation animationWithFrames:@"orange000" frameCount:8 delay:0.1f];
+    id normalAnim = [CCAnimation animationWithFrames:[NSString stringWithFormat:@"orange%i-",self.fileSeed] frameCount:8 delay:0.1f];
     normalAnimation = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:normalAnim]];
 }
 
@@ -53,7 +54,10 @@
 {
 	//if ((self = [super initWithTexture:texture]))
 //    if ((self = [super initWithSpriteFrameName:texture]))
-    if ((self = [super initWithSprite:@"orange0000" andLayer:layer]))
+    self.fileSeed = arc4random()%3;
+    NSString* filename = [NSString stringWithFormat:@"orange%i-0", self.fileSeed];
+    
+    if ((self = [super initWithSprite:filename andLayer:layer]))
 	{
         self.growDirections= 0x7f;
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];

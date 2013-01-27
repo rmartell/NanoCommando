@@ -212,7 +212,215 @@
                 <key>sourceSize</key>
                 <string>{640,640}</string>
             </dict>
-            <key>orange0000.png</key>
+            <key>orange0-0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,472},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,378},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,284},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,190},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1232,1918},{92,90}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{92,90}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,96},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,2},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange0-7.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1212,1100},{92,92}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1232,1824},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1216,1730},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1216,1636},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1216,1542},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1216,1448},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1216,1354},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1216,1542},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange1-7.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1232,1824},{90,92}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,92}}</string>
+                <key>sourceSize</key>
+                <string>{92,92}</string>
+            </dict>
+            <key>orange2-0.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1212,1006},{92,92}}</string>
@@ -225,7 +433,7 @@
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0001.png</key>
+            <key>orange2-1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1212,912},{92,92}}</string>
@@ -238,7 +446,7 @@
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0002.png</key>
+            <key>orange2-2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1212,818},{92,92}}</string>
@@ -251,7 +459,7 @@
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0003.png</key>
+            <key>orange2-3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1212,724},{92,92}}</string>
@@ -264,20 +472,20 @@
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0004.png</key>
+            <key>orange2-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1212,1100},{92,90}}</string>
+                <string>{{1216,1260},{90,92}}</string>
                 <key>offset</key>
-                <string>{0,-1}</string>
+                <string>{-1,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,2},{92,90}}</string>
+                <string>{{0,0},{90,92}}</string>
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0005.png</key>
+            <key>orange2-5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1212,630},{92,92}}</string>
@@ -290,7 +498,7 @@
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0006.png</key>
+            <key>orange2-6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1138,1892},{92,92}}</string>
@@ -303,7 +511,7 @@
                 <key>sourceSize</key>
                 <string>{92,92}</string>
             </dict>
-            <key>orange0007.png</key>
+            <key>orange2-7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1044,1892},{92,92}}</string>
@@ -599,7 +807,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e9cceb4e45e6485bcef18e9500c59bc5$</string>
+            <string>$TexturePacker:SmartUpdate:740d6eafba6cfe8d0fe65fb9d46aaac9$</string>
             <key>textureFileName</key>
             <string>NanoCommando-hd.pvr.ccz</string>
         </dict>

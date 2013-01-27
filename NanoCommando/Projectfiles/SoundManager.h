@@ -22,6 +22,7 @@ typedef enum {
     kSoundMoveShipLong,
     kSoundMoveShipShort,
     kSoundNoMoreTurrets,
+    kSoundHeartBeat,
     NUMBER_OF_SOUND_TYPES
 } SoundType;
 

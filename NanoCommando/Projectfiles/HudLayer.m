@@ -76,9 +76,17 @@
         
 //        CCLOG(@"==========INIT CALLED===========");
         [self scheduleUpdate];
+        [self schedule:@selector(playHeartBeat) interval:1.0];
     }
     return self;
 }
+
+-(void)playHeartBeat {
+    
+    [[SoundManager sharedSoundManager] playSound:kSoundHeartBeat];
+    
+}
+
 
 -(void)setGameLayer:(GamePlayLayer *)gameplayLayer  {
     self.theGamePlayLayer = gameplayLayer;

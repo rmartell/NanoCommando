@@ -90,6 +90,7 @@
                                                      bytesPerRow:MAP_WIDTH/8 andData:data];
 }
 
+
 -(void)setupBatchNode {
     
     // pre load the sprite frames from the texture atlas

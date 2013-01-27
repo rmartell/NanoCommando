@@ -14,6 +14,7 @@
 #import "HudLayer.h"
 #import "Turret.h"
 #import "LightLayer.h"
+#import "PowerUpCollection.h"
 
 
 @implementation GamePlayLayer {
@@ -70,6 +71,11 @@
     [self.cancerCells seed];
 }
 
+-(void)setupPowerUps {
+    self.powerups= [[PowerUpCollection alloc] initWithLayer:self];
+}
+
+
 -(void)setupTurrets {
     self.turrets= [[TurretCollection alloc] initWithLayer:self andCollisionMask:self.collisionMask];
     [self.turrets seed]; // this is NOOP once testing is complete
@@ -115,6 +121,7 @@
         [self setupPlayerShip];
         [self setupCollisionMask];
         [self setupCancerCells];
+        [self setupPowerUps];
         [self scheduleUpdate];
         [self setupTurrets];
     }
@@ -124,6 +131,7 @@
 -(void)update:(ccTime)delta {
     [self.cancerCells update:delta];
     [self.turrets update:delta];
+    [self.powerups update:delta];
 }
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)point

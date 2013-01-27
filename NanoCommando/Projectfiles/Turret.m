@@ -176,11 +176,11 @@ typedef enum  {
 {
     BOOL matched_bearing= NO;
     float desiredRotation= fmod(REAL_THETA_TO_COCOS_DEGREES(cc_radians_between_points(self.position, self.target))+180.0, 360);
-#if false
-    NSLog(@"Turret %@ turning towards %lf (current: %lf) Elapsed: %lf", self, desiredRotation, self.rotation, ticksElapsed);
-#endif
     float rotationDeltaDegrees = ticksElapsed * TURRET_ROTATIONAL_VELOCITY;
     float newRotation= self.rotation;
+
+
+#if true
     
     // this will not always turn in the optimal direction (FIXME)
     if(desiredRotation > self.rotation)
@@ -189,7 +189,36 @@ typedef enum  {
     } else {
         newRotation= fmaxf(self.rotation-rotationDeltaDegrees, desiredRotation);
     }
+#else
+    // this is broken, and I've wated too much time on it already..
+    // should we turn clockwise or counterclockwise?
+    float dx = self.target.x - self.position.x;
+    float dy = self.target.y - self.position.y;
     
+    float cp= dx*sin(DEGREES_TO_RADIANS(self.rotation)) + dy *cos(DEGREES_TO_RADIANS(self.rotation));
+    while(rotationDeltaDegrees>0)
+    {
+        if(cp<0)
+        {
+//            NSLog(@"Clockwise! Target: %f, Current: %f", desiredRotation, self.rotation);
+            newRotation = ((int)(newRotation +  1)+360)%360;
+        } else {
+//            NSLog(@"AntiClockwise! Target: %f, Current: %f", desiredRotation, self.rotation);
+            newRotation = ((int)(newRotation -  1)+360)%360;
+        }
+        if((((int)(newRotation - desiredRotation)+360)%360)<2)
+        {
+            newRotation= desiredRotation;
+            break;
+        }
+        rotationDeltaDegrees-= 1.0;
+    }
+#endif
+    
+#if true
+    NSLog(@"Turret %@ turning towards %lf (current: %lf) New: %lf Elapsed: %lf", self, desiredRotation, self.rotation, newRotation, ticksElapsed);
+#endif
+
     self.rotation= newRotation;
     if(self.rotation==desiredRotation)
     {
@@ -291,4 +320,11 @@ float cc_radians_between_points(CGPoint center, CGPoint target) {
     }
     
     return theta;
+}
+
+float distance_between_points(CGPoint center, CGPoint target)
+{
+    float dx = target.x - center.x;
+    float dy = target.y - center.y;
+    return sqrt(dx*dx + dy*dy);
 }

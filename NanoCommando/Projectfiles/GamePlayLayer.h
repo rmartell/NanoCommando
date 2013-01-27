@@ -14,6 +14,7 @@
 @class CancerCollection;
 @class TurretCollection;
 @class GJCollisionBitmap;
+@class PowerUpCollection;
 
 @interface GamePlayLayer : CCLayer
 
@@ -27,6 +28,7 @@
 @property (nonatomic, strong) TurretCollection *turrets;
 @property (nonatomic, strong) TileMapLayer* tileLayer;
 @property (nonatomic, strong) GJCollisionBitmap *collisionMask;
+@property (nonatomic, strong) PowerUpCollection *powerups;
 
 -(CGPoint)screenPointToWorldPoint:(CGPoint)pt;
 @end

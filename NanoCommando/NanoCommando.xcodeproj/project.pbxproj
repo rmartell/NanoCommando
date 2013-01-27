@@ -80,6 +80,18 @@
 		F2C7DA8D16B595B0009FBC1F /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA7216B595B0009FBC1F /* SSZipArchive.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA9116B5A47B009FBC1F /* NanoCommandoMainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DA9016B5A47B009FBC1F /* NanoCommandoMainMenu.ccbi */; };
 		F2C7DA9B16B5A4F8009FBC1F /* NCMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA9A16B5A4F8009FBC1F /* NCMainMenu.m */; };
+		F2C7DA9E16B5ADA5009FBC1F /* GameManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA9D16B5ADA5009FBC1F /* GameManger.m */; };
+		F2C7DAA116B5B17F009FBC1F /* LaunchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DAA016B5B17F009FBC1F /* LaunchScene.m */; };
+		F2C7DAAA16B5B2A9009FBC1F /* MenuSpriteSheet-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA316B5B2A8009FBC1F /* MenuSpriteSheet-hd.plist */; };
+		F2C7DAAB16B5B2A9009FBC1F /* MenuSpriteSheet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA416B5B2A8009FBC1F /* MenuSpriteSheet-hd.png */; };
+		F2C7DAAC16B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA516B5B2A8009FBC1F /* MenuSpriteSheet-ipadhd.plist */; };
+		F2C7DAAD16B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA616B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.png */; };
+		F2C7DAAE16B5B2A9009FBC1F /* MenuSpriteSheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA716B5B2A9009FBC1F /* MenuSpriteSheet.plist */; };
+		F2C7DAAF16B5B2A9009FBC1F /* MenuSpriteSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA816B5B2A9009FBC1F /* MenuSpriteSheet.png */; };
+		F2C7DAB016B5B2A9009FBC1F /* orangeglow.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C7DAA916B5B2A9009FBC1F /* orangeglow.png */; };
+		F2C7DAB116B5B924009FBC1F /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BBC8785C16B4F3E900460547 /* map.tmx */; };
+		F2C7DAB216B5B92E009FBC1F /* LvMap.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC8785B16B4F3E900460547 /* LvMap.png */; };
+		F2C7DAB316B5B932009FBC1F /* Collision.bm in Resources */ = {isa = PBXBuildFile; fileRef = BBC8785A16B4F3E900460547 /* Collision.bm */; };
 		F2CA83A316B4F7B4008248B3 /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA83A216B4F7B4008248B3 /* Heart.m */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +224,17 @@
 		F2C7DA9016B5A47B009FBC1F /* NanoCommandoMainMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanoCommandoMainMenu.ccbi; sourceTree = "<group>"; };
 		F2C7DA9916B5A4F8009FBC1F /* NCMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCMainMenu.h; path = Projectfiles/NCMainMenu.h; sourceTree = SOURCE_ROOT; };
 		F2C7DA9A16B5A4F8009FBC1F /* NCMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NCMainMenu.m; path = Projectfiles/NCMainMenu.m; sourceTree = SOURCE_ROOT; };
+		F2C7DA9C16B5ADA5009FBC1F /* GameManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManger.h; sourceTree = "<group>"; };
+		F2C7DA9D16B5ADA5009FBC1F /* GameManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManger.m; sourceTree = "<group>"; };
+		F2C7DA9F16B5B17F009FBC1F /* LaunchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScene.h; sourceTree = "<group>"; };
+		F2C7DAA016B5B17F009FBC1F /* LaunchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScene.m; sourceTree = "<group>"; };
+		F2C7DAA316B5B2A8009FBC1F /* MenuSpriteSheet-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MenuSpriteSheet-hd.plist"; sourceTree = "<group>"; };
+		F2C7DAA416B5B2A8009FBC1F /* MenuSpriteSheet-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuSpriteSheet-hd.png"; sourceTree = "<group>"; };
+		F2C7DAA516B5B2A8009FBC1F /* MenuSpriteSheet-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MenuSpriteSheet-ipadhd.plist"; sourceTree = "<group>"; };
+		F2C7DAA616B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuSpriteSheet-ipadhd.png"; sourceTree = "<group>"; };
+		F2C7DAA716B5B2A9009FBC1F /* MenuSpriteSheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuSpriteSheet.plist; sourceTree = "<group>"; };
+		F2C7DAA816B5B2A9009FBC1F /* MenuSpriteSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuSpriteSheet.png; sourceTree = "<group>"; };
+		F2C7DAA916B5B2A9009FBC1F /* orangeglow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeglow.png; sourceTree = "<group>"; };
 		F2CA83A116B4F7B4008248B3 /* Heart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heart.h; sourceTree = "<group>"; };
 		F2CA83A216B4F7B4008248B3 /* Heart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -325,6 +348,8 @@
 			children = (
 				F2C7DA3516B595B0009FBC1F /* CocosBuilder */,
 				F237496816B47D55006FCE54 /* Constants.h */,
+				F2C7DA9C16B5ADA5009FBC1F /* GameManger.h */,
+				F2C7DA9D16B5ADA5009FBC1F /* GameManger.m */,
 				F21026C516B444A300C70F6D /* GameObjects */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
@@ -339,6 +364,7 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2C7DAA216B5B2A8009FBC1F /* UI stuff */,
 				6E4066FA16B51A47009ADC89 /* superlamp.png */,
 				F2CA839C16B4F017008248B3 /* HUD */,
 				F237496016B45FC5006FCE54 /* Sprites */,
@@ -382,6 +408,8 @@
 				DC81EAA8141280D400735365 /* TileMapLayer.m */,
 				6E4066DA16B5023B009ADC89 /* LightLayer.h */,
 				6E4066DB16B5023B009ADC89 /* LightLayer.m */,
+				F2C7DA9F16B5B17F009FBC1F /* LaunchScene.h */,
+				F2C7DAA016B5B17F009FBC1F /* LaunchScene.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -571,6 +599,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F2C7DAA216B5B2A8009FBC1F /* UI stuff */ = {
+			isa = PBXGroup;
+			children = (
+				F2C7DAA316B5B2A8009FBC1F /* MenuSpriteSheet-hd.plist */,
+				F2C7DAA416B5B2A8009FBC1F /* MenuSpriteSheet-hd.png */,
+				F2C7DAA516B5B2A8009FBC1F /* MenuSpriteSheet-ipadhd.plist */,
+				F2C7DAA616B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.png */,
+				F2C7DAA716B5B2A9009FBC1F /* MenuSpriteSheet.plist */,
+				F2C7DAA816B5B2A9009FBC1F /* MenuSpriteSheet.png */,
+				F2C7DAA916B5B2A9009FBC1F /* orangeglow.png */,
+			);
+			path = "UI stuff";
+			sourceTree = "<group>";
+		};
 		F2CA839C16B4F017008248B3 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +698,16 @@
 				F2C7DA8616B595B0009FBC1F /* README.md in Resources */,
 				F2C7DA8816B595B0009FBC1F /* LICENSE in Resources */,
 				F2C7DA9116B5A47B009FBC1F /* NanoCommandoMainMenu.ccbi in Resources */,
+				F2C7DAAA16B5B2A9009FBC1F /* MenuSpriteSheet-hd.plist in Resources */,
+				F2C7DAAB16B5B2A9009FBC1F /* MenuSpriteSheet-hd.png in Resources */,
+				F2C7DAAC16B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.plist in Resources */,
+				F2C7DAAD16B5B2A9009FBC1F /* MenuSpriteSheet-ipadhd.png in Resources */,
+				F2C7DAAE16B5B2A9009FBC1F /* MenuSpriteSheet.plist in Resources */,
+				F2C7DAAF16B5B2A9009FBC1F /* MenuSpriteSheet.png in Resources */,
+				F2C7DAB016B5B2A9009FBC1F /* orangeglow.png in Resources */,
+				F2C7DAB116B5B924009FBC1F /* map.tmx in Resources */,
+				F2C7DAB216B5B92E009FBC1F /* LvMap.png in Resources */,
+				F2C7DAB316B5B932009FBC1F /* Collision.bm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +757,8 @@
 				F2C7DA8C16B595B0009FBC1F /* zip.c in Sources */,
 				F2C7DA8D16B595B0009FBC1F /* SSZipArchive.m in Sources */,
 				F2C7DA9B16B5A4F8009FBC1F /* NCMainMenu.m in Sources */,
+				F2C7DA9E16B5ADA5009FBC1F /* GameManger.m in Sources */,
+				F2C7DAA116B5B17F009FBC1F /* LaunchScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

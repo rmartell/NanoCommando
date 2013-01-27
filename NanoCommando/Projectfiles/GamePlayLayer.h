@@ -18,6 +18,7 @@
 @interface GamePlayLayer : CCLayer
 
 -(id) initWithGame;
++(CCScene*)scene;
 
 @property (nonatomic, weak) CCSpriteBatchNode* batchNode;
 @property (nonatomic, weak) Heart* heart;

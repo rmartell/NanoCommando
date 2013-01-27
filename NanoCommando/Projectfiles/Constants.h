@@ -1,6 +1,16 @@
 
 
 typedef enum {
+    
+    kNoSceneUnitialized,
+    kLaunchScene,
+    kMainMenuScene,
+    kGameScene,
+    kKillScene
+    
+}SceneTypes;
+
+typedef enum {
     kBackgroundZ,
     kGameZ,
     kGameObjectsZ,

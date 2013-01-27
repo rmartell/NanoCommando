@@ -8,7 +8,7 @@
 
 #import "NCMainMenu.h"
 #import "CCBReader.h"
-#import "SimpleAudioEngine.h"
+#import "GameManger.h"
 
 
 @implementation NCMainMenu
@@ -20,6 +20,7 @@
 
 -(void)startPressed:(id)sender {
     CCLOG(@"______Start Pressed!_____");
+    [[GameManager sharedGameManager] runSceneWithID:kGameScene];
 }
 
 

@@ -7,7 +7,7 @@
             <key>ipaddrawings.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,351},{185,72}}</string>
+                <string>{{30,351},{185,72}}</string>
                 <key>offset</key>
                 <string>{0,4}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>nanocommando.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{241,351},{240,34}}</string>
+                <string>{{217,413},{240,34}}</string>
                 <key>offset</key>
                 <string>{0,-2}</string>
                 <key>rotated</key>
@@ -46,20 +46,33 @@
             <key>startbutton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{241,387},{83,26}}</string>
+                <string>{{2,351},{83,26}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{83,26}}</string>
                 <key>sourceSize</key>
                 <string>{83,26}</string>
             </dict>
+            <key>tapanddrag.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{217,351},{170,60}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{4,3},{170,60}}</string>
+                <key>sourceSize</key>
+                <string>{178,64}</string>
+            </dict>
             <key>thumbstick edge.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{189,351},{50,50}}</string>
+                <string>{{459,351},{50,50}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>thumbstickcenter.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{189,403},{19,19}}</string>
+                <string>{{30,425},{19,19}}</string>
                 <key>offset</key>
                 <string>{-1,1}</string>
                 <key>rotated</key>
@@ -90,9 +103,9 @@
             <key>realTextureFileName</key>
             <string>MenuSpriteSheet.png</string>
             <key>size</key>
-            <string>{520,425}</string>
+            <string>{520,449}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ee05a47db8b11b2908894c117175183f$</string>
+            <string>$TexturePacker:SmartUpdate:5cda1721bcfd5bb8e1f9b9c322a0fd26$</string>
             <key>textureFileName</key>
             <string>MenuSpriteSheet.png</string>
         </dict>

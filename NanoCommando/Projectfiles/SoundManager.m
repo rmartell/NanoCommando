@@ -46,6 +46,7 @@
                               @"shipHum.mp3",
                               @"shipHumShort.mp3",
                               @"noMoreTurrets2.mp3",
+                              @"nanoCommandRedux.mp3",
                               nil];
 
         NSAssert(NUMBER_OF_SOUND_TYPES==self.audioFileNames.count, @"Counts don't match %d != %d", NUMBER_OF_SOUND_TYPES, self.audioFileNames.count);
@@ -91,5 +92,24 @@
         [[SimpleAudioEngine sharedEngine] playEffect:self.audioFileNames[type] pitch:1.0
                                              pan:pan gain:gain];
     }    
+}
+
+-(void)startBackgroundMusic:(SoundType)type
+{
+    NSAssert(type>=0 && type<self.audioFileNames.count, @"Index %d out of range!", type);
+    if(!self.backgroundMusicPlaying)
+    {
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:self.audioFileNames[type] loop:YES];
+        self.backgroundMusicPlaying= YES;
+    }
+}
+
+-(void)stopBackgroundMusic
+{
+    if(self.backgroundMusicPlaying)
+    {
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        self.backgroundMusicPlaying= NO;
+    }
 }
 @end

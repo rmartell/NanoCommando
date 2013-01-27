@@ -16,6 +16,7 @@
 #import "LightLayer.h"
 #import "PowerUpCollection.h"
 #import "GameManger.h"
+#import "SoundManager.h"
 
 @interface GamePlayLayer ()
 @property (nonatomic, weak) LightLayer *lightLayer;
@@ -134,6 +135,8 @@
         [self scheduleUpdate];
         [self setupTurrets];
         
+        [[SoundManager sharedSoundManager] startBackgroundMusic:kTheme];
+        
         [HUDLayer setGameLayer:self];
     }
     return self;
@@ -163,6 +166,7 @@
     
     if(self.playerShip.deathState==PlayerDeathStateDead)
     {
+        [[SoundManager sharedSoundManager] stopBackgroundMusic];
         [[GameManager sharedGameManager] runSceneWithID:kKillScene];
     }
 }

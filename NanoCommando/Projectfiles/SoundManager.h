@@ -22,14 +22,20 @@ typedef enum {
     kSoundMoveShipLong,
     kSoundMoveShipShort,
     kSoundNoMoreTurrets,
+    kTheme,
     NUMBER_OF_SOUND_TYPES
 } SoundType;
 
 @interface SoundManager : NSObject
 @property (nonatomic, assign) CGPoint listenerPoint;
+@property (nonatomic, assign) BOOL backgroundMusicPlaying;
 
 +(SoundManager *)sharedSoundManager;
 
 -(void)playSound:(SoundType)type;
 -(void)playSound:(SoundType)type atPoint:(CGPoint)pt;
+
+-(void)startBackgroundMusic:(SoundType)type;
+-(void)stopBackgroundMusic;
+
 @end

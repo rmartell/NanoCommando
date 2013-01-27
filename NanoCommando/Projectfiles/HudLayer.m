@@ -167,22 +167,16 @@
         
         
         
-#if DEBUG
-        CCLOG(@"panSprite.position: %f,%f\nself.theta: %f\nself.throttle: %f", panSprite.position.x, panSprite.position.y, self.theta, self.throttle);
-#endif
+//        CCLOG(@"panSprite.position: %f,%f\nself.theta: %f\nself.throttle: %f", panSprite.position.x, panSprite.position.y, self.theta, self.throttle);
     }
     else if (input.gestureTapRecognizedThisFrame) {
         // do some deployment
         panSprite.position = ccp(input.gestureTapLocation.x, input.gestureTapLocation.y);
-#if DEBUG
-        CCLOG(@"gesture tap: %f,%f", panSprite.position.x, panSprite.position.y);
-#endif
+//        CCLOG(@"gesture tap: %f,%f", panSprite.position.x, panSprite.position.y);
     }
     
     else if (!input.gesturePanBegan && !self.startpan) {
-#if DEBUG
-        CCLOG(@"TOUCH ENDED---------");
-#endif
+//        CCLOG(@"TOUCH ENDED---------");
         panSprite.visible = false;
         panSprite2.visible = false;
         self.startpan = true;

@@ -5,6 +5,7 @@ typedef enum {
     kGameObjectsZ,
     kBatchNodeZ,
    // kPlayerShipZ,
+    kTurretZ,
     kEffectsZ
 } metaZOrders;
 

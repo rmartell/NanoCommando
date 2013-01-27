@@ -16,6 +16,7 @@
 @property (nonatomic, weak) GamePlayLayer *layer;
 @property (nonatomic, weak) GJCollisionBitmap *collision;
 @property (nonatomic, assign) NSTimeInterval lastUpdate;
+@property (nonatomic, assign) NSInteger startIndex;
 
 @property (nonatomic, strong) NSString* textureFrameName;
 //@property (nonatomic, strong) CCTexture2D *cancerLive;
@@ -33,6 +34,11 @@
 @property (nonatomic, assign) int roughY;
 @end
 
+#define CANCER_SIZE (32)
+
+#define ROUGH_X_FROM_X(x) ((x)/(4*CANCER_SIZE))
+#define ROUGH_Y_FROM_Y(y) ((y)/(4*CANCER_SIZE))
+
 @implementation CancerCell
 
 //-(id) initWithGameLayer:(GamePlayLayer*)layer andTexture:(CCTexture2D *)texture
@@ -46,6 +52,13 @@
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];
 	}
 	return self;
+}
+
+-(void)setPosition:(CGPoint)position
+{
+    self.roughX= ROUGH_X_FROM_X(position.x);
+    self.roughY= ROUGH_Y_FROM_Y(position.y);
+    [super setPosition:position];
 }
 
 -(BOOL)isGrowing
@@ -89,7 +102,7 @@
             }
             
             if(!self.growDirections) {
-                [self runAction:[CCTintTo actionWithDuration:1.0f red:5 green:5 blue:5]];
+                [self runAction:[CCTintTo actionWithDuration:1.0f red:0xff green:0 blue:0]];
                // self.texture= collection.cancerDormant;
             }
         }
@@ -123,11 +136,18 @@
     
     if(valid)
     {
+        int rough_x= ROUGH_X_FROM_X(pt.x);
+        int rough_y= ROUGH_Y_FROM_Y(pt.y);
+        
         // check if inside another cancer cell...
         for(CancerCell *c in self.cells)
         {
-            if(cell != c && [c ptInside:pt])
+            if(cell != c &&
+               abs(rough_x-c.roughX)<=1 &&
+               abs(rough_y-c.roughY)<=1 &&
+               [c ptInside:pt])
             {
+//                [c runAction:[CCTintTo actionWithDuration:1.0f red:0 green:0 blue:0xff]];
                 valid= NO;
                 break;
             }
@@ -137,8 +157,12 @@
         {
             for(CancerCell *c in others)
             {
-                if(cell != c && [c ptInside:pt])
+                if(cell != c &&
+                   abs(rough_x-c.roughX)<=1 &&
+                   abs(rough_y-c.roughY)<=1 &&
+                   [c ptInside:pt])
                 {
+//                    [c runAction:[CCTintTo actionWithDuration:1.0f red:0 green:0 blue:0xff]];
                     valid= NO;
                     break;
                 }
@@ -151,7 +175,7 @@
 
 -(void)update:(ccTime)ticksPassed
 {
-    return;
+//    return;
     // I _really_ don't like the ticksPassed in crap..
     if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1)
     {
@@ -175,8 +199,7 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         [self.cells addObjectsFromArray:newGrowth];
         self.lastUpdate= [NSDate timeIntervalSinceReferenceDate];
         NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
-        CCLOG(@"Total time spent: %lf", delta);
-
+        CCLOG(@"Total time calculating cancer spent: %lf", delta);
     }
 }
 
@@ -192,6 +215,38 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
     [self.layer.batchNode addChild:cell z:kCancerZ];
     [array addObject:cell];
 }
+
+-(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt
+{
+    NSMutableArray *array= [NSMutableArray arrayWithCapacity:10];
+    int rXStart= ROUGH_X_FROM_X(pt.x - range);
+    int rXEnd= ROUGH_X_FROM_X(pt.x + range);
+    int rYStart= ROUGH_Y_FROM_Y(pt.y - range);
+    int rYEnd= ROUGH_Y_FROM_Y(pt.y + range);
+
+    for(int rx= rXStart; rx<= rXEnd; rx++)
+    {
+        for(int ry= rYStart; ry<= rYStart; ry++)
+        {
+            for(CancerCell *cell in self.cells)
+            {
+                if(cell.roughY==ry && cell.roughX==rx)
+                {
+                    float dx= cell.position.x - pt.x;
+                    float dy= cell.position.y - pt.y;
+                    
+                    if((dx*dx + dy*dy)<range*range)
+                    {
+                        [array addObject:cell];
+                    }
+                }
+            }
+        }
+    }
+
+    return array;
+}
+
 
 -(void)seed
 {

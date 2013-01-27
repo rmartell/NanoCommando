@@ -29,7 +29,7 @@
 	CCScene *scene = [CCScene node];
 //	TileMapLayer *tileLayer = [[TileMapLayer alloc]init];
 //	[scene addChild:tileLayer];
-    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc]initWithGame];
+    GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
     [scene addChild:gamePlayLayer];
     
 	return scene;

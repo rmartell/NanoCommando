@@ -30,6 +30,7 @@
         
         screenSize = [CCDirector sharedDirector].screenSize;
         
+        self.scale= 0.5;
         [self scheduleUpdate];
         [self setupAnimation];
         
@@ -42,6 +43,7 @@
 +(id) createWithLayer:(GamePlayLayer*)layer
 {
 	id playerShip= [[self alloc] initWithGameLayer:layer];
+    
 	return playerShip;
 }
 

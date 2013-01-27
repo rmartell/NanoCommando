@@ -51,6 +51,10 @@
         case kGameScene :
             sceneToRun = [GamePlayLayer scene];
             break;
+        case kKillScene :
+            sceneToRun = [CCBReader sceneWithNodeGraphFromFile:@"NCKillScreen.ccbi"];
+            break;
+            
         default:
             CCLOG(@"Unknown ID, cannot switch scenes");
             return;

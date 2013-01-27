@@ -7,7 +7,7 @@
             <key>ipaddrawings.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,1386},{738,283}}</string>
+                <string>{{2,1564},{738,283}}</string>
                 <key>offset</key>
                 <string>{1,19}</string>
                 <key>rotated</key>
@@ -17,10 +17,23 @@
                 <key>sourceSize</key>
                 <string>{740,321}</string>
             </dict>
+            <key>killscreentext.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1386},{1458,176}}</string>
+                <key>offset</key>
+                <string>{0,-9}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{59,54},{1458,176}}</string>
+                <key>sourceSize</key>
+                <string>{1576,266}</string>
+            </dict>
             <key>nanocommando.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{849,1618},{959,135}}</string>
+                <string>{{742,1796},{959,135}}</string>
                 <key>offset</key>
                 <string>{0,-8}</string>
                 <key>rotated</key>
@@ -46,11 +59,11 @@
             <key>startbutton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1386},{331,105}}</string>
+                <string>{{1656,1386},{331,105}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{331,105}}</string>
                 <key>sourceSize</key>
@@ -59,7 +72,7 @@
             <key>tapanddrag.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{849,1386},{674,230}}</string>
+                <string>{{742,1564},{674,230}}</string>
                 <key>offset</key>
                 <string>{2,-5}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>thumbstick edge.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1525,1386},{192,194}}</string>
+                <string>{{1462,1386},{192,194}}</string>
                 <key>offset</key>
                 <string>{-2,-1}</string>
                 <key>rotated</key>
@@ -85,7 +98,7 @@
             <key>thumbstickcenter.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,1671},{70,70}}</string>
+                <string>{{1989,1386},{70,70}}</string>
                 <key>offset</key>
                 <string>{-1,1}</string>
                 <key>rotated</key>
@@ -103,9 +116,9 @@
             <key>realTextureFileName</key>
             <string>MenuSpriteSheet-ipadhd.png</string>
             <key>size</key>
-            <string>{2063,1755}</string>
+            <string>{2063,1933}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:12b61b28ff1ca1d13691a2813f28782e$</string>
+            <string>$TexturePacker:SmartUpdate:311b0c95b5941878d15e7f332bef85ed$</string>
             <key>textureFileName</key>
             <string>MenuSpriteSheet-ipadhd.png</string>
         </dict>

@@ -227,8 +227,8 @@
                 self.deploy= true;
             }
         } else {
-            // REPLACE ME (FIXME) SOUNDTYPE
-            [[SoundManager sharedSoundManager] playSound:kSoundInvalidDeploy];
+            // No turrets
+            [[SoundManager sharedSoundManager] playSound:kSoundNoMoreTurrets];
         }
         
         self.tapSprite.position = input.gestureTapLocation;

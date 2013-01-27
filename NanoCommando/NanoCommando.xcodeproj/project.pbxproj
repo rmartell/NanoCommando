@@ -12,6 +12,8 @@
 		6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */; };
 		6E4066DC16B5023B009ADC89 /* LightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4066DB16B5023B009ADC89 /* LightLayer.m */; };
 		6E4066FB16B51A47009ADC89 /* superlamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4066FA16B51A47009ADC89 /* superlamp.png */; };
+		6E40671116B5D4E1009ADC89 /* shotFire2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E40671016B5D4E1009ADC89 /* shotFire2.mp3 */; };
+		6E40671516B5D61D009ADC89 /* noMoreTurrets2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E40671416B5D61D009ADC89 /* noMoreTurrets2.mp3 */; };
 		BB506CDD16B5A82C00F50E50 /* PowerUpCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = BB506CDC16B5A82C00F50E50 /* PowerUpCollection.m */; };
 		BB506CE116B5B14000F50E50 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB506CE016B5B13F00F50E50 /* SoundManager.m */; };
 		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
@@ -68,7 +70,6 @@
 		F23C30D916B5BE0600FD9CE7 /* quitBack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C716B5BE0600FD9CE7 /* quitBack.mp3 */; };
 		F23C30DA16B5BE0600FD9CE7 /* ShipHum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C816B5BE0600FD9CE7 /* ShipHum.mp3 */; };
 		F23C30DB16B5BE0600FD9CE7 /* ShipHumShort.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30C916B5BE0600FD9CE7 /* ShipHumShort.mp3 */; };
-		F23C30DC16B5BE0600FD9CE7 /* ShotFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */; };
 		F23C30DD16B5BE0600FD9CE7 /* startConfirm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */; };
 		F23C30DE16B5BE0600FD9CE7 /* turretDeploy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */; };
 		F23C30E316B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30E216B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png */; };
@@ -79,6 +80,8 @@
 		F23C30EF16B5CD1900FD9CE7 /* 72logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30EE16B5CD1900FD9CE7 /* 72logo.png */; };
 		F23C30F116B5CD7900FD9CE7 /* 144logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F016B5CD7900FD9CE7 /* 144logo.png */; };
 		F23C30F316B5D0CA00FD9CE7 /* noMoreTurrets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F216B5D0CA00FD9CE7 /* noMoreTurrets.mp3 */; };
+		F23C30F516B5D65700FD9CE7 /* NCKillScreen.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F23C30F416B5D65700FD9CE7 /* NCKillScreen.ccbi */; };
+		F23C30F816B5D67E00FD9CE7 /* NCKillScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F23C30F716B5D67E00FD9CE7 /* NCKillScreen.m */; };
 		F2C7DA7316B595B0009FBC1F /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7416B595B0009FBC1F /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3A16B595B0009FBC1F /* CCBKeyframe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F2C7DA7516B595B0009FBC1F /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7DA3C16B595B0009FBC1F /* CCBReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -129,6 +132,8 @@
 		6E4066DA16B5023B009ADC89 /* LightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightLayer.h; sourceTree = "<group>"; };
 		6E4066DB16B5023B009ADC89 /* LightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightLayer.m; sourceTree = "<group>"; };
 		6E4066FA16B51A47009ADC89 /* superlamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superlamp.png; sourceTree = "<group>"; };
+		6E40671016B5D4E1009ADC89 /* shotFire2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shotFire2.mp3; sourceTree = "<group>"; };
+		6E40671416B5D61D009ADC89 /* noMoreTurrets2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noMoreTurrets2.mp3; sourceTree = "<group>"; };
 		BB506CDB16B5A82C00F50E50 /* PowerUpCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUpCollection.h; sourceTree = "<group>"; };
 		BB506CDC16B5A82C00F50E50 /* PowerUpCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpCollection.m; sourceTree = "<group>"; };
 		BB506CDF16B5B13F00F50E50 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
@@ -215,7 +220,6 @@
 		F23C30C716B5BE0600FD9CE7 /* quitBack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quitBack.mp3; sourceTree = "<group>"; };
 		F23C30C816B5BE0600FD9CE7 /* ShipHum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShipHum.mp3; sourceTree = "<group>"; };
 		F23C30C916B5BE0600FD9CE7 /* ShipHumShort.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShipHumShort.mp3; sourceTree = "<group>"; };
-		F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShotFire.mp3; sourceTree = "<group>"; };
 		F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startConfirm.mp3; sourceTree = "<group>"; };
 		F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = turretDeploy.mp3; sourceTree = "<group>"; };
 		F23C30E216B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
@@ -226,6 +230,9 @@
 		F23C30EE16B5CD1900FD9CE7 /* 72logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 72logo.png; path = ../../72logo.png; sourceTree = "<group>"; };
 		F23C30F016B5CD7900FD9CE7 /* 144logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144logo.png; sourceTree = SOURCE_ROOT; };
 		F23C30F216B5D0CA00FD9CE7 /* noMoreTurrets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noMoreTurrets.mp3; sourceTree = "<group>"; };
+		F23C30F416B5D65700FD9CE7 /* NCKillScreen.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = NCKillScreen.ccbi; sourceTree = "<group>"; };
+		F23C30F616B5D67E00FD9CE7 /* NCKillScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NCKillScreen.h; path = Projectfiles/NCKillScreen.h; sourceTree = SOURCE_ROOT; };
+		F23C30F716B5D67E00FD9CE7 /* NCKillScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NCKillScreen.m; path = Projectfiles/NCKillScreen.m; sourceTree = SOURCE_ROOT; };
 		F2C7DA3716B595B0009FBC1F /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		F2C7DA3816B595B0009FBC1F /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		F2C7DA3916B595B0009FBC1F /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -534,7 +541,8 @@
 		F23C30B916B5BE0600FD9CE7 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				F23C30F216B5D0CA00FD9CE7 /* noMoreTurrets.mp3 */,
+				6E40671416B5D61D009ADC89 /* noMoreTurrets2.mp3 */,
+				6E40671016B5D4E1009ADC89 /* shotFire2.mp3 */,
 				F23C30BA16B5BE0600FD9CE7 /* deadCell.mp3 */,
 				F23C30BB16B5BE0600FD9CE7 /* Flatline.mp3 */,
 				F23C30BC16B5BE0600FD9CE7 /* HeartBeat */,
@@ -546,7 +554,6 @@
 				F23C30C716B5BE0600FD9CE7 /* quitBack.mp3 */,
 				F23C30C816B5BE0600FD9CE7 /* ShipHum.mp3 */,
 				F23C30C916B5BE0600FD9CE7 /* ShipHumShort.mp3 */,
-				F23C30CA16B5BE0600FD9CE7 /* ShotFire.mp3 */,
 				F23C30CB16B5BE0600FD9CE7 /* startConfirm.mp3 */,
 				F23C30CC16B5BE0600FD9CE7 /* turretDeploy.mp3 */,
 			);
@@ -692,7 +699,10 @@
 		F2C7DA8F16B5A442009FBC1F /* CCBuilderLayers */ = {
 			isa = PBXGroup;
 			children = (
+				F23C30F416B5D65700FD9CE7 /* NCKillScreen.ccbi */,
 				F2C7DA9016B5A47B009FBC1F /* NanoCommandoMainMenu.ccbi */,
+				F23C30F616B5D67E00FD9CE7 /* NCKillScreen.h */,
+				F23C30F716B5D67E00FD9CE7 /* NCKillScreen.m */,
 				F2C7DA9916B5A4F8009FBC1F /* NCMainMenu.h */,
 				F2C7DA9A16B5A4F8009FBC1F /* NCMainMenu.m */,
 			);
@@ -827,7 +837,6 @@
 				F23C30D916B5BE0600FD9CE7 /* quitBack.mp3 in Resources */,
 				F23C30DA16B5BE0600FD9CE7 /* ShipHum.mp3 in Resources */,
 				F23C30DB16B5BE0600FD9CE7 /* ShipHumShort.mp3 in Resources */,
-				F23C30DC16B5BE0600FD9CE7 /* ShotFire.mp3 in Resources */,
 				F23C30DD16B5BE0600FD9CE7 /* startConfirm.mp3 in Resources */,
 				F23C30DE16B5BE0600FD9CE7 /* turretDeploy.mp3 in Resources */,
 				F23C30E316B5C1D600FD9CE7 /* Default-Landscape@2x~ipad.png in Resources */,
@@ -837,7 +846,9 @@
 				F23C30EB16B5C55D00FD9CE7 /* startupscreen.png in Resources */,
 				F23C30EF16B5CD1900FD9CE7 /* 72logo.png in Resources */,
 				F23C30F116B5CD7900FD9CE7 /* 144logo.png in Resources */,
-				F23C30F316B5D0CA00FD9CE7 /* noMoreTurrets.mp3 in Resources */,
+				6E40671116B5D4E1009ADC89 /* shotFire2.mp3 in Resources */,
+				6E40671516B5D61D009ADC89 /* noMoreTurrets2.mp3 in Resources */,
+				F23C30F516B5D65700FD9CE7 /* NCKillScreen.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +902,7 @@
 				F2C7DAA116B5B17F009FBC1F /* LaunchScene.m in Sources */,
 				BB506CDD16B5A82C00F50E50 /* PowerUpCollection.m in Sources */,
 				BB506CE116B5B14000F50E50 /* SoundManager.m in Sources */,
+				F23C30F816B5D67E00FD9CE7 /* NCKillScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

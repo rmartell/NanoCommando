@@ -79,7 +79,27 @@
         {
             // find a random one to seed.
             CGPoint seed_pts[]= {
-                CGPointMake(50, 60)
+                CGPointMake(-1.094042, 132.172775),
+                CGPointMake(-138.877823, 34.268536),
+                CGPointMake(3.735448, -128.770248),
+                CGPointMake(132.889526, 53.498062),
+                CGPointMake(435.893188, 716.664734),
+                CGPointMake(-204.679276, 878.736511),
+                CGPointMake(631.855652, -723.856201),
+                CGPointMake(-463.391632, -714.683533),
+                CGPointMake(1376.601562, 296.421906),
+                CGPointMake(-870.966736, 12.253122),
+                CGPointMake(-1483.273926, -126.869110),
+                CGPointMake(-1567.962402, 793.779541),
+                CGPointMake(-1675.728027, 1207.793945),
+                CGPointMake(-776.062500, 1068.025757),
+                CGPointMake(-224.600525, 871.530884),
+                CGPointMake(29.772858, -877.352600),
+                CGPointMake(1231.633545, -1109.238892),
+                CGPointMake(1396.841309, -374.800232),
+                CGPointMake(801.565369, -415.316467),
+                CGPointMake(1306.285522, 748.267822),
+                CGPointMake(-1484.598755, -715.762390)
             };
             
             int randIndex= rand()%ARRAY_SIZE(seed_pts);

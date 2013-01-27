@@ -5,13 +5,13 @@ typedef enum {
     kGameZ,
     kGameObjectsZ,
     kBatchNodeZ,
-   // kPlayerShipZ,
     kTurretZ,
     kEffectsZ,
     kHudZ
 } metaZOrders;
 
 typedef enum {
+    kHeartZ,
     kCancerZ,
     kPlayerShipZ,
 } batchOrders;

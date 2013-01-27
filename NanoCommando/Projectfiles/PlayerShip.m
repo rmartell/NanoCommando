@@ -8,6 +8,7 @@
 
 #import "PlayerShip.h"
 #import "HudLayer.h"
+#import "GJCollisionBitmap.h"
 
 // Maximum velocity in world units/second
 #define MAXIMUM_VELOCITY (300)
@@ -20,10 +21,6 @@
 
 @implementation PlayerShip {
     CGSize screenSize;
-    
-    
-    CCMoveBy* moveAction;
-    CCRotateBy* rotateAction;
     CCAction* normalAnimation;
 }
 
@@ -58,15 +55,6 @@
 	return playerShip;
 }
 
--(void)moveBy:(CGPoint)vector {
-    
-return;
-    [moveAction stop];
-    moveAction = [CCMoveBy actionWithDuration:1.0f position:vector];
-    [self runAction:moveAction];
-    
-    NSLog(@"Current ship position: %@", NSStringFromCGPoint(self.position));
-}
 
 -(void)update:(ccTime)delta {
     // update theta
@@ -86,8 +74,11 @@ return;
                                      self.position.y + delta*self.velocity.y);
 
     // collision test on newPosition
-    
-    self.position= newPosition;
+    if(![self.collision ptInside:newPosition])
+    {
+        // don't allow for now..
+        self.position= newPosition;
+    }
 }
 
 

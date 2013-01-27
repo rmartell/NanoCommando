@@ -10,13 +10,14 @@
 #import "GameObject.h"
 
 @class HudLayer;
+@class GJCollisionBitmap;
 
 @interface PlayerShip : GameObject
 
 @property (nonatomic, weak) HudLayer *hud;
+@property (nonatomic, weak) GJCollisionBitmap *collision;
 
 +(id) createWithLayer:(GamePlayLayer*)layer;
 
--(void)moveBy:(CGPoint)vector;
 
 @end

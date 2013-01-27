@@ -14,12 +14,13 @@
 @property (nonatomic, weak) GJCollisionBitmap *collision;
 @property (nonatomic, assign) NSTimeInterval lastUpdate;
 @property (nonatomic, assign) NSInteger startIndex;
+@property (nonatomic, assign) int currentGeneration;
 
 //@property (nonatomic, strong) NSString* textureFrameName;
 //@property (nonatomic, strong) CCTexture2D *cancerLive;
 //@property (nonatomic, strong) CCTexture2D *cancerDormant;
 
--(void)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array;
+-(CancerCell *)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array;
 -(BOOL)cancerCell:(CancerCell *)cell canGrowToPoint:(CGPoint)pt andInterimArray:(NSMutableArray *)others;
 @end
 
@@ -27,6 +28,7 @@
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
 @property (nonatomic, assign) NSTimeInterval lastGrowth;
+@property (nonatomic, assign) int generation;
 @property (nonatomic, assign) int roughX;
 @property (nonatomic, assign) int roughY;
 @end
@@ -75,13 +77,14 @@
     {
         for(int ii= 0; ii<8; ii++)
         {
-            unsigned char mask= (1<<ii);
+            int bitIndex= (ii+self.generation)%8;
+            unsigned char mask= (1<<bitIndex);
             if(self.growDirections & mask)
             {
-                float degrees= ((360/8)*ii);
+                float degrees= ((360/8)*bitIndex);
 
                 // can we grow there?
-                float distance= self.contentSize.width * 0.9;
+                float distance= self.boundingBox.size.width * 0.8;
                 double radians= DEGREES_TO_RADIANS(degrees);
 
                 float dx= cos(radians)*distance;
@@ -91,7 +94,8 @@
                 
                 if([collection cancerCell:self canGrowToPoint:dest andInterimArray:array])
                 {
-                    [collection addCancerAtPoint:dest intoArray:array];
+                    CancerCell *newCell= [collection addCancerAtPoint:dest intoArray:array];
+                    // The newCell growDirection can't grow back in the way it went before.
                 }
                 
                 // either we grew, or we clear...
@@ -101,7 +105,7 @@
                     // [self runAction:[CCTintTo actionWithDuration:1.0f red:0xff green:0 blue:0]];
                    // self.texture= collection.cancerDormant;
                 }
-                break; // only do one each time
+//                break; // only do one each time
             }
             
             if(!self.growDirections) {
@@ -182,6 +186,7 @@
     // I _really_ don't like the ticksPassed in crap..
     if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1)
     {
+        self.currentGeneration+= 1;
         int ticks= 1;
 
 NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
@@ -206,17 +211,20 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
     }
 }
 
--(void)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array
+-(CancerCell *)addCancerAtPoint:(CGPoint)pt intoArray:(NSMutableArray *)array
 {
 //    CancerCell *cell= [[CancerCell alloc] initWithGameLayer:self.layer andTexture:self.cancerLive];
     CancerCell *cell= [[CancerCell alloc] initWithGameLayer:self.layer]; //] andFrameName:self.textureFrameName];
     cell.position= pt;
     double scaled = (double)rand()/RAND_MAX;
 
-    cell.scale= 0.9 + (.20*scaled);
-    
+    cell.scale=2*( 0.8 + (.40*scaled));
+    cell.generation= rand()%8;
+
     [self.layer.batchNode addChild:cell z:kCancerZ];
     [array addObject:cell];
+    
+    return cell;
 }
 
 -(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt

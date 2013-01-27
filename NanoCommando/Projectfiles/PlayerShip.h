@@ -19,6 +19,5 @@
 
 +(id) createWithLayer:(GamePlayLayer*)layer;
 
--(void)moveBy:(CGPoint)vector;
 
 @end

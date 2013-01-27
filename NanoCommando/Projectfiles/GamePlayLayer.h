@@ -10,6 +10,7 @@
 #import "TileMapLayer.h"
 
 @class PlayerShip;
+@class Heart;
 @class CancerCollection;
 
 @interface GamePlayLayer : CCLayer
@@ -17,6 +18,7 @@
 -(id) initWithGame;
 
 @property (nonatomic, weak) CCSpriteBatchNode* batchNode;
+@property (nonatomic, weak) Heart* heart;
 @property (nonatomic, weak) PlayerShip* playerShip;
 
 @property (nonatomic, strong) CancerCollection *cancerCells;

@@ -18,4 +18,6 @@
 
 -(void)update:(ccTime)ticksPassed;
 -(void)seed;
+
+-(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt;
 @end

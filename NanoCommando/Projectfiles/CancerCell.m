@@ -16,6 +16,7 @@
 @property (nonatomic, weak) GamePlayLayer *layer;
 @property (nonatomic, weak) GJCollisionBitmap *collision;
 @property (nonatomic, assign) NSTimeInterval lastUpdate;
+@property (nonatomic, assign) NSInteger startIndex;
 
 //@property (nonatomic, strong) NSString* textureFrameName;
 //@property (nonatomic, strong) CCTexture2D *cancerLive;
@@ -29,7 +30,14 @@
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
 @property (nonatomic, assign) NSTimeInterval lastGrowth;
+@property (nonatomic, assign) int roughX;
+@property (nonatomic, assign) int roughY;
 @end
+
+#define CANCER_SIZE (32)
+
+#define ROUGH_X_FROM_X(x) ((x)/(4*CANCER_SIZE))
+#define ROUGH_Y_FROM_Y(y) ((y)/(4*CANCER_SIZE))
 
 @implementation CancerCell
 
@@ -44,6 +52,13 @@
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];
 	}
 	return self;
+}
+
+-(void)setPosition:(CGPoint)position
+{
+    self.roughX= ROUGH_X_FROM_X(position.x);
+    self.roughY= ROUGH_Y_FROM_Y(position.y);
+    [super setPosition:position];
 }
 
 -(BOOL)isGrowing
@@ -121,11 +136,18 @@
     
     if(valid)
     {
+        int rough_x= ROUGH_X_FROM_X(pt.x);
+        int rough_y= ROUGH_Y_FROM_Y(pt.y);
+        
         // check if inside another cancer cell...
         for(CancerCell *c in self.cells)
         {
-            if(cell != c && [c ptInside:pt])
+            if(cell != c &&
+               abs(rough_x-c.roughX)<=1 &&
+               abs(rough_y-c.roughY)<=1 &&
+               [c ptInside:pt])
             {
+//                [c runAction:[CCTintTo actionWithDuration:1.0f red:0 green:0 blue:0xff]];
                 valid= NO;
                 break;
             }
@@ -135,8 +157,12 @@
         {
             for(CancerCell *c in others)
             {
-                if(cell != c && [c ptInside:pt])
+                if(cell != c &&
+                   abs(rough_x-c.roughX)<=1 &&
+                   abs(rough_y-c.roughY)<=1 &&
+                   [c ptInside:pt])
                 {
+//                    [c runAction:[CCTintTo actionWithDuration:1.0f red:0 green:0 blue:0xff]];
                     valid= NO;
                     break;
                 }
@@ -149,6 +175,7 @@
 
 -(void)update:(ccTime)ticksPassed
 {
+//    return;
     // I _really_ don't like the ticksPassed in crap..
     if([NSDate timeIntervalSinceReferenceDate] - self.lastUpdate>1)
     {
@@ -172,8 +199,7 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         [self.cells addObjectsFromArray:newGrowth];
         self.lastUpdate= [NSDate timeIntervalSinceReferenceDate];
         NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
-        CCLOG(@"Total time spent: %lf", delta);
-
+        CCLOG(@"Total time calculating cancer spent: %lf", delta);
     }
 }
 
@@ -190,9 +216,51 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
     [array addObject:cell];
 }
 
+-(NSArray *)cancerCellsInRange:(float)range ofPoint:(CGPoint)pt
+{
+    NSMutableArray *array= [NSMutableArray arrayWithCapacity:10];
+    int rXStart= ROUGH_X_FROM_X(pt.x - range);
+    int rXEnd= ROUGH_X_FROM_X(pt.x + range);
+    int rYStart= ROUGH_Y_FROM_Y(pt.y - range);
+    int rYEnd= ROUGH_Y_FROM_Y(pt.y + range);
+
+    for(int rx= rXStart; rx<= rXEnd; rx++)
+    {
+        for(int ry= rYStart; ry<= rYStart; ry++)
+        {
+            for(CancerCell *cell in self.cells)
+            {
+                if(cell.roughY==ry && cell.roughX==rx)
+                {
+                    float dx= cell.position.x - pt.x;
+                    float dy= cell.position.y - pt.y;
+                    
+                    if((dx*dx + dy*dy)<range*range)
+                    {
+                        [array addObject:cell];
+                    }
+                }
+            }
+        }
+    }
+
+    return array;
+}
+
+
 -(void)seed
 {
+    CGPoint seed_pts[]= {
+        CGPointMake(-2031, -1405),
+        CGPointMake(-2006, -381.134),
+        CGPointMake(-2025, 152.49),
+        CGPointMake(-2034, 1087.51)
+    };
+    
 //    [self addCancerAtPoint:ccp(512, 500) intoArray:self.cells];
-    [self addCancerAtPoint:ccp(0, 0) intoArray:self.cells];
+    for(int ii= 0; ii<(int)(sizeof(seed_pts)/sizeof(seed_pts[0])); ii++)
+    {
+        [self addCancerAtPoint:seed_pts[ii] intoArray:self.cells];
+    }
 }
 @end

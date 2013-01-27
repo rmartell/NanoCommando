@@ -25,12 +25,14 @@
 @end
 
 @interface CancerCell ()
+
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
 @property (nonatomic, assign) NSTimeInterval lastGrowth;
 @property (nonatomic, assign) int generation;
 @property (nonatomic, assign) int roughX;
 @property (nonatomic, assign) int roughY;
+@property (nonatomic, assign) int fileSeed;
 @end
 
 #define CANCER_SIZE (32)
@@ -38,17 +40,32 @@
 #define ROUGH_X_FROM_X(x) ((x)/(4*CANCER_SIZE))
 #define ROUGH_Y_FROM_Y(y) ((y)/(4*CANCER_SIZE))
 
-@implementation CancerCell
+@implementation CancerCell {
+    CCAction* normalAnimation;
+}
+
+-(void)setupAnimation {
+    id normalAnim = [CCAnimation animationWithFrames:[NSString stringWithFormat:@"orange%i-",self.fileSeed] frameCount:8 delay:0.1f];
+    normalAnimation = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:normalAnim]];
+}
 
 //-(id) initWithGameLayer:(GamePlayLayer*)layer andTexture:(CCTexture2D *)texture
 -(id) initWithGameLayer:(GamePlayLayer*)layer // andFrameName:(NSString *)texture
 {
 	//if ((self = [super initWithTexture:texture]))
 //    if ((self = [super initWithSpriteFrameName:texture]))
-    if ((self = [super initWithSprite:@"cancertest02" andLayer:layer]))
+    self.fileSeed = arc4random()%3;
+    NSString* filename = [NSString stringWithFormat:@"orange%i-0", self.fileSeed];
+    
+    if ((self = [super initWithSprite:filename andLayer:layer]))
 	{
         self.growDirections= 0x7f;
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];
+        [self setupAnimation];
+        
+        [self runAction:normalAnimation];
+        int randomRot = arc4random()%360;
+        self.rotation = (float)randomRot;
 	}
 	return self;
 }
@@ -206,8 +223,8 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         
         [self.cells addObjectsFromArray:newGrowth];
         self.lastUpdate= [NSDate timeIntervalSinceReferenceDate];
-        NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
-        CCLOG(@"Total time calculating cancer spent: %lf", delta);
+        //NSTimeInterval delta= [NSDate timeIntervalSinceReferenceDate] - startTime;
+        //CCLOG(@"Total time calculating cancer spent: %lf", delta);
     }
 }
 
@@ -265,13 +282,34 @@ NSTimeInterval startTime= [NSDate timeIntervalSinceReferenceDate];
         CGPointMake(-2031, -1405),
         CGPointMake(-2006, -381.134),
         CGPointMake(-2025, 152.49),
-        CGPointMake(-2034, 1087.51)
+        CGPointMake(-2034, 1087.51),
+        CGPointMake(-680, 1520),
+        CGPointMake(126, 1533),
+        CGPointMake(565, 1501),
+        CGPointMake(1249, 1500),
+        CGPointMake(1997, 763),
+        CGPointMake(2016, -384),
+        CGPointMake(2028, -1330),
+        CGPointMake(1076, -1473),
+        CGPointMake(101, -1481),
+        CGPointMake(-827, -1502),
+        CGPointMake(-1146, -1525)
     };
+    int numberOfSeedsToMake = 3;
+    int numberOfSeedPoints = sizeof(seed_pts)/sizeof(seed_pts[0]);
+    int iterations = numberOfSeedPoints / numberOfSeedsToMake;
+    for (int iii = 0; iii < numberOfSeedsToMake; iii++) {
+        int randomInt = arc4random()%iterations;
+        int randomSeed = iii*iterations + randomInt;
+        [self addCancerAtPoint:seed_pts[randomSeed] intoArray:self.cells];
+        CCLOG(@"Random seed index:%i", randomSeed);
+        
+    }
     
 //    [self addCancerAtPoint:ccp(512, 500) intoArray:self.cells];
-    for(int ii= 0; ii<(int)(sizeof(seed_pts)/sizeof(seed_pts[0])); ii++)
-    {
-        [self addCancerAtPoint:seed_pts[ii] intoArray:self.cells];
-    }
+    //for(int ii= 0; ii<(int)(sizeof(seed_pts)/sizeof(seed_pts[0])); ii++)
+    //{
+    //    [self addCancerAtPoint:seed_pts[ii] intoArray:self.cells];
+    //}
 }
 @end

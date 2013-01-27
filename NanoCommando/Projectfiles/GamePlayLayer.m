@@ -88,7 +88,7 @@
     
     // setup batchNode
     CCLOG(@"Setting up batchNode");
-    batchNode = [CCSpriteBatchNode batchNodeWithFile:@"NanoCommando.pvr.ccz"];
+    batchNode = [CCSpriteBatchNode batchNodeWithFile:@"NanoCommando.pvr.ccz" capacity:2000];
     [self addChild:batchNode z:kBatchNodeZ];
 }
 

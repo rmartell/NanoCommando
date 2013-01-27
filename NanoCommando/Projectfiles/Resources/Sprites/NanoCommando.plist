@@ -7,7 +7,7 @@
             <key>CancerCell.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1246,402},{16,16}}</string>
+                <string>{{1258,2},{16,16}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1278,6 +1278,19 @@
                 <key>sourceSize</key>
                 <string>{160,120}</string>
             </dict>
+            <key>cancetest.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1246,402},{32,32}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,32}}</string>
+                <key>sourceSize</key>
+                <string>{32,32}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -1286,9 +1299,9 @@
             <key>realTextureFileName</key>
             <string>NanoCommando.pvr.ccz</string>
             <key>size</key>
-            <string>{1264,503}</string>
+            <string>{1280,503}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b8888f2c3539b155aa2c0019daa7f8f8$</string>
+            <string>$TexturePacker:SmartUpdate:36a3c943b5c9a444446bcaa2f2da8a7d$</string>
             <key>textureFileName</key>
             <string>NanoCommando.pvr.ccz</string>
         </dict>

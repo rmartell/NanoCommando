@@ -27,6 +27,7 @@
 +(CCScene*)scene
 {
 	CCScene *scene = [CCScene node];
+    
 //	TileMapLayer *tileLayer = [[TileMapLayer alloc]init];
 //	[scene addChild:tileLayer];
     GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc]initWithGame];

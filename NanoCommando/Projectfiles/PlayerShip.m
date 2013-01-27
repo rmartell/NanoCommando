@@ -7,9 +7,20 @@
 //
 
 #import "PlayerShip.h"
+#import "HudLayer.h"
+
+// Maximum velocity in world units/second
+#define MAXIMUM_VELOCITY (300)
+
+@interface PlayerShip ()
+@property (nonatomic, assign) float desiredTheta;
+@property (nonatomic, assign) CGPoint desiredVelocity;
+@property (nonatomic, assign) CGPoint velocity;
+@end
 
 @implementation PlayerShip {
     CGSize screenSize;
+    
     
     CCMoveBy* moveAction;
     CCRotateBy* rotateAction;
@@ -49,6 +60,7 @@
 
 -(void)moveBy:(CGPoint)vector {
     
+return;
     [moveAction stop];
     moveAction = [CCMoveBy actionWithDuration:1.0f position:vector];
     [self runAction:moveAction];
@@ -57,8 +69,25 @@
 }
 
 -(void)update:(ccTime)delta {
-
+    // update theta
+    // instantaneous for now.
+    float currentRotationTheta= self.hud.theta;
+    self.rotation= 360 - RADIANS_TO_DEGREES(currentRotationTheta) - 90;
     
+    // update velocity
+    float velocityMag= MAXIMUM_VELOCITY*self.hud.throttle;
+    self.velocity= CGPointMake(
+                               velocityMag*cos(currentRotationTheta),
+                               velocityMag*sin(currentRotationTheta));
+
+    // update position
+    CGPoint newPosition= CGPointMake(
+                                     self.position.x + delta*self.velocity.x,
+                                     self.position.y + delta*self.velocity.y);
+
+    // collision test on newPosition
+    
+    self.position= newPosition;
 }
 
 

@@ -9,9 +9,11 @@
 
 #import "GameObject.h"
 
+@class HudLayer;
+
 @interface PlayerShip : GameObject
 
-
+@property (nonatomic, weak) HudLayer *hud;
 
 +(id) createWithLayer:(GamePlayLayer*)layer;
 

@@ -36,6 +36,8 @@
     GamePlayLayer* gamePlayLayer = [[GamePlayLayer alloc] initWithGame];
     [scene addChild:gamePlayLayer z:kGameZ];
     
+    gamePlayLayer.playerShip.hud= hudLayer;
+    
 	return scene;
 }
 

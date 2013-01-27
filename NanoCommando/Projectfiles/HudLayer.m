@@ -78,11 +78,11 @@
         // calculate the sin/cosine, then move it out that far..
         // tan would give us the angle directly, but it wouldn't like have the correct hemisphere.
         float r2= sqrt(dx*dx + dy*dy);
-        float theta= asin(dy/r2);
-        pt.y= r*sin(theta) + center.y;
+        float angle= asin(dy/r2);
+        pt.y= r*sin(angle) + center.y;
         
-        theta= acos(dx/r2);
-        pt.x= r*cos(theta) + center.x;
+        angle= acos(dx/r2);
+        pt.x= r*cos(angle) + center.x;
     }
     
     return pt;

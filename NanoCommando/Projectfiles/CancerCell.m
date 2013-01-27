@@ -25,6 +25,7 @@
 @end
 
 @interface CancerCell ()
+
 @property (nonatomic, assign) unsigned char growDirections;
 @property (nonatomic, assign) NSTimeInterval birthTime;
 @property (nonatomic, assign) NSTimeInterval lastGrowth;
@@ -38,17 +39,29 @@
 #define ROUGH_X_FROM_X(x) ((x)/(4*CANCER_SIZE))
 #define ROUGH_Y_FROM_Y(y) ((y)/(4*CANCER_SIZE))
 
-@implementation CancerCell
+@implementation CancerCell {
+    CCAction* normalAnimation;
+}
+
+-(void)setupAnimation {
+    id normalAnim = [CCAnimation animationWithFrames:@"orange000" frameCount:8 delay:0.1f];
+    normalAnimation = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:normalAnim]];
+}
 
 //-(id) initWithGameLayer:(GamePlayLayer*)layer andTexture:(CCTexture2D *)texture
 -(id) initWithGameLayer:(GamePlayLayer*)layer // andFrameName:(NSString *)texture
 {
 	//if ((self = [super initWithTexture:texture]))
 //    if ((self = [super initWithSpriteFrameName:texture]))
-    if ((self = [super initWithSprite:@"cancertest02" andLayer:layer]))
+    if ((self = [super initWithSprite:@"orange0000" andLayer:layer]))
 	{
         self.growDirections= 0x7f;
         self.birthTime= [NSDate timeIntervalSinceReferenceDate];
+        [self setupAnimation];
+        
+        [self runAction:normalAnimation];
+        int randomRot = arc4random()%360;
+        self.rotation = (float)randomRot;
 	}
 	return self;
 }

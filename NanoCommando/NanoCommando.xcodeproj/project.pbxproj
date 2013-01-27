@@ -15,8 +15,6 @@
 		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
 		BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1B16B47966009D1B11 /* Collision.bm */; };
 		BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */; };
-		BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A1E16B47C80009D1B11 /* CancerCell.png */; };
-		BBD95A2116B486E7009D1B11 /* CancerCellInside.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD95A2016B486E7009D1B11 /* CancerCellInside.png */; };
 		BBD95A3A16B4D1C4009D1B11 /* Turret.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A3916B4D1C4009D1B11 /* Turret.m */; };
 		BBD95A4516B4E1F1009D1B11 /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A4416B4E1F1009D1B11 /* HudLayer.m */; };
 		DC2721C0160CB0DF00D88944 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2721BF160CB0DF00D88944 /* Default-568h@2x.png */; };
@@ -33,12 +31,6 @@
 		DC65616613A969B600A7AC53 /* libsneakyinput-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615A13A969B600A7AC53 /* libsneakyinput-ios.a */; };
 		DC65618F15114CB400E59F8A /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC65618E15114CB400E59F8A /* fps_images-ipadhd.png */; };
 		DC81EAA9141280D400735365 /* TileMapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC81EAA8141280D400735365 /* TileMapLayer.m */; };
-		DC81EAB9141281CE00735365 /* alien-sfx.caf in Resources */ = {isa = PBXBuildFile; fileRef = DC81EAAB141281CE00735365 /* alien-sfx.caf */; };
-		DC81EABB141281CE00735365 /* Author&License.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC81EAAD141281CE00735365 /* Author&License.txt */; };
-		DC81EABD141281CE00735365 /* dg_grounds32.png in Resources */ = {isa = PBXBuildFile; fileRef = DC81EAAE141281CE00735365 /* dg_grounds32.png */; };
-		DC81EAC1141281CE00735365 /* game-events.png in Resources */ = {isa = PBXBuildFile; fileRef = DC81EAB0141281CE00735365 /* game-events.png */; };
-		DC81EAC3141281CE00735365 /* orthogonal.tmx in Resources */ = {isa = PBXBuildFile; fileRef = DC81EAB1141281CE00735365 /* orthogonal.tmx */; };
-		DC81EAC5141281CE00735365 /* fx-explosion.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC81EAB2141281CE00735365 /* fx-explosion.plist */; };
 		DCC1A0FA13A94ED5005BD75D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0F913A94ED5005BD75D /* Default.png */; };
 		DCC1A0FC13A94ED5005BD75D /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0FB13A94ED5005BD75D /* fps_images.png */; };
 		DCC1A0FE13A94ED5005BD75D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0FD13A94ED5005BD75D /* Icon-72.png */; };
@@ -54,7 +46,6 @@
 		F21026C016B43C6700C70F6D /* GamePlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026BF16B43C6700C70F6D /* GamePlayLayer.m */; };
 		F21026C816B444D500C70F6D /* PlayerShip.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026C716B444D500C70F6D /* PlayerShip.m */; };
 		F21026CB16B4464C00C70F6D /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F21026CA16B4464C00C70F6D /* GameObject.m */; };
-		F21026CE16B4507700C70F6D /* LvMapbackground1.png in Resources */ = {isa = PBXBuildFile; fileRef = F21026CD16B4507700C70F6D /* LvMapbackground1.png */; };
 		F237496216B45FF1006FCE54 /* TestShip.png in Resources */ = {isa = PBXBuildFile; fileRef = F237496116B45FF1006FCE54 /* TestShip.png */; };
 		F237498116B4AC7E006FCE54 /* NanoCommando-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */; };
 		F237498216B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F237497C16B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz */; };
@@ -65,17 +56,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
-		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMap.png; sourceTree = "<group>"; };
+		6E1FAABC16B468F200B711AF /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.tmx; path = ../map.tmx; sourceTree = "<group>"; };
+		6E1FAABE16B4692000B711AF /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LvMap.png; path = ../LvMap.png; sourceTree = "<group>"; };
 		6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickedge.png; sourceTree = "<group>"; };
 		6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbstickcenter.png; sourceTree = "<group>"; };
 		BBD95A0A16B46F3C009D1B11 /* CancerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancerCell.m; sourceTree = "<group>"; };
 		BBD95A0B16B46F3C009D1B11 /* CancerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancerCell.h; sourceTree = "<group>"; };
 		BBD95A1216B475D9009D1B11 /* GJCollisionBitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJCollisionBitmap.h; sourceTree = "<group>"; };
 		BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJCollisionBitmap.m; sourceTree = "<group>"; };
-		BBD95A1B16B47966009D1B11 /* Collision.bm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collision.bm; sourceTree = "<group>"; };
-		BBD95A1E16B47C80009D1B11 /* CancerCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancerCell.png; sourceTree = "<group>"; };
-		BBD95A2016B486E7009D1B11 /* CancerCellInside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancerCellInside.png; sourceTree = "<group>"; };
+		BBD95A1B16B47966009D1B11 /* Collision.bm */ = {isa = PBXFileReference; lastKnownFileType = file; name = Collision.bm; path = ../Collision.bm; sourceTree = "<group>"; };
 		BBD95A3816B4D1C4009D1B11 /* Turret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Turret.h; sourceTree = "<group>"; };
 		BBD95A3916B4D1C4009D1B11 /* Turret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Turret.m; sourceTree = "<group>"; };
 		BBD95A4316B4E1F0009D1B11 /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
@@ -96,12 +85,6 @@
 		DC65618E15114CB400E59F8A /* fps_images-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-ipadhd.png"; sourceTree = "<group>"; };
 		DC81EAA7141280D400735365 /* TileMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapLayer.h; sourceTree = "<group>"; };
 		DC81EAA8141280D400735365 /* TileMapLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileMapLayer.m; sourceTree = "<group>"; };
-		DC81EAAB141281CE00735365 /* alien-sfx.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alien-sfx.caf"; sourceTree = "<group>"; };
-		DC81EAAD141281CE00735365 /* Author&License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Author&License.txt"; sourceTree = "<group>"; };
-		DC81EAAE141281CE00735365 /* dg_grounds32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dg_grounds32.png; sourceTree = "<group>"; };
-		DC81EAB0141281CE00735365 /* game-events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-events.png"; path = "David Gervais Tilesets/game-events.png"; sourceTree = "<group>"; };
-		DC81EAB1141281CE00735365 /* orthogonal.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = orthogonal.tmx; path = "David Gervais Tilesets/orthogonal.tmx"; sourceTree = "<group>"; };
-		DC81EAB2141281CE00735365 /* fx-explosion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fx-explosion.plist"; sourceTree = "<group>"; };
 		DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Debug-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E813B5024400931BF2 /* BuildSettings-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Release-Mac.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +118,6 @@
 		F21026C716B444D500C70F6D /* PlayerShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerShip.m; sourceTree = "<group>"; };
 		F21026C916B4464C00C70F6D /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		F21026CA16B4464C00C70F6D /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
-		F21026CD16B4507700C70F6D /* LvMapbackground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvMapbackground1.png; sourceTree = "<group>"; };
 		F237496116B45FF1006FCE54 /* TestShip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestShip.png; sourceTree = "<group>"; };
 		F237496816B47D55006FCE54 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F237497B16B4AC7E006FCE54 /* NanoCommando-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NanoCommando-hd.plist"; sourceTree = "<group>"; };
@@ -167,15 +149,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC81EAAC141281CE00735365 /* David Gervais Tilesets */ = {
-			isa = PBXGroup;
-			children = (
-				DC81EAAD141281CE00735365 /* Author&License.txt */,
-				DC81EAAE141281CE00735365 /* dg_grounds32.png */,
-			);
-			path = "David Gervais Tilesets";
-			sourceTree = "<group>";
-		};
 		DCC1A0D613A94EC0005BD75D = {
 			isa = PBXGroup;
 			children = (
@@ -277,20 +250,9 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */,
-				6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */,
-				BBD95A1B16B47966009D1B11 /* Collision.bm */,
-				BBD95A1E16B47C80009D1B11 /* CancerCell.png */,
-				6E1FAABE16B4692000B711AF /* LvMap.png */,
-				BBD95A2016B486E7009D1B11 /* CancerCellInside.png */,
-				6E1FAABC16B468F200B711AF /* map.tmx */,
+				F2CA839C16B4F017008248B3 /* HUD */,
 				F237496016B45FC5006FCE54 /* Sprites */,
 				F21026CC16B4507700C70F6D /* Background */,
-				DC81EAAB141281CE00735365 /* alien-sfx.caf */,
-				DC81EAB0141281CE00735365 /* game-events.png */,
-				DC81EAB1141281CE00735365 /* orthogonal.tmx */,
-				DC81EAAC141281CE00735365 /* David Gervais Tilesets */,
-				DC81EAB2141281CE00735365 /* fx-explosion.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -351,7 +313,9 @@
 		F21026CC16B4507700C70F6D /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				F21026CD16B4507700C70F6D /* LvMapbackground1.png */,
+				BBD95A1B16B47966009D1B11 /* Collision.bm */,
+				6E1FAABE16B4692000B711AF /* LvMap.png */,
+				6E1FAABC16B468F200B711AF /* map.tmx */,
 			);
 			path = Background;
 			sourceTree = "<group>";
@@ -376,6 +340,15 @@
 				F237498016B4AC7E006FCE54 /* NanoCommando.pvr.ccz */,
 			);
 			name = SpriteSheets;
+			sourceTree = "<group>";
+		};
+		F2CA839C16B4F017008248B3 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				6E1FAAC516B4AFE100B711AF /* thumbstickedge.png */,
+				6E1FAAC716B4B00C00B711AF /* thumbstickcenter.png */,
+			);
+			name = HUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,24 +412,15 @@
 				DCC1A10813A94ED5005BD75D /* Icon@2x.png in Resources */,
 				DCC1A10B13A94ED5005BD75D /* iTunesArtwork in Resources */,
 				DCC1A3AF13A94F1A005BD75D /* config.lua in Resources */,
-				DC81EAB9141281CE00735365 /* alien-sfx.caf in Resources */,
-				DC81EABB141281CE00735365 /* Author&License.txt in Resources */,
-				DC81EABD141281CE00735365 /* dg_grounds32.png in Resources */,
-				DC81EAC1141281CE00735365 /* game-events.png in Resources */,
-				DC81EAC3141281CE00735365 /* orthogonal.tmx in Resources */,
-				DC81EAC5141281CE00735365 /* fx-explosion.plist in Resources */,
 				DC3C6FB514B8A9BA00DAD281 /* fps_images-hd.png in Resources */,
 				DC65618F15114CB400E59F8A /* fps_images-ipadhd.png in Resources */,
 				DC2721C0160CB0DF00D88944 /* Default-568h@2x.png in Resources */,
-				F21026CE16B4507700C70F6D /* LvMapbackground1.png in Resources */,
 				F237496216B45FF1006FCE54 /* TestShip.png in Resources */,
 				6E1FAABD16B468F200B711AF /* map.tmx in Resources */,
 				6E1FAABF16B4692000B711AF /* LvMap.png in Resources */,
 				6E1FAAC616B4AFE100B711AF /* thumbstickedge.png in Resources */,
 				6E1FAAC816B4B00C00B711AF /* thumbstickcenter.png in Resources */,
 				BBD95A1C16B47966009D1B11 /* Collision.bm in Resources */,
-				BBD95A1F16B47C80009D1B11 /* CancerCell.png in Resources */,
-				BBD95A2116B486E7009D1B11 /* CancerCellInside.png in Resources */,
 				F237498116B4AC7E006FCE54 /* NanoCommando-hd.plist in Resources */,
 				F237498216B4AC7E006FCE54 /* NanoCommando-hd.pvr.ccz in Resources */,
 				F237498316B4AC7E006FCE54 /* NanoCommando-ipadhd.plist in Resources */,

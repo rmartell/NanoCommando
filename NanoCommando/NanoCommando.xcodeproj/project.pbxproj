@@ -13,6 +13,7 @@
 		6E4066DC16B5023B009ADC89 /* LightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4066DB16B5023B009ADC89 /* LightLayer.m */; };
 		6E4066FB16B51A47009ADC89 /* superlamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4066FA16B51A47009ADC89 /* superlamp.png */; };
 		BB506CDD16B5A82C00F50E50 /* PowerUpCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = BB506CDC16B5A82C00F50E50 /* PowerUpCollection.m */; };
+		BB506CE116B5B14000F50E50 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB506CE016B5B13F00F50E50 /* SoundManager.m */; };
 		BBD95A0C16B46F3C009D1B11 /* CancerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A0A16B46F3C009D1B11 /* CancerCell.m */; };
 		BBD95A1D16B479CC009D1B11 /* GJCollisionBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A1316B475D9009D1B11 /* GJCollisionBitmap.m */; };
 		BBD95A3A16B4D1C4009D1B11 /* Turret.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD95A3916B4D1C4009D1B11 /* Turret.m */; };
@@ -92,6 +93,8 @@
 		6E4066FA16B51A47009ADC89 /* superlamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superlamp.png; sourceTree = "<group>"; };
 		BB506CDB16B5A82C00F50E50 /* PowerUpCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerUpCollection.h; sourceTree = "<group>"; };
 		BB506CDC16B5A82C00F50E50 /* PowerUpCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerUpCollection.m; sourceTree = "<group>"; };
+		BB506CDF16B5B13F00F50E50 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		BB506CE016B5B13F00F50E50 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		BBC8785A16B4F3E900460547 /* Collision.bm */ = {isa = PBXFileReference; lastKnownFileType = file; name = Collision.bm; path = Projectfiles/Resources/Collision.bm; sourceTree = SOURCE_ROOT; };
 		BBC8785B16B4F3E900460547 /* LvMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LvMap.png; path = Projectfiles/Resources/LvMap.png; sourceTree = SOURCE_ROOT; };
 		BBC8785C16B4F3E900460547 /* map.tmx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = map.tmx; path = Projectfiles/Resources/map.tmx; sourceTree = SOURCE_ROOT; };
@@ -400,6 +403,8 @@
 				F21026CA16B4464C00C70F6D /* GameObject.m */,
 				BBD95A3816B4D1C4009D1B11 /* Turret.h */,
 				BBD95A3916B4D1C4009D1B11 /* Turret.m */,
+				BB506CDF16B5B13F00F50E50 /* SoundManager.h */,
+				BB506CE016B5B13F00F50E50 /* SoundManager.m */,
 				BB506CDB16B5A82C00F50E50 /* PowerUpCollection.h */,
 				BB506CDC16B5A82C00F50E50 /* PowerUpCollection.m */,
 				F21026C616B444D500C70F6D /* PlayerShip.h */,
@@ -711,6 +716,7 @@
 				F2C7DA8D16B595B0009FBC1F /* SSZipArchive.m in Sources */,
 				F2C7DA9B16B5A4F8009FBC1F /* NCMainMenu.m in Sources */,
 				BB506CDD16B5A82C00F50E50 /* PowerUpCollection.m in Sources */,
+				BB506CE116B5B14000F50E50 /* SoundManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

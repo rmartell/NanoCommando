@@ -11,6 +11,9 @@
 // The ultimate fix is to create a dummy class in each implementation file defining only an Objective-C category.
 // This fix was proposed by Jamie Briant here: http://blog.binaryfinery.com/universal-static-library-problem-in-iphone-sd
 
+// rdm set as NOOP
+#define FIX_CATEGORY_BUG(name)
+
 #ifndef FIX_CATEGORY_BUG
 #define FIX_CATEGORY_BUG(name) @interface FIXCATEGORYBUG ## name; @end @implementation FIXCATEGORYBUG ## name; @end
 #endif

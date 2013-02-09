@@ -6,6 +6,9 @@
 
 #import "NSMutableArray+WeakReferences.h"
 #import "kkARCSupport.h"
+#import "FixCategoryBug.h"
+
+FIX_CATEGORY_BUG(NSMutableArray_WeakReferences);
 
 @implementation NSMutableArray (WeakReferences)
 
@@ -35,8 +38,3 @@
 }
 
 @end
-
-#define FIX_CATEGORY_BUG(name) @interface FIX_CATEGORY_BUG_##name @end @implementation FIX_CATEGORY_BUG_##name @end
-
-
-FIX_CATEGORY_BUG(NSMutableArray_WeakReferences);
